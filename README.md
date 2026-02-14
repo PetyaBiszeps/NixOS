@@ -1,2 +1,1 @@
-# NixOS
-NixOS setup
+# NixOS setup guide
