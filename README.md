@@ -9,18 +9,17 @@ This repository contains my system configuration files. It documents the journey
 
 ### 2. Core configuration
 Once logged into the TTY, clone this repository and apply the settings:
-1. **Clone the repository:**
+
 ```bash
+1. **Clone the repository:**
 git clone https://github.com/PetyaBiszeps/NixOS.git ~/nixos-config
    cd ~/nixos-config
 
 2. **Deploy configurations:**
-```bash
 sudo cp configuration.nix /etc/nixos/configuration.nix
 mkdir -p ~/.config
 cp -r .config/* ~/.config/
 
 3. **Apply changes and reboot:**
-```bash
 sudo nixos-rebuild switch
 reboot
