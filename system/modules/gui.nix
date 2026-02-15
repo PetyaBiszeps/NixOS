@@ -7,7 +7,7 @@
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
 
-  services.xserver.displayManager = {
+  services.displayManager = {
     gdm.enable = true;
   };
 
@@ -24,5 +24,9 @@
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";
     SDL_VIDEODRIVER = "wayland";
+
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "Hyprland";
   };
 }
