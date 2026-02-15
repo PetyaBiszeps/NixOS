@@ -17,6 +17,8 @@
     ./modules/packageManager.nix
     ./modules/packages.nix
     ./modules/user.nix
+    ./modules/gaming.nix
+    ./modules/graphics.nix
   ];
 
   # NixOS current version (Don't remove that unless you know what you do)

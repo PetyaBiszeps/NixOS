@@ -16,5 +16,9 @@
     LC_PAPER = "uk_UA.UTF-8";
     LC_TELEPHONE = "uk_UA.UTF-8";
     LC_TIME = "uk_UA.UTF-8";
-  };  
+  };
+  i18n.supportedLocales = [
+    "en_US.UTF-8/UTF-8"
+    "uk_UA.UTF-8/UTF-8"
+  ];
 }

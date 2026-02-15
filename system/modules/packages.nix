@@ -19,9 +19,11 @@
     unzip
 
     # GUI
+    rofi
     waybar
 
     # Software
+    telegram-desktop
     teamspeak6-client
   ]; 
 }
