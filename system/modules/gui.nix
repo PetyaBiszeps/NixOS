@@ -3,8 +3,13 @@
 # Everything can be changed and modified, the structure is pretend to be skeleton of your (!) config
 
 { pkgs, ... }: {
+  services.xserver.enable = true;
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
+
+  services.xserver.displayManager = {
+    gdm.enable = true;
+  };
 
   xdg.portal = {
     enable = true;

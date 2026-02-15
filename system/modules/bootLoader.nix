@@ -3,6 +3,7 @@
 # Everything can be changed and modified, the structure is pretend to be skeleton of your (!) config
 
 { pkgs, ... }: {
+  boot.tmp.cleanOnBoot = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 }
