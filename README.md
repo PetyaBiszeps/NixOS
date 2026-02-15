@@ -4,7 +4,8 @@ This repository contains my system configuration files. It documents the journey
 
 ## Installation Steps
 ### 1. Base System Installation
-- Download the official **NixOS ISO** (graphical installer for now).
-- Install the system using the **No Desktop Environment** option for a clean, CLI-only base.
+- Download the official **NixOS ISO**
+- Install the system using the **No Desktop Environment** option for a clean, CLI-only base
 
 ### 2. Core configuration
+

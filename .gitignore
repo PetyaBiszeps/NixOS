@@ -4,3 +4,6 @@ result-*
 
 # Ignore automatically generated direnv output
 .direnv
+
+# Hardware detection
+system/hardware-configuration.nix
