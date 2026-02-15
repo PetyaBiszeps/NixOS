@@ -17,5 +17,11 @@
     adwaita-icon-theme
     gnumake
     unzip
+
+    # GUI
+    waybar
+
+    # Software
+    teamspeak6-client
   ]; 
 }
