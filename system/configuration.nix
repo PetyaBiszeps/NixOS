@@ -12,11 +12,22 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # User
+  services.userborn.enable = true;
+  xdg.portal = {
+     enable = true;
+     extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+  };
   users.users.yp00 = {
      isNormalUser = true;
      description = "Yaroslav";
      extraGroups = ["networkmanager" "wheel"];
      packages = with pkgs; [];
+  };
+  systemd.user.services.create-xdg-user-dirs = {
+     description = "Create User Directories";
+     wantedBy = ["default.target"];
+     serviceConfig.Type = "oneshot";
+     script = "${pkgs.xdg-user-dirs}/bin/xdg-user-dirs-update";
   };
 
   # Hyprland (Desktop Environment)
@@ -76,6 +87,7 @@
      neovim
      brave
 
+     xdg-user-dirs
      gnumake
      unzip
   ];
