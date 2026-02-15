@@ -4,7 +4,7 @@
 
 { config, pkgs, ... }: {
   imports = [
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
 
     ./modules/audio.nix
     ./modules/bootLoader.nix
