@@ -14,6 +14,7 @@
     brave
 
     xdg-user-dirs
+    adwaita-icon-theme
     gnumake
     unzip
   ]; 

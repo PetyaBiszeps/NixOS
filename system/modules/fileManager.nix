@@ -3,5 +3,7 @@
 # Everything can be changed and modified, the structure is pretend to be skeleton of your (!) config
 
 { pkgs, ... }: {
-  services.gvfs.enable = true; # -> Trashbox
+  programs.dconf.enable = true;
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
 }
