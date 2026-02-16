@@ -5,5 +5,11 @@
 { pkgs, ... }: {
   networking.hostName = "HOME-PC";
   # networking.wireless.enable = true;
-  networking.networkmanager.enable = true;  
+  networking.networkmanager.enable = true;
+
+  networking.firewall = {
+    enable = true;
+    allowedUDPPorts = [];
+    allowedTCPPorts = [3000 5173 8000 8080];
+  };
 }
