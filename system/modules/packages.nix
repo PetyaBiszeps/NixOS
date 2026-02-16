@@ -21,6 +21,7 @@
     # GUI
     rofi
     waybar
+    hyprpaper
 
     # Development
     docker-compose
