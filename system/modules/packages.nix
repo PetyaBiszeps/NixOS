@@ -22,6 +22,9 @@
     rofi
     waybar
 
+    # Development
+    docker-compose
+
     # Software
     telegram-desktop
     teamspeak6-client

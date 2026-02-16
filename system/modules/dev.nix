@@ -9,4 +9,9 @@
      enableSSHSupport = true;
   };
   services.openssh.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+    autoPrune.enable = true;
+  };
 }
