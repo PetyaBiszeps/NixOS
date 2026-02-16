@@ -29,5 +29,5 @@
     # Software
     telegram-desktop
     teamspeak6-client
-  ]; 
+  ];
 }
