@@ -29,5 +29,11 @@
     # Software
     telegram-desktop
     teamspeak6-client
+
+    # Gaming
+    gamescope
+
+    # Styling
+    catppuccin-cursors.mochaMauve
   ];
 }

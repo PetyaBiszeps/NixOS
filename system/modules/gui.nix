@@ -20,7 +20,7 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";
-    SDL_VIDEODRIVER = "wayland,x11";
+    SDL_VIDEODRIVER = "wayland";
 
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
