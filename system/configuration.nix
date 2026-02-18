@@ -20,6 +20,7 @@
     ./modules/gaming.nix
     ./modules/graphics.nix
     ./modules/themes.nix
+    ./modules/system.nix
   ];
 
   # NixOS current version (Don't remove that unless you know what you do)
