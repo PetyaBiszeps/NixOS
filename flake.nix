@@ -12,15 +12,23 @@
     # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager";
-
-      inputs.nixpkgs = {
-        follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Niri
     niri = {
       url = "github:YaLTeR/niri";
+    };
+
+    # QuickShell
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Zen Browser
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
     };
   };
 
@@ -35,18 +43,18 @@
         # Nix config
         ./hosts/desktop/configuration.nix
 
-	# Home manager init
-	home-manager.nixosModules.home-manager
+        # Home manager init
+        home-manager.nixosModules.home-manager
 
-	# Home manager config
-	{
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.extraSpecialArgs = {
-	    inherit inputs;
-	  };
-	  home-manager.users.yp00 = import ./home/home.nix;
-	}
+        # Home manager config
+        {
+          home-manager.useGlobalPkgs = true;
+	      home-manager.useUserPackages = true;
+	      home-manager.extraSpecialArgs = {
+	        inherit inputs;
+	      };
+	      home-manager.users.yp00 = import ./home/home.nix;
+	    }
       ];
     };
   };
