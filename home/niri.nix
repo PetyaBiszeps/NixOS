@@ -4,11 +4,20 @@
 
 { pkgs, ... }: {
   programs.niri = {
+    enable = true;
+
     settings = {
       layout.gaps = 10;
       
       input = {
-        keyboard.layout = "us,ru,uk";
+        keyboard.layout = "us,ru,ua";
+	keyboard.options = "grp:alt_shift_toggle";
+      };
+
+      binds = {
+        "Mod+Enter".action.spawn = ["ghostty"];
+	"Mod+Q".action.close-window = null;
+	"Mod+Shift+Q".action.quit = null;
       };
     };
   };

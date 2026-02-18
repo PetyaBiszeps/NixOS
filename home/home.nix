@@ -6,24 +6,32 @@
   home = {
     username = "yp00";
     homeDirectory = "/home/yp00";
-    stateVersion = "23.11";
+    stateVersion = "25.11";
   };
+
+  # Init
+  programs.home-manager.enable = true;
 
   # Import
-  imports = [ inputs.niri.homeModules.niri ];
+  imports = [
+    inputs.niri.homeModules.niri
 
-  # Config
-  programs.home-manager = {
-    enable = true;
-  };
+    ./niri.nix
+  ];
 
-  programs.niri = {
-    enable = true;
+  # Packages
+  home.packages = with pkgs; [
+    wget
+    git gh
+    ghostty
+    neovim
+    brave
 
-    settings = {
-      spawn-at-startup = [{
-        command = [];
-      }];
-    };
-  };
+    # Software
+    telegram-desktop
+    teamspeak6-client
+
+    # Gaming
+    gamescope
+  ];
 }
