@@ -33,5 +33,5 @@
   };
 
   # NixOS current version (Don't remove that unless you know what you do)
-  system.stateVersion = "25.11";
+  system.stateVersion = "24.11";
 }

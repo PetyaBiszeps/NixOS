@@ -6,7 +6,7 @@
   home = {
     username = "yp00";
     homeDirectory = "/home/yp00";
-    stateVersion = "25.11";
+    stateVersion = "24.11";
   };
 
   # Init
