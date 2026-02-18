@@ -13,7 +13,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Network
-  networking.hostName = "desktop";
+  networking.hostName = "default";
   networking.networkmanager.enable = true;
 
   # Flakes
