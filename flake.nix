@@ -32,30 +32,5 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, niri, ... }@inputs: {
-    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {
-        inherit inputs;
-      };
-
-      modules = [
-        # Nix config
-        ./hosts/desktop/configuration.nix
-
-        # Home manager init
-        home-manager.nixosModules.home-manager
-
-        # Home manager config
-        {
-          home-manager.useGlobalPkgs = true;
-	      home-manager.useUserPackages = true;
-	      home-manager.extraSpecialArgs = {
-	        inherit inputs;
-	      };
-	      home-manager.users.yp00 = import ./home/home.nix;
-	    }
-      ];
-    };
-  };
+  outputs = {}@inputs: {};
 }
