@@ -45,7 +45,7 @@
 	  home-manager.extraSpecialArgs = {
 	    inherit inputs;
 	  };
-	  home-manager.users.yp00 = import ./home/yp00/home.nix;
+	  home-manager.users.yp00 = import ./home/home.nix;
 	}
       ];
     };
