@@ -10,7 +10,7 @@
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efiTouchEfiVariables = true;
+  boot.loader.efi.TouchEfiVariables = true;
 
   # Network
   networking.hostName = "desktop";
