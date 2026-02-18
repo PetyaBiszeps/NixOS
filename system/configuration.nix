@@ -5,22 +5,6 @@
 { config, pkgs, ... }: {
   imports = [
     /etc/nixos/hardware-configuration.nix
-
-    ./modules/audio.nix
-    ./modules/bootLoader.nix
-    ./modules/dev.nix
-    ./modules/fileManager.nix
-    ./modules/fonts.nix
-    ./modules/gui.nix
-    ./modules/locales.nix
-    ./modules/network.nix
-    ./modules/packageManager.nix
-    ./modules/packages.nix
-    ./modules/user.nix
-    ./modules/gaming.nix
-    ./modules/graphics.nix
-    ./modules/themes.nix
-    ./modules/system.nix
   ];
 
   # NixOS current version (Don't remove that unless you know what you do)
