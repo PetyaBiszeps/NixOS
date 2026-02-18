@@ -1,4 +1,4 @@
-# NixOS setup guide (Hyprland Edition)
+# NixOS setup guide (Niri Edition)
 
 This repository contains my system configuration files. It documents the journey from a fresh install to a fully functional development and gaming environment.
 
@@ -11,15 +11,9 @@ This repository contains my system configuration files. It documents the journey
 Once logged into the TTY, clone this repository and apply the settings:
 
 ```bash
-1. **Clone the repository:**
-git clone https://github.com/PetyaBiszeps/NixOS.git ~/nixos-config
-   cd ~/nixos-config
+1. **Run local git with nix-shell:**
+nix-shell -p git
 
-2. **Deploy configurations:**
-sudo cp configuration.nix /etc/nixos/configuration.nix
-mkdir -p ~/.config
-cp -r .config/* ~/.config/
-
-3. **Apply changes and reboot:**
-sudo nixos-rebuild switch
-reboot
+2. **Clone the repository:**
+git clone https://github.com/PetyaBiszeps/NixOS.git ~/Documents/Web/NixOS
+   cd ~/Documents/Web/NixOS
