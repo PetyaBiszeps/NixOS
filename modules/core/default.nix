@@ -7,6 +7,7 @@
     ./ly.nix
     ./nfs.nix
     ./fonts.nix
+    ./network.nix
     ./hardware.nix
     ./var_connector.nix
     ./gaming_support.nix

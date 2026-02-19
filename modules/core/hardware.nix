@@ -15,5 +15,5 @@
       disabledDefaultBackends = [ "escl" ];
     };
   };
-  local.hardware-clock.enable = false;
+  time.hardwareClockInLocalTime = false;
 }
