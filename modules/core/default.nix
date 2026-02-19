@@ -11,7 +11,7 @@
     ./time.nix
     ./fonts.nix
     ./steam.nix
-    ./network.nix
+    #./network.nix
     ./hardware.nix
     ./packages.nix
     ./security.nix
