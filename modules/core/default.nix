@@ -6,6 +6,7 @@
   imports = [
     ./ly.nix
     ./nfs.nix
+    ./boot.nix
     ./user.nix
     ./fonts.nix
     ./steam.nix
