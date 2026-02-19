@@ -5,6 +5,6 @@
 { pkgs, ... }:
 {
   home.packages = [
-    pkgs.jetbrains.webstorm-bin
+    pkgs.jetbrains.webstorm
   ];
 }
