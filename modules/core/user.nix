@@ -2,7 +2,7 @@
 # Provides user and home-manager configuration
 # Feel free to add, remove and modify anything here
 
-{ config, pkgs, inputs, username, ... }:
+{ config, inputs, pkgs, ... }:
   let
     vars = config.variables;
     gitUsername = vars.gitUsername or username;

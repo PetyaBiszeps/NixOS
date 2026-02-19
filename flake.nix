@@ -42,12 +42,12 @@
       system = "x86_64-linux";
       lib = nixpkgs.lib;
 
-      mkHost = { hostname, profile, username }:
+      mkHost = { hostname, profile }:
         lib.nixosSystem {
           inherit system;
 
           specialArgs = {
-            inherit inputs hostname profile username;
+            inherit inputs hostname profile;
           };
 
           modules = [
@@ -65,7 +65,6 @@
         default = mkHost {
           hostname = "default";
           profile = "amd";
-          username = "yp00";
         };
       };
     };

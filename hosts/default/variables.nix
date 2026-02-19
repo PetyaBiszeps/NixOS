@@ -10,7 +10,7 @@
   monitorSettings = "monitor=,preferred,auto,1";
 
   # User
-  username = "";
+  username = null;
   hashedPassword = null;
 
   # Git
