@@ -13,4 +13,12 @@ in {
     slurp
     wl-clipboard
   ];
+
+  xdg.configFile."niri/config.kdl".text = ''
+    // Minimal niri config
+    binds {
+      Mod+Q hotkey-overlay-title="Open Terminal: ${terminal}" { spawn "${terminal}"; }
+      Mod+B hotkey-overlay-title="Open Browser: ${browser}" { spawn "${browser}"; }
+    }
+  '';
 }
