@@ -21,7 +21,7 @@
     ghostty
     zen-browser
     docker-compose
-    # telegram-desktop --> communication module
-    # teamspeak-client6 --> communication module
+    telegram-desktop
+    teamspeak-client6
   ];
 }

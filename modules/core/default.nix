@@ -13,5 +13,6 @@
     ./printing.nix
     ./var_connector.nix
     ./gaming_support.nix
+    ./garbage_collector.nix
   ];
 }
