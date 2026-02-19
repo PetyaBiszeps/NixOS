@@ -2,7 +2,7 @@
 # Provides garbage auto cleaning
 # Feel free to add, remove and modify anything here
 
-{ pkgs, username, ... }: {
+{ config, pkgs, ... }: {
   programs.nh = {
     enable = true;
 
@@ -10,7 +10,7 @@
       enable = true;
       extraArgs = "--keep-since 7d --keep 5";
     };
-    # flake = "/home/${username}/nixos";
+    # flake = "/home/${config.variables.username}/nixos";
   };
 
   environment.systemPackages = with pkgs; [
