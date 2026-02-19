@@ -6,7 +6,7 @@
   let vars = variables;
 in {
   imports = [
-    ./niri.nix
+    ./niri
     ./ghostty.nix
   ];
 }
