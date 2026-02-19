@@ -2,59 +2,72 @@
 # Provides user and home-manager configuration
 # Feel free to add, remove and modify anything here
 
-{ config, inputs, pkgs, ... }:
-  let
-    # variables.nix
-    vars = config.variables;
+{ config, inputs, pkgs, lib, ... }:
+let
+  # variables.nix
+  vars = config.variables;
 
-    username = vars.username;
-    password = vars.hashedPassword;
-    enableNewUser = vars.enableNewUser;
+  username = vars.username or "";
+  hashedPassword = vars.hashedPassword or "";
+  enableNewUser = vars.enableNewUser or false;
 
-    gitUsername = vars.gitUsername or username;
-    defaultShell = vars.defaultShell or "zsh";
-    shellPackage = if defaultShell == "fish" then pkgs.fish else pkgs.zsh;
+  gitUsername = vars.gitUsername or username;
+  defaultShell = vars.defaultShell or "zsh";
+  shellPackage = if defaultShell == "fish" then pkgs.fish else pkgs.zsh;
+
+  hasUser = username != "" && username != null;
+  hasPassword = hashedPassword != "" && hashedPassword != null;
 in {
-  programs.zsh.enable = true;
-  programs.fish.enable = true;
+  assertions = [{
+    assertion = (!enableNewUser) || (hasUser && hasPassword);
+    message = "enableNewUser is true, but username or hashedPassword is not set";
+  }];
 
-  home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = false;
-    backupFileExtension = "backup";
+  config = lib.mkIf hasUser {
+    programs.zsh.enable = true;
+    programs.fish.enable = true;
 
-    extraSpecialArgs = {
-      inherit inputs username;
-    };
+    home-manager = {
+      useUserPackages = true;
+      useGlobalPkgs = false;
+      backupFileExtension = "backup";
 
-    users.${username} = {
-      imports = [ ../home ];
-
-      home = {
+      extraSpecialArgs = {
+        inherit inputs;
         username = username;
-        homeDirectory = "/home/${username}";
-        stateVersion = "26.05";
+      };
+
+      users.${username} = {
+        imports = [ ../home ];
+
+        home = {
+          username = username;
+          homeDirectory = "/home/${username}";
+          stateVersion = "26.05";
+        };
       };
     };
-  };
 
-  users.mutableUsers = true;
-  users.users.${username} = {
-    isNormalUser = true;
-    description = gitUsername;
-    extraGroups = [
-      "adbusers"
-      "docker"
-      "libvirtd"
-      "lp"
-      "networkmanager"
-      "scanner"
-      "wheel"
-      "vboxusers"
-    ];
-    shell = shellPackage;
-    ignoreShellProgramCheck = true;
-  };
+    users.mutableUsers = true;
+    users.users.${username} = {
+      isNormalUser = true;
+      description = gitUsername;
+      extraGroups = [
+        "adbusers"
+        "docker"
+        "libvirtd"
+        "lp"
+        "networkmanager"
+        "scanner"
+        "wheel"
+        "vboxusers"
+      ];
+      shell = shellPackage;
+      ignoreShellProgramCheck = true;
+    } // lib.optionalAttrs enableNewUser {
+      initialHashedPassword = hashedPassword;
+    };
 
-  nix.settings.allowed-users = [username];
+    nix.settings.allowed-users = [username];
+  };
 }

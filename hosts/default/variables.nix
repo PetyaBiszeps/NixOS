@@ -14,15 +14,15 @@
   hashedPassword = null;
 
   # Git
-  gitUsername = "user";
-  gitEmail = "user@example.com";
+  gitUsername = null;
+  gitEmail = null;
 
   # Software
   browser = "zen";
   terminal = "ghostty";
 
   # Enable new user
-  enableNewUser = false;
+  enableNewUser = true;
 
   # Enable NFS
   enableNFS = true;
