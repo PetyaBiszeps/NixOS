@@ -4,8 +4,13 @@
 
 { config, inputs, pkgs, ... }:
   let
+    # variables.nix
     vars = config.variables;
-    username = config.variables.username;
+
+    username = vars.username;
+    password = vars.hashedPassword;
+    enableNewUser = vars.enableNewUser;
+
     gitUsername = vars.gitUsername or username;
     defaultShell = vars.defaultShell or "zsh";
     shellPackage = if defaultShell == "fish" then pkgs.fish else pkgs.zsh;
