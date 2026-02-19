@@ -18,7 +18,7 @@
   gitEmail = null;
 
   # Software
-  IDE = "zed";
+  IDE = "zeditor";
   browser = "brave";
   terminal = "ghostty";
 
