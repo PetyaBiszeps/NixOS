@@ -6,5 +6,6 @@
   imports = [
     ./ly.nix
     ./nfs.nix
+    ./varConnector.nix
   ];
 }
