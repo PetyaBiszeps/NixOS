@@ -2,6 +2,9 @@
 .idea
 .vscode
 
+# NixOS local variables
+hosts/*/variables.local.nix
+
 # NixOS build artifacts
 result
 result-*

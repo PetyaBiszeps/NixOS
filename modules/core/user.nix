@@ -42,6 +42,17 @@ in {
         users.${username} = {
           imports = [ ../home ];
 
+          programs.git {
+            enable = true;
+            userName = vars.gitUsername
+            userEmail = vars.gitEmail
+            extraConfig = {
+              init.defaultBranch = "main"
+              pull.rebase = true;
+              # You can add more git-specific logic here...
+            };
+          };
+
           home = {
             username = username;
             homeDirectory = "/home/${username}";

@@ -3,9 +3,23 @@
 # strict mode
 set -euo pipefail
 
+# Generate the local variables file (Overwrites if exists)
+cat <<EOF > "${LOCAL_VARS}"
+{
+  username = "${username}";
+  hashedPassword = "${hashed_password}";
+  gitUsername = "${git_username}";
+  gitEmail = "${git_email}";
+}
+EOF
+
+# Tell the Flake to include new local variables
+git add -N "${LOCAL_VARS}"
+echo "Generated ${LOCAL_VARS}"
+
 # dirs
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-VARS="${REPO_DIR}/hosts/default/variables.nix"
+LOCAL_VARS="${REPO_DIR}/hosts/default/variables.local.nix"
 HARDWARE="${REPO_DIR}/hosts/default/hardware.nix"
 
 # vars check

@@ -2,20 +2,31 @@
 # Vocabulary for important constants
 # Do not edit manually. This file is overwritten per-machine, changes can lead to unexpected results
 
-{
+{ config, lib }:
+  let
+    # Check local file
+    localVars = if builtins.pathExists ./variables.local.nix
+                then import ./variables.local.nix
+                else {
+                  username = null;
+                  hashedPassword = null;
+
+                  gitUsername = null;
+                  gitEmail = null;
+                };
+in {
   # System
   timeZone = "Europe/Kyiv";
   defaultLocale = "en_US.UTF-8";
   keyboardLayout = "us,ru,ua";
   monitorSettings = "monitor=,preferred,auto,1";
 
-  # User
-  username = null;
-  hashedPassword = null;
-
-  # Git
-  gitUsername = null;
-  gitEmail = null;
+  # Local
+  inherit (localVars)
+    username
+    hashedPassword
+    gitUsername
+    gitEmail
 
   # Software
   IDE = "zeditor";
