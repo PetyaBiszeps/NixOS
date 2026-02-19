@@ -6,6 +6,13 @@
   let
     browser = variables.browser or "firefox";
     terminal = variables.terminal or "ghostty";
+
+    # Import keybinds
+    keybindsModule = import ./keybinds.nix {
+      inherit
+        browser
+        terminal;
+    };
 in {
   home.packages = with pkgs; [
     niri
@@ -13,13 +20,6 @@ in {
     slurp
     wl-clipboard
   ];
-
-  # Keybinds
-  keybindsModule = import ./keybinds.nix {
-    inherit
-      browser
-      terminal;
-  };
 
   # Generate Niri config.kdl
   xdg.configFile."niri/config.kdl".text = ''
