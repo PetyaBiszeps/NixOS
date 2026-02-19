@@ -20,7 +20,7 @@
     ghostty
     docker-compose
     telegram-desktop
-    teamspeak-client6
+    teamspeak6-client
 
     # Specific packages
     inputs.zen-browser.packages.${pkgs.system}.default  # Zen Browser
