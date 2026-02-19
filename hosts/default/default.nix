@@ -11,9 +11,6 @@
   # Display manager
   services.displayManager.ly.enable = true;
 
-  # Xwayland for apps that require X11 (Webstorm .e.g)
-  programs.xwayland.enable = true;
-
   # Enable niri session for display manager
   programs.niri = {
     enable = true;

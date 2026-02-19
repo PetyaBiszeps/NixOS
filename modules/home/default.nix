@@ -7,7 +7,7 @@
 in {
   imports = [
     ./niri
+    ./zed.nix
     ./ghostty.nix
-    ./webstorm.nix
   ];
 }

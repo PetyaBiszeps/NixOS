@@ -3,7 +3,7 @@
 # Feel free to add, remove and modify anything here
 
 { config, inputs, pkgs, lib, ... }:
-let
+  let
   # variables.nix
   vars = config.variables;
 
