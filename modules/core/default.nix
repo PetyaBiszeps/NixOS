@@ -12,6 +12,8 @@
     ./hardware.nix
     ./packages.nix
     ./security.nix
+    ./nautilus.nix
+    ./keyboard.nix
     ./printing.nix
     ./services.nix
     ./quickshell.nix

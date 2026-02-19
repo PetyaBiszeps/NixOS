@@ -5,6 +5,7 @@
 {
   # System
   timeZone = "Europe/Kyiv";
+  defaultLocale = "en_US.UTF-8";
   keyboardLayout = "us";
   monitorSettings = "monitor=,preferred,auto,1";
 
