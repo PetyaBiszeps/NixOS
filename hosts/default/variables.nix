@@ -1,6 +1,6 @@
 # Default host variables
 # Vocabulary for important constants
-# Feel free to add, remove and edit anything here as you wish
+# Do not edit manually. This file is overwritten per-machine, changes can lead to unexpected results
 
 {
   # System
