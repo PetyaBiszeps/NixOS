@@ -17,8 +17,10 @@ in {
   xdg.configFile."niri/config.kdl".text = ''
     // Minimal niri config
     binds {
-      Mod+Q hotkey-overlay-title="Open Terminal: ${terminal}" { spawn "${terminal}"; }
+      Mod+Return hotkey-overlay-title="Open Terminal: ${terminal}" { spawn "${terminal}"; }
       Mod+B hotkey-overlay-title="Open Browser: ${browser}" { spawn "${browser}"; }
+      Mod+C hotkey-overlay-title="Close Window" { close-window; }
+      Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     }
   '';
 }

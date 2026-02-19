@@ -18,7 +18,7 @@
   gitEmail = null;
 
   # Software
-  browser = "zen";
+  browser = "brave";
   terminal = "ghostty";
 
   # Enable new user

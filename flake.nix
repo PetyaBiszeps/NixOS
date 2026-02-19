@@ -30,11 +30,6 @@
       url = "github:outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Zen Browser
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-    };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }:

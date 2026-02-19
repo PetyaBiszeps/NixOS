@@ -18,12 +18,10 @@
   environment.systemPackages = with pkgs; [
     git
     wget
+    brave
     ghostty
     docker-compose
     telegram-desktop
     teamspeak6-client
-
-    # Specific packages
-    inputs.zen-browser.packages.${pkgs.system}.default  # Zen Browser
   ];
 }
