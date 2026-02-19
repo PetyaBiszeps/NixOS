@@ -5,9 +5,8 @@
 { config, pkgs, lib, ... }:
   let nautilusEnable = config.variables.nautilusEnable or false;
 in lib.mkIf nautilusEnable {
-  programs.nautilus.enable = true;
-
   environment.systemPackages = [
+    pkgs.nautilus
     pkgs.ffmpegthumbnailer
   ];
 }
