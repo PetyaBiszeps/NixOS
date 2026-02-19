@@ -2,7 +2,7 @@
 # Provides printing support
 # Feel free to add, remove and modify anything here
 
-{ hostname, ... }:
+{ config, ... }:
   let printEnable = config.variables.printEnable or false;
 in {
   services = {

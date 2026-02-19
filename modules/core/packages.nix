@@ -2,7 +2,7 @@
 # Provides system packages for every system setup
 # Feel free to add, remove and modify anything here
 
-{ pkgs, lib, zen-browser, hostname, ... }: {
+{ inputs, pkgs, lib, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   programs = {
@@ -19,9 +19,11 @@
   environment.systemPackages = with pkgs; [
     wget
     ghostty
-    zen-browser
     docker-compose
     telegram-desktop
     teamspeak-client6
+
+    # Specific packages
+    inputs.zen-browser.packages.${pkgs.system}.default  # Zen Browser
   ];
 }
