@@ -9,6 +9,10 @@
   keyboardLayout = "us";
   monitorSettings = "monitor=,preferred,auto,1";
 
+  # User
+  username = "";
+  password = "";
+
   # Git
   gitUsername = "user";
   gitEmail = "user@example.com";
@@ -16,6 +20,9 @@
   # Software
   browser = "zen";
   terminal = "ghostty";
+
+  # Enable new user
+  enableNewUser = false;
 
   # Enable NFS
   enableNFS = true;
