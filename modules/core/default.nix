@@ -7,7 +7,7 @@
     ./ly.nix
     ./nfs.nix
     ./fonts.nix
-    ./varConnector.nix
+    ./var_connector.nix
     ./gaming_support.nix
   ];
 }
