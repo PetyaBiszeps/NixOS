@@ -65,7 +65,7 @@
         default = mkHost {
           hostname = "default";
           profile = "amd";
-          username = "user";
+          username = "yp00";
         };
       };
     };
