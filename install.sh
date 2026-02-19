@@ -6,10 +6,17 @@ set -euo pipefail
 # dirs
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VARS="${REPO_DIR}/hosts/default/variables.nix"
+HARDWARE="${REPO_DIR}/hosts/default/hardware.nix"
 
 # vars check
 if [[ ! -f "${VARS}" ]]; then
   echo "variables.nix not found: ${VARS}"
+  exit 1
+fi
+
+# nixos-generate-config exists check
+if ! command -v nixos-generate-config >/dev/null 2>&1; then
+  echo "nixos-generate-config not found. Run this on NixOS."
   exit 1
 fi
 
@@ -57,4 +64,5 @@ sed -i \
   "${VARS}"
 
 # Build
+nixos-generate-config --show-hardware-config > "${HARDWARE}"
 sudo nixos-rebuild switch --flake "${REPO_DIR}#default"
