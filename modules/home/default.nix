@@ -7,5 +7,6 @@
 in {
   imports = [
     ./niri.nix
+    ./ghostty.nix
   ];
 }

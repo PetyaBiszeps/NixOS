@@ -55,6 +55,8 @@
             ./profiles/${profile}
             ./modules/core
             ./modules/drivers
+            # ./modules/home
+
             home-manager.nixosModules.home-manager
           ];
         };

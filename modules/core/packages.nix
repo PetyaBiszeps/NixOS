@@ -11,11 +11,12 @@
 
     neovim = {
       enable = true;
-      defaultEditor = false;
+      defaultEditor = true;
     };
   };
 
   environment.systemPackages = with pkgs; [
+    git
     wget
     ghostty
     docker-compose
