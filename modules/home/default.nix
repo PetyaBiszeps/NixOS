@@ -8,5 +8,6 @@ in {
   imports = [
     ./niri
     ./ghostty.nix
+    ./webstorm.nix
   ];
 }
