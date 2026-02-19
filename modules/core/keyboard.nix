@@ -22,11 +22,13 @@ in {
   };
   i18n.supportedLocales = [
     "en_US.UTF-8/UTF-8"
+    "ru_RU.UTF-8/UTF-8"
     "uk_UA.UTF-8/UTF-8"
   ];
 
   services.xserver.xkb = {
     layout = keyboardLayout;
     variant = "";
+    options = "grp:alt_shift_toggle";
   };
 }
