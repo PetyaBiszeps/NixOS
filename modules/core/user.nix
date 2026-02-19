@@ -5,6 +5,7 @@
 { config, inputs, pkgs, ... }:
   let
     vars = config.variables;
+    username = config.variables.username;
     gitUsername = vars.gitUsername or username;
     defaultShell = vars.defaultShell or "zsh";
     shellPackage = if defaultShell == "fish" then pkgs.fish else pkgs.zsh;
