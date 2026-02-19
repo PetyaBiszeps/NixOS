@@ -11,9 +11,8 @@ This repository contains my system configuration files. It documents the journey
 Once logged into the TTY, clone this repository and apply the settings:
 
 ```bash
-1. **Run local git with nix-shell:**
-nix-shell -p git
-
-2. **Clone the repository:**
-git clone https://github.com/PetyaBiszeps/NixOS.git ~/Documents/Web/NixOS
-   cd ~/Documents/Web/NixOS
+0. mkdir Documents && cd Documents && mkdir Web && cd Web # Create Documents/Web directory
+1. nix-shell-p git # Run local git
+2. git clone https://github.com/PetyaBiszeps/NixOS.git ~/Documents/Web/NixOS && cd ~/Documents/Web/NixOS && cd NixOS # Clone repo and move into
+3. chmod +x install.sh && ./install.sh # run installation script
+```
