@@ -9,6 +9,8 @@
     ./fonts.nix
     ./network.nix
     ./hardware.nix
+    ./packages.nix
+    ./printing.nix
     ./var_connector.nix
     ./gaming_support.nix
   ];
