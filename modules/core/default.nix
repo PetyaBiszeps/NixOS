@@ -7,10 +7,14 @@
     ./ly.nix
     ./nfs.nix
     ./fonts.nix
+    ./steam.nix
     ./network.nix
     ./hardware.nix
     ./packages.nix
+    ./security.nix
     ./printing.nix
+    ./services.nix
+    ./quickshell.nix
     ./var_connector.nix
     ./gaming_support.nix
     ./garbage_collector.nix
