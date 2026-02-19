@@ -6,7 +6,6 @@
   nixpkgs.config.allowUnfree = true;
 
   programs = {
-    adb.enable = true;
     dconf.enable = true;
     firefox.enable = true;
 
