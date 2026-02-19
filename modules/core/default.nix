@@ -6,6 +6,8 @@
   imports = [
     ./ly.nix
     ./nfs.nix
+    ./fonts.nix
     ./varConnector.nix
+    ./gaming_support.nix
   ];
 }
