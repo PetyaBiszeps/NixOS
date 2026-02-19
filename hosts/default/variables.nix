@@ -11,7 +11,7 @@
 
   # User
   username = "";
-  password = "";
+  hashedPassword = null;
 
   # Git
   gitUsername = "user";
