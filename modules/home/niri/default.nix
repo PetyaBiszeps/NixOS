@@ -1,9 +1,9 @@
-# Home modules import
-# Placeholder for home-manager module list
+# Niri global import
+# Imports complete Niri configuration
 # Feel free to add, remove and modify anything here
 
 { ... }: {
   imports = [
-    ./niri
+    ./niri.nix
   ];
 }
