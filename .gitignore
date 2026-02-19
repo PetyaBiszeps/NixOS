@@ -5,6 +5,3 @@
 # NixOS build artifacts
 result
 result-*
-
-# Exclude hardware.nix
-hosts/**/hardware.nix
