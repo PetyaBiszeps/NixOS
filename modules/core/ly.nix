@@ -8,16 +8,15 @@
 
   # Enable ly with the matrix animation
   # Animations: "doom", "colormix", "matrix"
-  services.displayManager.sdm.enable = true;
-#  services.displayManager.ly = {
-#    enable = lib.mkDefault false;
-#
-#    settings = {
-#      animation = "matrix";
-#      save_file = "etc/ly/save";
-#      # tty = 2;  # REMOVED: Default is now tty 1 in nixpkgs-unstable, conflicts if set
-#      hide_borders = true;
-#      min_refresh_delta = 5;
-#    };
-#  };
+  services.displayManager.ly = {
+    enable = lib.mkDefault false;
+
+    settings = {
+      animation = "matrix";
+      save_file = "etc/ly/save";
+      # tty = 2;  # REMOVED: Default is now tty 1 in nixpkgs-unstable, conflicts if set
+      hide_borders = true;
+      min_refresh_delta = 5;
+    };
+  };
 }
