@@ -34,6 +34,8 @@ in {
 
         extraSpecialArgs = {
           inherit inputs;
+
+          variables = vars;
           username = username;
         };
 
