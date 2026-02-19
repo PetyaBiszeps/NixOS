@@ -18,56 +18,56 @@ let
   hasUser = username != "" && username != null;
   hasPassword = hashedPassword != "" && hashedPassword != null;
 in {
-  assertions = [{
-    assertion = (!enableNewUser) || (hasUser && hasPassword);
-    message = "enableNewUser is true, but username or hashedPassword is not set";
-  }];
+  config = lib.mkMerge [{
+    assertions = [{
+      assertion = (!enableNewUser) || (hasUser && hasPassword);
+      message = "enableNewUser is true, but username or hashedPassword is not set";
+    }];
+} (lib.mkIf hasUser {
+      programs.zsh.enable = true;
+      programs.fish.enable = true;
 
-  config = lib.mkIf hasUser {
-    programs.zsh.enable = true;
-    programs.fish.enable = true;
+      home-manager = {
+        useUserPackages = true;
+        useGlobalPkgs = false;
+        backupFileExtension = "backup";
 
-    home-manager = {
-      useUserPackages = true;
-      useGlobalPkgs = false;
-      backupFileExtension = "backup";
-
-      extraSpecialArgs = {
-        inherit inputs;
-        username = username;
-      };
-
-      users.${username} = {
-        imports = [ ../home ];
-
-        home = {
+        extraSpecialArgs = {
+          inherit inputs;
           username = username;
-          homeDirectory = "/home/${username}";
-          stateVersion = "26.05";
+        };
+
+        users.${username} = {
+          imports = [ ../home ];
+
+          home = {
+            username = username;
+            homeDirectory = "/home/${username}";
+            stateVersion = "26.05";
+          };
         };
       };
-    };
 
-    users.mutableUsers = true;
-    users.users.${username} = {
-      isNormalUser = true;
-      description = gitUsername;
-      extraGroups = [
-        "adbusers"
-        "docker"
-        "libvirtd"
-        "lp"
-        "networkmanager"
-        "scanner"
-        "wheel"
-        "vboxusers"
-      ];
-      shell = shellPackage;
-      ignoreShellProgramCheck = true;
-    } // lib.optionalAttrs enableNewUser {
-      initialHashedPassword = hashedPassword;
-    };
+      users.mutableUsers = true;
+      users.users.${username} = {
+        isNormalUser = true;
+        description = gitUsername;
+        extraGroups = [
+          "adbusers"
+          "docker"
+          "libvirtd"
+          "lp"
+          "networkmanager"
+          "scanner"
+          "wheel"
+          "vboxusers"
+        ];
+        shell = shellPackage;
+        ignoreShellProgramCheck = true;
+      } // lib.optionalAttrs enableNewUser {
+        initialHashedPassword = hashedPassword;
+      };
 
-    nix.settings.allowed-users = [username];
-  };
+      nix.settings.allowed-users = [ username ];
+  })];
 }
