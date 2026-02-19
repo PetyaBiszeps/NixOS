@@ -18,6 +18,7 @@
   gitEmail = null;
 
   # Software
+  IDE = "zed";
   browser = "brave";
   terminal = "ghostty";
 

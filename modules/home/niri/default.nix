@@ -4,14 +4,13 @@
 
 { variables, pkgs, ... }:
   let
+    ide = variables.IDE or "zed";
     browser = variables.browser or "firefox";
     terminal = variables.terminal or "ghostty";
 
     # Import keybinds
     keybindsModule = import ./keybinds.nix {
-      inherit
-        browser
-        terminal;
+      inherit terminal browser ide;
     };
 in {
   home.packages = with pkgs; [
