@@ -1,9 +1,9 @@
-#
-#
-#
+# Global Nix Flake
+# Provides build for the system
+# Feel free to add, remove and modify anything here
 
 {
-  descriptions = "NixOS configuration";
+  description = "NixOS configuration";
 
   inputs = {
     # NixOS packages
@@ -37,40 +37,36 @@
     };
   };
 
-  outputs = {};
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
+    let
+      system = "x86_64-linux";
+      lib = nixpkgs.lib;
+
+      mkHost = { hostname, profile, username }:
+        lib.nixosSystem {
+          inherit system;
+
+          specialArgs = {
+            inherit inputs hostname profile username;
+          };
+
+          modules = [
+            ./hosts/${hostname}
+            ./profiles/${profile}
+            ./modules/core
+            ./modules/drivers
+            ./modules/home
+
+            home-manager.nixosModules.home-manager
+          ];
+        };
+    in {
+      nixosConfigurations = {
+        default = mkHost {
+          hostname = "default";
+          profile = "amd";
+          username = "user";
+        };
+      };
+    };
 }
-
-
-
-
-
-
-
-#{
-#  outputs = { self, nixpkgs, home-manager, niri, ... }@inputs: {
-#    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-#      system = "x86_64-linux";
-#      specialArgs = {
-#        inherit inputs;
-#      };
-#
-#      modules = [
-#        # Nix config
-#        ./hosts/desktop/configuration.nix
-#
-#        # Home manager init
-#        home-manager.nixosModules.home-manager
-#
-#        # Home manager config
-#        {
-#          home-manager.useGlobalPkgs = true;
-#	      home-manager.useUserPackages = true;
-#	      home-manager.extraSpecialArgs = {
-#	        inherit inputs;
-#	      };
-#	      home-manager.users.yp00 = import ./home/home.nix;
-#	    }
-#      ];
-#    };
-#  };
-#}
