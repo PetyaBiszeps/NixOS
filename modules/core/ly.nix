@@ -13,6 +13,7 @@
 
     settings = {
       animation = "matrix";
+      hide_system_users = true;
       save_file = "/var/lib/ly/save";
       # hide_borders = true;
       # min_refresh_delta = 5;
