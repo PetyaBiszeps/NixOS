@@ -2,9 +2,9 @@
 # Detects user hardware configuration to make proper build
 # Enables display manager, sync GUI (Niri) session to be available to display manager
 
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   imports = [
-    ./hardware.nix
+    (lib.mkIf (builtins.pathExists ./hardware.nix) ./hardware.nix)
     ./host-packages.nix
   ];
 

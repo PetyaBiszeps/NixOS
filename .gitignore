@@ -2,7 +2,8 @@
 .idea
 .vscode
 
-# NixOS local variables
+# NixOS local files
+hosts/*/hardware.nix
 hosts/*/variables.local.nix
 
 # NixOS build artifacts
