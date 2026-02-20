@@ -70,6 +70,7 @@ if [[ "${enable_new_user}" == "true" ]]; then
   fi
 fi
 
+# Git data, auth, SSH
 if [[ "${generate_ssh,,}" == "y" || "${generate_ssh,,}" == "yes" ]]; then
   if ! command -v ssh-keygen >/dev/null 2>&1; then
     echo "ssh-keygen not found. Skipping SSH key generation."
