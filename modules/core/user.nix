@@ -7,9 +7,10 @@
   # variables.nix
   vars = config.variables;
 
+  enableNewUser = vars.enableNewUser or false;
+
   username = vars.username or "";
   hashedPassword = vars.hashedPassword or "";
-  enableNewUser = vars.enableNewUser or false;
 
   gitUsername = vars.gitUsername or username;
   defaultShell = vars.defaultShell or "zsh";
