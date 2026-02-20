@@ -38,6 +38,11 @@ chmod +x install.sh
 ./install.sh
 ```
 
+### Rebuild after changes
+```bash
+sudo nixos-rebuild switch --flake "path:.#nixos" --no-update-lock-file
+```
+
 If you prefer HTTPS instead of SSH, use:
 
 ```bash
