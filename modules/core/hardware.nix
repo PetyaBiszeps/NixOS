@@ -8,6 +8,9 @@
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
     enableRedistributableFirmware = true;
+    extraPackages = with pkgs; [
+      libvdpau-va-gl vaapiVdpau
+    ];
 
     sane = {
       enable = true;
