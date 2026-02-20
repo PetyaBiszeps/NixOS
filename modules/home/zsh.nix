@@ -9,7 +9,7 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      nixos-rebuild-all = "sudo nixos-rebuild switch --flake \"path:.#nixos\" -- --no-write-lock-file && sudo nix-collect-garbage -d";
+      nixos-rebuild-all = "sudo nixos-rebuild switch --flake \"path:.#nixos\" --no-write-lock-file && sudo nix-collect-garbage -d";
     };
   };
 }
