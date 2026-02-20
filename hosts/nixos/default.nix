@@ -20,6 +20,9 @@
   services.displayManager.defaultSession = "niri";
   services.displayManager.sessionPackages = [ pkgs.niri ];
 
+  # Allow NixOS flakes
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   # NixOS current version (Don't remove that unless you know what you do)
   system.stateVersion = "26.05";
 }
