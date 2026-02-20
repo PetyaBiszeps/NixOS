@@ -19,6 +19,7 @@
     ./keyboard.nix
     ./printing.nix
     ./services.nix
+    ./xwayland.nix
     ./quickshell.nix
     ./var_connector.nix
     ./gaming_support.nix
