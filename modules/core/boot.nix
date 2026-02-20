@@ -6,10 +6,9 @@
   boot = {
     loader.systemd-boot = {
       enable = true;
-
-      timeout = 0;
       configurationLimit = 5;
     };
+    loader.timeout = 0;
     loader.efi.canTouchEfiVariables = true;
   };
 }
