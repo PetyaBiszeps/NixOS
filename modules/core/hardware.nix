@@ -4,13 +4,15 @@
 
 { pkgs, ... }: {
   hardware = {
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        libvdpau-va-gl vaapiVdpau
+      ];
+    };
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
     enableRedistributableFirmware = true;
-    extraPackages = with pkgs; [
-      libvdpau-va-gl vaapiVdpau
-    ];
 
     sane = {
       enable = true;
