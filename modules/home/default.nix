@@ -10,6 +10,10 @@ in {
     ./zsh.nix
     ./fzf.nix
     ./eza.nix
+    ./zoxide.nix
+    ./fd.nix
+    ./rg.nix
+    ./bat.nix
     ./zed.nix
     ./ghostty.nix
     ./noctalia.nix
