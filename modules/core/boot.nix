@@ -9,6 +9,8 @@
       configurationLimit = 5;
     };
     loader.timeout = 0;
+    initrd.verbose = false;
+    consoleLogLevel = 0;
     loader.efi.canTouchEfiVariables = true;
 
     kernelParams = [
