@@ -44,9 +44,10 @@ in {
 
           programs.git = {
             enable = true;
-            userName = vars.gitUsername;
-            userEmail = vars.gitEmail;
-            extraConfig = {
+
+            settings = {
+              user.name = vars.gitUsername;
+              user.email = vars.gitEmail;
               init.defaultBranch = "main";
               pull.rebase = true;
               # You can add more git-specific logic here...

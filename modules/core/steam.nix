@@ -25,7 +25,7 @@
             libxcursor
             libxi
             libxinerama
-            xorg.libXScrnSaver
+            libxscrnsaver
             libxcomposite
             libxdamage
             libxrender

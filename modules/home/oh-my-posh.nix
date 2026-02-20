@@ -10,7 +10,7 @@ in {
   programs.zsh = lib.mkIf (defaultShell == "zsh") {
     enable = true;
 
-    initExtra = ''
+    initContent = ''
       eval "$(oh-my-posh init zsh --config "$HOME/.config/oh-my-posh/config.toml")"
     '';
   };
