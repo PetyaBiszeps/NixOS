@@ -62,4 +62,10 @@ echo "Generated ${LOCAL_VARS}"
 
 # Build
 nixos-generate-config --show-hardware-config > "${HARDWARE}"
-sudo nixos-rebuild switch --flake "path:${REPO_DIR}#${HOST}" --no-write-lock-file && sudo reboot
+
+if command -v systemctl >/dev/null 2>&1 && [[ -d /run/systemd/system ]]; then
+  sudo /bin/sh -c "nixos-rebuild switch --flake 'path:${REPO_DIR}#${HOST}' --no-write-lock-file && systemctl reboot"
+else
+  sudo nixos-rebuild switch --flake "path:${REPO_DIR}#${HOST}" --no-write-lock-file
+  echo "Switch complete. Reboot manually to log in as ${username}."
+fi
