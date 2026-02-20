@@ -10,5 +10,12 @@
     };
     loader.timeout = 0;
     loader.efi.canTouchEfiVariables = true;
+
+    kernelParams = [
+      "quiet"
+      "loglevel=3"
+      "rd.udev.log_level=3"
+      "systemd.show_status=false"
+    ];
   };
 }
