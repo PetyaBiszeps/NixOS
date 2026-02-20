@@ -7,7 +7,7 @@
     graphics = {
       enable = true;
       extraPackages = with pkgs; [
-        libvdpau-va-gl vaapiVdpau
+        libvdpau-va-gl libva-vdpau-driver
       ];
     };
     bluetooth.enable = true;
