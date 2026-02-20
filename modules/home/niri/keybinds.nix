@@ -7,6 +7,7 @@
     Mod+Q hotkey-overlay-title="Open Terminal: ${terminal}" { spawn "${terminal}"; }
     Mod+B hotkey-overlay-title="Open Browser: ${browser}" { spawn "${browser}"; }
     Mod+I hotkey-overlay-title="Open IDE: ${ide}" { spawn "${ide}"; }
+    Mod+E hotkey-overlay-title="Open Files" { spawn "nautilus"; }
     Mod+C hotkey-overlay-title="Close Window" { close-window; }
   }
 ''
