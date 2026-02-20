@@ -3,30 +3,10 @@
 # strict mode
 set -euo pipefail
 
-# Generate the local variables file (Overwrites if exists)
-cat <<EOF > "${LOCAL_VARS}"
-{
-  username = "${username}";
-  hashedPassword = "${hashed_password}";
-  gitUsername = "${git_username}";
-  gitEmail = "${git_email}";
-}
-EOF
-
-# Tell the Flake to include new local variables
-git add -N "${LOCAL_VARS}"
-echo "Generated ${LOCAL_VARS}"
-
 # dirs
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOCAL_VARS="${REPO_DIR}/hosts/default/variables.local.nix"
 HARDWARE="${REPO_DIR}/hosts/default/hardware.nix"
-
-# vars check
-if [[ ! -f "${VARS}" ]]; then
-  echo "variables.nix not found: ${VARS}"
-  exit 1
-fi
 
 # nixos-generate-config exists check
 if ! command -v nixos-generate-config >/dev/null 2>&1; then
@@ -59,23 +39,16 @@ else
   exit 1
 fi
 
-# Validation helper
-escape_sed() {
-  printf '%s' "$1" | sed -e 's/[\\/&|]/\\&/g'
+# Generate the local variables file (Overwrites if exists)
+cat <<EOF > "${LOCAL_VARS}"
+{
+  username = "${username}";
+  hashedPassword = "${hashed_password}";
+  gitUsername = "${git_username}";
+  gitEmail = "${git_email}";
 }
-
-# Fill data
-username_esc="$(escape_sed "${username}")"
-hashed_esc="$(escape_sed "${hashed_password}")"
-git_user_esc="$(escape_sed "${git_username}")"
-git_email_esc="$(escape_sed "${git_email}")"
-
-sed -i \
-  -e "s|^  username = .*;|  username = \"${username_esc}\";|" \
-  -e "s|^  hashedPassword = .*;|  hashedPassword = \"${hashed_esc}\";|" \
-  -e "s|^  gitUsername = .*;|  gitUsername = \"${git_user_esc}\";|" \
-  -e "s|^  gitEmail = .*;|  gitEmail = \"${git_email_esc}\";|" \
-  "${VARS}"
+EOF
+echo "Generated ${LOCAL_VARS}"
 
 # Build
 nixos-generate-config --show-hardware-config > "${HARDWARE}"

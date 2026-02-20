@@ -42,12 +42,12 @@ in {
         users.${username} = {
           imports = [ ../home ];
 
-          programs.git {
+          programs.git = {
             enable = true;
-            userName = vars.gitUsername
-            userEmail = vars.gitEmail
+            userName = vars.gitUsername;
+            userEmail = vars.gitEmail;
             extraConfig = {
-              init.defaultBranch = "main"
+              init.defaultBranch = "main";
               pull.rebase = true;
               # You can add more git-specific logic here...
             };

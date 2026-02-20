@@ -26,7 +26,7 @@ in {
     username
     hashedPassword
     gitUsername
-    gitEmail
+    gitEmail;
 
   # Software
   IDE = "zeditor";
