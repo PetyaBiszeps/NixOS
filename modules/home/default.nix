@@ -9,5 +9,6 @@ in {
     ./niri
     ./zed.nix
     ./ghostty.nix
+    ./noctalia.nix
   ];
 }
