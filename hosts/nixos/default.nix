@@ -1,12 +1,11 @@
-# Nix nixos host configuration file
+# Nix default host configuration file
 # Detects user hardware configuration to make proper build
 # Enables display manager, sync GUI (Niri) session to be available to display manager
 
 { pkgs, lib, ... }: {
   imports = [
-    (lib.mkIf (builtins.pathExists ./hardware.nix) ./hardware.nix)
     ./host-packages.nix
-  ];
+  ] ++ lib.optional (builtins.pathExists ./hardware.nix) ./hardware.nix;
 
   # Display manager
   services.displayManager.ly.enable = true;
