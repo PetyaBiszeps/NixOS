@@ -4,10 +4,11 @@
 
 { hostname, pkgs, ... }: {
   networking = {
-    hostName = hostname;
-    timeServers = [
-      "pool.ntp.org"
-    ];
+    # hostName = hostname;
+    # timeServers = [
+    #   "pool.ntp.org"
+    # ];
+    dhcpcd.enable = false;
     networkmanager.enable = true;
 
     firewall = {

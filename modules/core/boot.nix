@@ -4,7 +4,12 @@
 
 { pkgs, config, ... }: {
   boot = {
-    loader.systemd-boot.enable = true;
+    loader.systemd-boot = {
+      enable = true;
+
+      timeout = 0;
+      configurationLimit = 5;
+    };
     loader.efi.canTouchEfiVariables = true;
   };
 }

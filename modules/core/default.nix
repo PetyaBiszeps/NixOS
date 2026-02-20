@@ -11,7 +11,7 @@
     ./time.nix
     ./fonts.nix
     ./steam.nix
-    #./network.nix  -> Recursive BUG
+    ./network.nix
     ./hardware.nix
     ./packages.nix
     ./security.nix
