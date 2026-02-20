@@ -9,9 +9,7 @@
     terminal = variables.terminal or "ghostty";
     desktopShell = variables.desktopShell or "";
     noctaliaStartup = lib.optionalString (desktopShell == "noctalia") ''
-      spawn-at-startup {
-        command "noctalia-shell"
-      }
+      spawn-at-startup "noctalia-shell"
     '';
 
     # Import keybinds
