@@ -12,9 +12,8 @@
     enable = lib.mkDefault false;
 
     settings = {
-      # animation = "matrix";
-      # save_file = "etc/ly/save";
-      # tty = 2;  # REMOVED: Default is now tty 1 in nixpkgs-unstable, conflicts if set
+      animation = "matrix";
+      save_file = "etc/ly/save";
       # hide_borders = true;
       # min_refresh_delta = 5;
     };
