@@ -11,40 +11,22 @@ This repository contains my system configuration files. It documents the journey
 ```bash
 mkdir -p ~/Documents/Web
 cd ~/Documents/Web
-nix-shell -p git openssh
+nix-shell -p git openssh gh
 ```
 
-### 3. (Optional) SSH clone
-If you want to clone via SSH right after install:
-
+### 3. Clone and install
 ```bash
-ssh-keygen -t ed25519 -C "your@email"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-cat ~/.ssh/id_ed25519.pub
-```
-
-Add the printed public key to GitHub, then verify access:
-
-```bash
-ssh -T git@github.com
-```
-
-### 4. Clone and install
-```bash
-git clone git@github.com:PetyaBiszeps/NixOS.git
+git clone https://github.com/PetyaBiszeps/NixOS.git
 cd ~/Documents/Web/NixOS
 chmod +x install.sh
 ./install.sh
 ```
+
+The installer can generate an SSH key, authenticate GitHub via device-flow, and switch the repo remote to SSH.
 
 ### Rebuild after changes
 ```bash
 sudo nixos-rebuild switch --flake "path:.#nixos" --no-update-lock-file
 ```
 
-If you prefer HTTPS instead of SSH, use:
-
-```bash
-git clone https://github.com/PetyaBiszeps/NixOS.git
-```
+If you want to verify SSH, run `ssh -T git@github.com` after the installer completes.
