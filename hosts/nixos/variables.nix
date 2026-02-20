@@ -2,18 +2,18 @@
 # Vocabulary for important constants
 # Do not edit manually. This file is overwritten per-machine, changes can lead to unexpected results
 
-{ config, lib }:
-  let
-    # Check local file
-    localVars = if builtins.pathExists ./variables.local.nix
-                then import ./variables.local.nix
-                else {
-                  username = null;
-                  hashedPassword = null;
+let
+  # Check local file
+  localVars =
+    if builtins.pathExists ./variables.local.nix
+    then import ./variables.local.nix
+    else {
+      username = null;
+      hashedPassword = null;
 
-                  gitUsername = null;
-                  gitEmail = null;
-                };
+      gitUsername = null;
+      gitEmail = null;
+    };
 in {
   # System
   timeZone = "Europe/Kyiv";
