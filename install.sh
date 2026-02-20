@@ -4,9 +4,16 @@
 set -euo pipefail
 
 # dirs
+HOST="${HOSTNAME:-default}"
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LOCAL_VARS="${REPO_DIR}/hosts/default/variables.local.nix"
-HARDWARE="${REPO_DIR}/hosts/default/hardware.nix"
+LOCAL_VARS="${REPO_DIR}/hosts/${HOST}/variables.local.nix"
+HARDWARE="${REPO_DIR}/hosts/${HOST}/hardware.nix"
+
+echo "Install plan:"
+echo "1) Collect user and git info"
+echo "2) Generate ${LOCAL_VARS}"
+echo "3) Generate ${HARDWARE}"
+echo "4) nixos-rebuild switch (flake: ${REPO_DIR}#${HOST})"
 
 # nixos-generate-config exists check
 if ! command -v nixos-generate-config >/dev/null 2>&1; then
@@ -52,4 +59,4 @@ echo "Generated ${LOCAL_VARS}"
 
 # Build
 nixos-generate-config --show-hardware-config > "${HARDWARE}"
-sudo nixos-rebuild switch --flake "${REPO_DIR}#default"
+sudo nixos-rebuild switch --flake "${REPO_DIR}#${HOST}" && sudo reboot
