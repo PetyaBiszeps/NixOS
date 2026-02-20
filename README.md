@@ -7,12 +7,39 @@ This repository contains my system configuration files. It documents the journey
 - Download the official **NixOS ISO**
 - Install the system using the **No Desktop Environment** option for a clean, CLI-only base
 
-### 2. Core configuration
-Once logged into the TTY, clone this repository and apply the settings:
+### 2. Prepare tools (TTY)
+```bash
+mkdir -p ~/Documents/Web
+cd ~/Documents/Web
+nix-shell -p git openssh
+```
+
+### 3. (Optional) SSH clone
+If you want to clone via SSH right after install:
 
 ```bash
-0. mkdir Documents && cd Documents && mkdir Web && cd Web # Create Documents/Web directory
-1. nix-shell-p git # Run local git
-2. git clone https://github.com/PetyaBiszeps/NixOS.git ~/Documents/Web/NixOS && cd ~/Documents/Web/NixOS && cd NixOS # Clone repo and move into
-3. chmod +x install.sh && ./install.sh # run installation script
+ssh-keygen -t ed25519 -C "your@email"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+```
+
+Add the printed public key to GitHub, then verify access:
+
+```bash
+ssh -T git@github.com
+```
+
+### 4. Clone and install
+```bash
+git clone git@github.com:PetyaBiszeps/NixOS.git
+cd ~/Documents/Web/NixOS
+chmod +x install.sh
+./install.sh
+```
+
+If you prefer HTTPS instead of SSH, use:
+
+```bash
+git clone https://github.com/PetyaBiszeps/NixOS.git
 ```
