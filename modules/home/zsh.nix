@@ -8,7 +8,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      nix-rebuild-all = "sudo nixos-rebuild switch --flake \"path:.#nixos\" --no-update-lock-file && sudo nix-collect-garbage -d";
+      nixos-rebuild-all = "sudo nixos-rebuild switch --flake \"path:.#nixos\" --no-update-lock-file && sudo nix-collect-garbage -d";
     };
   };
 }
