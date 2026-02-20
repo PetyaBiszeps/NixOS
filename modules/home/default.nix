@@ -7,8 +7,12 @@
 in {
   imports = [
     ./niri
+    ./zsh.nix
+    ./fzf.nix
+    ./eza.nix
     ./zed.nix
     ./ghostty.nix
     ./noctalia.nix
+    ./oh-my-posh.nix
   ];
 }

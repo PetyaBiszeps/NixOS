@@ -7,4 +7,9 @@
     enable = true;
     package = pkgs.ghostty;
   };
+
+  xdg.configFile."ghostty/config".text = ''
+    font-family = Fira Code
+    font-size = 12
+  '';
 }
