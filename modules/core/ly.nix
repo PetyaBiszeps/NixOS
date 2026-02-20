@@ -13,9 +13,14 @@
 
     settings = {
       animation = "matrix";
-      save_file = "etc/ly/save";
+      save_file = "/var/lib/ly/save";
       # hide_borders = true;
       # min_refresh_delta = 5;
     };
   };
+
+  # temporary files
+  systemd.tmpfiles.rules = [
+    "d /var/lib/ly 0755 root root -"
+  ];
 }
