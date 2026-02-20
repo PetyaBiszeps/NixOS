@@ -46,6 +46,9 @@ else
   exit 1
 fi
 
+# Ensure host directory exists
+mkdir -p "$(dirname "${LOCAL_VARS}")"
+
 # Generate the local variables file (Overwrites if exists)
 cat <<EOF > "${LOCAL_VARS}"
 {
@@ -59,4 +62,4 @@ echo "Generated ${LOCAL_VARS}"
 
 # Build
 nixos-generate-config --show-hardware-config > "${HARDWARE}"
-sudo nixos-rebuild switch --flake "path:${REPO_DIR}#${HOST}" && sudo reboot
+sudo nixos-rebuild switch --flake "path:${REPO_DIR}#${HOST}" -- --no-write-lock-file && sudo reboot
