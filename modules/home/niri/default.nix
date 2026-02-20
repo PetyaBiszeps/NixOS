@@ -14,7 +14,7 @@
 
     # Import keybinds
     keybindsModule = import ./keybinds.nix {
-      inherit terminal browser ide;
+      inherit terminal browser ide desktopShell;
     };
 
     # Import styles
