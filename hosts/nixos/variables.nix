@@ -8,6 +8,8 @@ let
     if builtins.pathExists ./variables.local.nix
     then import ./variables.local.nix
     else {
+      enableNewUser = false;
+
       username = null;
       hashedPassword = null;
 
@@ -23,8 +25,11 @@ in {
 
   # Local
   inherit (localVars)
+    enableNewUser
+
     username
     hashedPassword
+
     gitUsername
     gitEmail;
 
@@ -33,8 +38,6 @@ in {
   browser = "brave";
   terminal = "ghostty";
 
-  # Enable new user
-  enableNewUser = true;
 
   # Enable NFS
   enableNFS = true;
