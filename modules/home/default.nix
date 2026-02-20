@@ -7,14 +7,14 @@
 in {
   imports = [
     ./niri
+    ./fd.nix
+    ./rg.nix
     ./zsh.nix
     ./fzf.nix
     ./eza.nix
-    ./zoxide.nix
-    ./fd.nix
-    ./rg.nix
     ./bat.nix
     ./zed.nix
+    ./zoxide.nix
     ./ghostty.nix
     ./noctalia.nix
     ./oh-my-posh.nix
