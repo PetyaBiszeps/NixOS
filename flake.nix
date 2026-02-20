@@ -57,8 +57,8 @@
         };
     in {
       nixosConfigurations = {
-        default = mkHost {
-          hostname = "default";
+        nixos = mkHost {
+          hostname = "nixos";
           profile = "amd";
         };
       };

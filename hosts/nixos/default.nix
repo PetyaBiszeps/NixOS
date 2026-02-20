@@ -1,4 +1,4 @@
-# Nix default host configuration file
+# Nix nixos host configuration file
 # Detects user hardware configuration to make proper build
 # Enables display manager, sync GUI (Niri) session to be available to display manager
 
