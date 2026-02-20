@@ -16,6 +16,9 @@
     keybindsModule = import ./keybinds.nix {
       inherit terminal browser ide;
     };
+
+    # Import styles
+    styleModule = import ./styles.nix {};
 in {
   home.packages = with pkgs; [
     niri
