@@ -12,11 +12,46 @@
     enable = lib.mkDefault false;
 
     settings = {
+      xinitrc = null;
       animation = "matrix";
-      hide_system_users = true;
-      save_file = "/var/lib/ly/save";
       # hide_borders = true;
       # min_refresh_delta = 5;
+      hide_system_users = true;
+      save_file = "/var/lib/ly/save";
+      hide_users = [
+        "nixbld1"
+        "nixbld2"
+        "nixbld3"
+        "nixbld4"
+        "nixbld5"
+        "nixbld6"
+        "nixbld7"
+        "nixbld8"
+        "nixbld9"
+        "nixbld10"
+        "nixbld11"
+        "nixbld12"
+        "nixbld13"
+        "nixbld14"
+        "nixbld15"
+        "nixbld16"
+        "nixbld17"
+        "nixbld18"
+        "nixbld19"
+        "nixbld20"
+        "nixbld21"
+        "nixbld22"
+        "nixbld23"
+        "nixbld24"
+        "nixbld25"
+        "nixbld26"
+        "nixbld27"
+        "nixbld28"
+        "nixbld29"
+        "nixbld30"
+        "nixbld31"
+        "nixbld32"
+      ];
     };
   };
 
