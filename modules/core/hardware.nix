@@ -4,6 +4,10 @@
 
 { pkgs, ... }: {
   hardware = {
+    amdgpu = {
+      opencl = true;
+    };
+
     graphics = {
       enable = true;
       enable32Bit = true;
