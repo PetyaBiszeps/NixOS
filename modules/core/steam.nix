@@ -37,11 +37,11 @@
             keyutils
           ];
       };
-
-      # Additional steam pkgs
-      environment.systemPackages = with pkgs; [
-        mangohud
-      ];
     };
   };
+
+  # Additional steam pkgs
+  environment.systemPackages = with pkgs; [
+    mangohud
+  ];
 }
