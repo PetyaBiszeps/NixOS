@@ -7,6 +7,7 @@
 in {
   imports = [
     ./niri
+    ./fastfetch
     ./fd.nix
     ./rg.nix
     ./zsh.nix
