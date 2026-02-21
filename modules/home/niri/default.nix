@@ -25,6 +25,7 @@ in {
     grim
     slurp
     wl-clipboard
+    xwayland-satellite
   ];
 
   # Generate Niri config.kdl
@@ -36,4 +37,23 @@ in {
     ${keybindsModule}
     ${styleModule}
   '';
+
+  # Xwayland support
+  systemd.user.services.xwayland-satellite = {
+    Unit = {
+      Description = "Xwayland outside Wayland";
+      BindsTo = "graphical-session.target";
+      After = "graphical-session.target";
+    };
+
+    Service = {
+      Type = "notify";
+      NotifyAccess = "all";
+      Restart = "on-failure";
+      StandardOutput = "journal";
+      ExecStart = "${pkgs.xwayland-satellite}/bin/xwayland-satellite";
+    };
+    
+    Install.WantedBy = ["graphical-session.target"];
+  };
 }
