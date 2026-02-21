@@ -20,6 +20,7 @@
       "loglevel=3"
       "rd.udev.log_level=3"
       "systemd.show_status=false"
+      "amdgpu.ppfeaturemask=0xffffffff"
     ];
     kernelPackages = pkgs.linuxPackages_latest;
   };
