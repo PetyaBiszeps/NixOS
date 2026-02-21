@@ -4,7 +4,7 @@
 
 { variables, pkgs, lib, ... }:
   let
-    theme = "jandedobbeleer";
+    theme = "powerlevel10k_rainbow";
     defaultShell = variables.defaultShell or "zsh";
     themeFile = "${pkgs.oh-my-posh}/share/oh-my-posh/themes/${theme}.omp.json";
 in {
