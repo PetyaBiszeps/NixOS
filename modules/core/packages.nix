@@ -18,7 +18,6 @@
   environment.systemPackages = with pkgs; [
     git
     wget
-    lact
     brave
     ghostty
     docker-compose

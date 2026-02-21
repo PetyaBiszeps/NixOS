@@ -8,6 +8,7 @@
     ./nfs.nix
     ./boot.nix
     ./user.nix
+    ./lact.nix
     ./time.nix
     ./fonts.nix
     ./steam.nix
