@@ -2,7 +2,9 @@
 # Provides Nixvim version management
 # Feel free to add, remove and modify anything here
 
-{ pkgs, lib, ... }: {
+{ inputs, pkgs, ... }: {
+  imports = [inputs.nvf.homeManagerModules.default];
+
   programs.nvf = {
     enable = true;
 
