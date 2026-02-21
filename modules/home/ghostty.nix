@@ -10,6 +10,6 @@
 
   xdg.configFile."ghostty/config".text = ''
     font-family = Fira Code
-    font-size = 12
+    font-size = 14
   '';
 }
