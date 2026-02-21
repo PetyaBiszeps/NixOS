@@ -15,6 +15,6 @@
     };
 
     # Extra
-    initExtra = "fastfetch";
+    initContent = "fastfetch";
   };
 }
