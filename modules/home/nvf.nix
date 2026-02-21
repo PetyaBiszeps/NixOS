@@ -13,8 +13,8 @@
 
       # Vim theme
       theme = {
-        name = "gruvbox";
-        style = "dark";
+        name = "catppuccin";
+        style = "mocha";
         enable = true;
       };
 
