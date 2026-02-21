@@ -4,14 +4,16 @@
 
 { pkgs, config, ... }: {
   boot = {
-    loader.systemd-boot = {
-      enable = true;
-      configurationLimit = 5;
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 5;
+      };
+      timeout = 0;
+      efi.canTouchEfiVariables = true;
     };
-    loader.timeout = 0;
     initrd.verbose = false;
     consoleLogLevel = 0;
-    loader.efi.canTouchEfiVariables = true;
 
     kernelParams = [
       "quiet"
@@ -19,5 +21,6 @@
       "rd.udev.log_level=3"
       "systemd.show_status=false"
     ];
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 }

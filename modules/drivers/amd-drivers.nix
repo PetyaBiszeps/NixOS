@@ -12,5 +12,13 @@ in {
   config = mkIf cfg.enable {
     systemd.tmpfiles.rules = ["L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"];
     services.xserver.videoDrivers = ["amdgpu"];
+
+    environment.sessionVariables = {
+      RADV_DEBUG = "nodcc";
+      RADV_PERFTEST = "gpl";
+      AMD_VULKAN_ICD = "RADV";
+      VDPAU_DRIVER = "radeonsi";
+      LIBVA_DRIVER_NAME = "radeonsi";
+    };
   };
 }
