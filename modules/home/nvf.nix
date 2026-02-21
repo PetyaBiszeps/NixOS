@@ -9,7 +9,19 @@
     enable = true;
 
     settings.vim = {
-      lsp.enable = true;
+      lsp = {
+        enable = true;
+
+        servers.nixd = {
+          enable = true;
+
+          settings = {
+            nixd = {
+              autoArchive = true;
+            };
+          };
+        };
+      };
 
       # Vim theme
       theme = {
@@ -23,7 +35,11 @@
         enableTreesitter = true;
 
         ts.enable = true;
-        nix.enable = true;
+        nix = {
+          enable = true;
+          lsp.enable = true;
+          lsp.servers = ["nixd"];
+        };
       };
 
       # Others
