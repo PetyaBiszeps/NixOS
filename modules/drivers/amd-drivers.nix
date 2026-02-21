@@ -7,6 +7,7 @@
 in {
   options.drivers.amdgpu = {
     enable = mkEnableOption "Enable AMD Drivers";
+    overdrive.enable = true;
   };
 
   config = mkIf cfg.enable {
