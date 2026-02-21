@@ -9,6 +9,8 @@
     enable = true;
 
     settings.vim = {
+      lsp.enable = true;
+
       # Vim theme
       theme = {
         name = "gruvbox";
@@ -16,9 +18,8 @@
         enable = true;
       };
 
-      # Vim LSP
+      # Vim LSP's
       languages = {
-        enableLSP = true;
         enableTreesitter = true;
 
         ts.enable = true;
