@@ -18,6 +18,7 @@ in {
     ./zoxide.nix
     ./ghostty.nix
     ./noctalia.nix
+    ./jetbrains.nix
     ./oh-my-posh.nix
   ];
 }
