@@ -10,6 +10,7 @@ in {
     ./fd.nix
     ./rg.nix
     ./zsh.nix
+    ./nvf.nix
     ./fzf.nix
     ./eza.nix
     ./bat.nix
