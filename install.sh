@@ -102,7 +102,7 @@ if [[ "${gh_auth,,}" == "y" || "${gh_auth,,}" == "yes" ]]; then
   if ! command -v gh >/dev/null 2>&1; then
     echo "gh CLI not found. Skipping GitHub auth."
   else
-    gh auth login --hostname github.com --device
+    gh auth login --hostname github.com
     if [[ -f "${HOME}/.ssh/id_ed25519.pub" ]]; then
       gh ssh-key add "${HOME}/.ssh/id_ed25519.pub" -t "${username}@$(hostname)"
     fi
