@@ -10,8 +10,8 @@
 
     # Aliases
     shellAliases = {
-      nixos-rebuild-all = "sudo nixos-rebuild switch --flake \"path:.#nixos\" --no-write-lock-file && sudo nix-collect-garbage -d";
-      nixos-delete-old = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old && sudo nix-collect-garbage -d && sudo nixos-rebuild boot --flake \"path:.#nixos\" --no-write-lock-file";
+      nixos-rebuild-all = "sudo nixos-rebuild switch --flake \"path:.#nixos\" --no-write-lock-file && sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old && sudo nix-collect-garbage -d";
+      nixos-delete-old = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old && sudo nix-collect-garbage -d";
     };
 
     # Extra
