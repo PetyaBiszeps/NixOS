@@ -3,7 +3,10 @@
 # Feel free to add, remove and modify anything here
 
 { variables, pkgs, lib, ... }:
-  let defaultShell = variables.defaultShell or "zsh";
+  let
+    theme = "jandedobbeleer";
+    defaultShell = variables.defaultShell or "zsh";
+    themeFile = "${pkgs.oh-my-posh}/share/oh-my-posh/themes/${theme}.omp.json";
 in {
   home.packages = [pkgs.oh-my-posh];
 
@@ -11,7 +14,7 @@ in {
     enable = true;
 
     initContent = ''
-      eval "$(oh-my-posh init zsh --config "$HOME/.config/oh-my-posh/config.toml")"
+      eval "$(oh-my-posh init zsh --config "$HOME/.config/oh-my-posh/${theme}.omp.json")"
     '';
   };
 
@@ -19,37 +22,9 @@ in {
     enable = true;
 
     interactiveShellInit = ''
-      oh-my-posh init fish --config "$HOME/.config/oh-my-posh/config.toml" | source
+      oh-my-posh init fish --config "$HOME/.config/oh-my-posh/${theme}.omp.json" | source
     '';
   };
 
-  xdg.configFile."oh-my-posh/config.toml".text = ''
-    version = 2
-
-    [[blocks]]
-    type = "prompt"
-    alignment = "left"
-
-    [[blocks.segments]]
-    type = "path"
-    style = "plain"
-    foreground = "#8aadf4"
-    template = "{{ .Path }}"
-
-    [[blocks.segments]]
-    type = "git"
-    style = "plain"
-    foreground = "#a6da95"
-    template = "{{ .HEAD }}{{ if .Working.Changed }}*{{ end }}"
-
-    [[blocks]]
-    type = "prompt"
-    alignment = "right"
-
-    [[blocks.segments]]
-    type = "time"
-    style = "plain"
-    foreground = "#9da1a6"
-    template = "{{ .CurrentDate | date \"15:04\" }}"
-  '';
+  xdg.configFile."oh-my-posh/${theme}.omp.json".source = themeFile;
 }
