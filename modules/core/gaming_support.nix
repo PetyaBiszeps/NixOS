@@ -5,6 +5,9 @@
 { config, lib, pkgs, ... }:
   let gamingSupportEnable = config.variables.gamingSupportEnable or false;
 in lib.mkIf gamingSupportEnable {
+  # Gamemode
+  programs.gamemode.enable = true;
+
   # Enable kernel modules for controller support
   boot.kernelModules = [
     "xpad"
@@ -29,7 +32,7 @@ in lib.mkIf gamingSupportEnable {
   # System packages for gaming support
   environment.systemPackages = with pkgs; [
     # Gaming tools
-    gamescope
+    # gamescope -> moved into steam.nix
     protonup-qt
 
     # SDL

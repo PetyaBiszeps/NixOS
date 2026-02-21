@@ -7,6 +7,7 @@
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
+      gamescopeSession.enable = true;
       dedicatedServer.openFirewall = false;
       extraCompatPackages = [
         pkgs.proton-ge-bin
@@ -36,6 +37,11 @@
             keyutils
           ];
       };
+
+      # Additional steam pkgs
+      environment.systemPackages = with pkgs; [
+        mangohud
+      ];
     };
   };
 }
