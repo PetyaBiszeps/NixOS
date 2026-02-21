@@ -12,12 +12,15 @@
     enable = lib.mkDefault false;
 
     settings = {
+      save = true;
       xinitrc = null;
+      xsessions = null;
       animation = "matrix";
-      # hide_borders = true;
-      # min_refresh_delta = 5;
-      hide_system_users = true;
       save_file = "/var/lib/ly/save";
+      default_input = "password";
+      # hide_borders = true;
+      hide_system_users = true;
+      # min_refresh_delta = 5;
       hide_users = [
         "nixbld1"
         "nixbld2"
