@@ -4,9 +4,7 @@
 
 { pkgs, ... }: {
   hardware = {
-    amdgpu = {
-      opencl = true;
-    };
+    amdgpu.opencl.enable = true;
 
     graphics = {
       enable = true;
