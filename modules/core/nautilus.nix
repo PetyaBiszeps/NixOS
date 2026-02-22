@@ -7,7 +7,8 @@
 in lib.mkIf nautilusEnable {
   environment.systemPackages = [
     pkgs.nautilus
-    pkgs.nautilus-admin
     pkgs.ffmpegthumbnailer
+    pkgs.nautilus-admin-gtk4
+    pkgs.nautilus-open-any-terminal
   ];
 }
