@@ -16,6 +16,7 @@
     brave
     ghostty
     imv vlc # Image, Video
+    gpu-screen-recorder
     docker-compose
     telegram-desktop
     teamspeak6-client
