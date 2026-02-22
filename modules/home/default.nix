@@ -18,6 +18,7 @@ in {
     ./bat.nix
     ./xdg.nix
     ./zed.nix
+    ./gtk.nix
     ./tmux.nix
     ./polkit.nix
     ./zoxide.nix
