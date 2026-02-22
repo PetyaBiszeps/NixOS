@@ -8,6 +8,7 @@ in {
   imports = [
     ./niri
     ./fastfetch
+
     ./fd.nix
     ./rg.nix
     ./zsh.nix
@@ -17,6 +18,7 @@ in {
     ./bat.nix
     ./xdg.nix
     ./zed.nix
+    ./tmux.nix
     ./polkit.nix
     ./zoxide.nix
     ./ghostty.nix
