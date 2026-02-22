@@ -15,6 +15,7 @@
     wget
     brave
     ghostty
+    vlc mpv # photo, video
     docker-compose
     telegram-desktop
     teamspeak6-client
