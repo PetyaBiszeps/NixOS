@@ -17,6 +17,7 @@ in {
     ./bat.nix
     ./xdg.nix
     ./zed.nix
+    ./polkit.nix
     ./zoxide.nix
     ./ghostty.nix
     ./noctalia.nix
