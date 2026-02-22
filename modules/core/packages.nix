@@ -15,7 +15,7 @@
     wget
     brave
     ghostty
-    imv vlc # Image, Video
+    loupe celluloid # Image, Video
     gpu-screen-recorder
     docker-compose
     telegram-desktop
