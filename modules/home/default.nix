@@ -15,6 +15,7 @@ in {
     ./fzf.nix
     ./eza.nix
     ./bat.nix
+    ./xdg.nix
     ./zed.nix
     ./zoxide.nix
     ./ghostty.nix
