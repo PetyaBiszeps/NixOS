@@ -42,6 +42,17 @@ while true; do
   mapfile -t disk_rows < <(lsblk -rno NAME,SIZE,FSTYPE,UUID,MOUNTPOINT,LABEL)
 
   echo "Available disks:"
+  max_name_len=4
+  for row in "${disk_rows[@]}"; do
+    read -r name size fstype uuid mnt label <<< "${row}"
+    if [[ -z "${uuid}" ]]; then
+      continue
+    fi
+    if [[ "${#name}" -gt "${max_name_len}" ]]; then
+      max_name_len="${#name}"
+    fi
+  done
+  printf "%2s  %-*s | %s\n" "#" "${max_name_len}" "NAME" "SIZE"
   disk_count=0
   for row in "${disk_rows[@]}"; do
     read -r name size fstype uuid mnt label <<< "${row}"
@@ -49,7 +60,7 @@ while true; do
       continue
     fi
     disk_count=$((disk_count + 1))
-    printf "%s %s\n" "${disk_count}." "${name} | ${size}"
+    printf "%2d  %-*s | %s\n" "${disk_count}" "${max_name_len}" "${name}" "${size}"
   done
 
   if [[ "${disk_count}" -eq 0 ]]; then
