@@ -3,6 +3,7 @@
 .vscode
 
 # NixOS local files
+hosts/*/disks.nix
 hosts/*/hardware.nix
 hosts/*/variables.local.nix
 

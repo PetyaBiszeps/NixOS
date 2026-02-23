@@ -5,7 +5,11 @@
 { pkgs, lib, ... }: {
   imports = [
     ./host-packages.nix
-  ] ++ lib.optional (builtins.pathExists ./hardware.nix) ./hardware.nix;
+  ]
+    # Users disks
+  ++ lib.optional (builtins.pathExists ./disks.nix) ./disks.nix
+    # Users hardware
+  ++ lib.optional (builtins.pathExists ./hardware.nix) ./hardware.nix;
 
   # Display manager
   services.displayManager.ly.enable = true;
