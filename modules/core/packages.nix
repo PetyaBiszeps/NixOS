@@ -19,6 +19,7 @@
     gpu-screen-recorder
     docker-compose
     telegram-desktop
+    discord
     teamspeak6-client
   ];
 }
