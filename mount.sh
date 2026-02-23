@@ -42,7 +42,6 @@ while true; do
   mapfile -t disk_rows < <(lsblk -rno NAME,SIZE,FSTYPE,UUID,MOUNTPOINT,LABEL)
 
   echo "Available disks:"
-  echo "# NAME SIZE FSTYPE UUID MOUNTPOINT LABEL"
   disk_count=0
   for row in "${disk_rows[@]}"; do
     read -r name size fstype uuid mnt label <<< "${row}"
@@ -50,7 +49,7 @@ while true; do
       continue
     fi
     disk_count=$((disk_count + 1))
-    printf "%s %s\n" "${disk_count}." "${name} ${size} ${fstype:-?} ${uuid} ${mnt:-"-"} ${label:-"-"}"
+    printf "%s %s\n" "${disk_count}." "${name} | ${size}"
   done
 
   if [[ "${disk_count}" -eq 0 ]]; then
