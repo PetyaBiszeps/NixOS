@@ -53,6 +53,7 @@ while true; do
     fi
   done
   printf "%2s  %-*s | %s\n" "#" "${max_name_len}" "NAME" "SIZE"
+  printf "%2s  %-*s | %s\n" "--" "${max_name_len}" "----" "----"
   disk_count=0
   for row in "${disk_rows[@]}"; do
     read -r name size fstype uuid mnt label <<< "${row}"
