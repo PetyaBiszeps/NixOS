@@ -44,7 +44,7 @@ while true; do
   echo "Available disks:"
   max_name_len=4
   for row in "${disk_rows[@]}"; do
-    read -r name size fstype uuid mnt label <<< "${row}"
+    read -r name size fstype uuid _ label <<< "${row}"
     if [[ -z "${uuid}" ]]; then
       continue
     fi
@@ -56,7 +56,7 @@ while true; do
   printf "%2s  %-*s | %s\n" "--" "${max_name_len}" "----" "----"
   disk_count=0
   for row in "${disk_rows[@]}"; do
-    read -r name size fstype uuid mnt label <<< "${row}"
+    read -r name size fstype uuid _ label <<< "${row}"
     if [[ -z "${uuid}" ]]; then
       continue
     fi
@@ -86,7 +86,7 @@ while true; do
   selected_uuid=""
 
   for row in "${disk_rows[@]}"; do
-    read -r name size fstype uuid mnt label <<< "${row}"
+    read -r name size fstype uuid _ label <<< "${row}"
     if [[ -z "${uuid}" ]]; then
       continue
     fi
@@ -170,3 +170,11 @@ cat <<EOF >> "${DISKS_FILE}"
 EOF
 
 echo "Generated ${DISKS_FILE}"
+
+read -r -p "Run nixos-rebuild-all now? [Y/n]: " run_rebuild
+run_rebuild="${run_rebuild:-Y}"
+if [[ "${run_rebuild,,}" == "y" || "${run_rebuild,,}" == "yes" ]]; then
+  sudo nixos-rebuild switch --flake "path:${REPO_DIR}#${HOST}" --no-write-lock-file \
+    && sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations old \
+    && sudo nix-collect-garbage -d
+fi
