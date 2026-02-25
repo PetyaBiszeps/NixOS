@@ -12,6 +12,7 @@
     ./time.nix
     ./fonts.nix
     ./steam.nix
+    ./avahi.nix
     ./network.nix
     ./hardware.nix
     ./packages.nix
