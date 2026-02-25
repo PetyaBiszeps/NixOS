@@ -9,8 +9,8 @@
     // Keep borders slim and calm.
     border {
       width 2
-      active-color "#9aa4b2"
-      inactive-color "#3a4048"
+      active-color "#7f8b9b"
+      inactive-color "#2b3036"
       urgent-color "#b14d4d"
     }
 
