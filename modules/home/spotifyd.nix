@@ -10,7 +10,7 @@
   xdg.configFile."spotifyd/spotifyd.conf".text = ''
     [global]
     device_name = "nixos"
-    backend = "pipewire"
+    backend = "pulseaudio"
     volume_controller = "softvol"
     bitrate = 320
   '';
