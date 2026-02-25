@@ -25,7 +25,6 @@ in {
         source = ./nixos.png;
         type = "kitty-direct";
         height = 10;
-        width = 20;
         padding = {
           top = 2;
           left = 2;
