@@ -24,6 +24,7 @@ in {
     ./zoxide.nix
     ./ghostty.nix
     ./noctalia.nix
+    ./spotifyd.nix
     ./jetbrains.nix
     ./oh-my-posh.nix
   ];
