@@ -27,7 +27,6 @@ in {
     ./spotify.nix
     ./discord.nix
     ./noctalia.nix
-    ./spotifyd.nix
     ./telegram.nix
     ./jetbrains.nix
     ./teamspeak.nix
