@@ -20,13 +20,17 @@ in {
     ./zed.nix
     ./gtk.nix
     ./tmux.nix
+    ./brave.nix
     ./polkit.nix
     ./zoxide.nix
     ./ghostty.nix
     ./spotify.nix
+    ./discord.nix
     ./noctalia.nix
     ./spotifyd.nix
+    ./telegram.nix
     ./jetbrains.nix
+    ./teamspeak.nix
     ./oh-my-posh.nix
   ];
 }

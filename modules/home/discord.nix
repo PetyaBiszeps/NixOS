@@ -1,9 +1,9 @@
-# Spotify home-manager module
-# Provides spotify client config
+# Discord home-manager module
+# Provides Discord installation
 # Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    spotify
+    discord
   ];
 }

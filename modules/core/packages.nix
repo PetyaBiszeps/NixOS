@@ -13,13 +13,10 @@
   environment.systemPackages = with pkgs; [
     git
     wget
-    brave
-    ghostty
-    loupe celluloid # Image, Video
-    gpu-screen-recorder
+    # gnome-notes
     docker-compose
-    telegram-desktop
-    discord
-    teamspeak6-client
+    loupe celluloid # Image, Video
+    # gnome-calculator
+    gpu-screen-recorder
   ];
 }
