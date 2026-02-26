@@ -23,6 +23,7 @@ in {
     ./polkit.nix
     ./zoxide.nix
     ./ghostty.nix
+    ./spotify.nix
     ./noctalia.nix
     ./spotifyd.nix
     ./jetbrains.nix
