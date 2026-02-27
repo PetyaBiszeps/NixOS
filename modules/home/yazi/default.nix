@@ -2,7 +2,7 @@
 # Provides import of modules
 # Feel free to add, remove and change anything here
 
-{ pkgs, ... }:
+{ variables, pkgs, ... }:
   let
     theme = import ./theme.nix;
     keymap = import ./keymap.nix;
@@ -18,8 +18,8 @@ in {
 
     # Shell
     shellWrapperName = "yy";
-    enableZshIntegration = defaultShell == "zsh";
-    enableFishIntegration = defaultShell == "fish";
+    enableZshIntegration = variables.defaultShell == "zsh";
+    enableFishIntegration = variables.defaultShell == "fish";
 
     # Plugins
     plugins = {
