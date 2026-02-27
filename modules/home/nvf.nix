@@ -24,9 +24,9 @@
             };
           };
 
-          volar.enable = true;
           ts_ls.enable = true;
           gopls.enable = true;
+          vue_ls.enable = true;
           pyright.enable = true;
           bash_ls.enable = true;
         };
