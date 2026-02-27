@@ -2,4 +2,9 @@
 # Provides Yazi configuration
 # Feel free to add, remove and modify anything here
 
-{ ... }: {}
+{
+  manager = {
+    sort_by = "name";
+    show_hidden = false;
+  };
+}
