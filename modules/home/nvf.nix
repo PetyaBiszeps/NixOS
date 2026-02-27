@@ -48,12 +48,6 @@
           lsp.servers = ["nixd"];
         };
 
-        vue = {
-          enable = true;
-          lsp.enable = true;
-          lsp.servers = ["volar"];
-        };
-
         go = {
           enable = true;
           lsp.enable = true;
