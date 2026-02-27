@@ -4,9 +4,11 @@
 
 { variables, pkgs, ... }:
   let
+    defaultShell = variables.defaultShell or "zsh";
+
     theme = import ./theme.nix;
     keymap = import ./keymap.nix;
-    settings = import ./yazi.nix;
+    settings = import ./settings.nix;
 in {
   programs.yazi = {
     enable = true;
@@ -18,8 +20,8 @@ in {
 
     # Shell
     shellWrapperName = "yy";
-    enableZshIntegration = variables.defaultShell == "zsh";
-    enableFishIntegration = variables.defaultShell == "fish";
+    enableZshIntegration = defaultShell == "zsh";
+    enableFishIntegration = defaultShell == "fish";
 
     # Plugins
     plugins = {
