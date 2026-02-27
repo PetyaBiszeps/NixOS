@@ -24,9 +24,8 @@
             };
           };
 
-          ts_ls.enable = true;
+          vtsls.enable = true;
           gopls.enable = true;
-          vue_ls.enable = true;
           pyright.enable = true;
           bash_ls.enable = true;
         };
@@ -52,7 +51,7 @@
         ts = {
           enable = true;
           lsp.enable = true;
-          lsp.servers = ["ts_ls"];
+          lsp.servers = ["vtsls"];
         };
 
         go = {
