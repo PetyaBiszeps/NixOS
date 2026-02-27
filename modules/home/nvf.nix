@@ -24,10 +24,10 @@
           };
 
           volar.enable = true;
+          ts_ls.enable = true;
           gopls.enable = true;
           bashls.enable = true;
           pyright.enable = true;
-          tsserver.enable = true;
         };
       };
 
@@ -48,6 +48,12 @@
           lsp.servers = ["nixd"];
         };
 
+        ts = {
+          enable = true;
+          lsp.enable = true;
+          lsp.servers = ["ts_ls"];
+        };
+
         go = {
           enable = true;
           lsp.enable = true;
@@ -64,12 +70,6 @@
           enable = true;
           lsp.enable = true;
           lsp.servers = ["pyright"];
-        };
-
-        ts = {
-          enable = true;
-          lsp.enable = true;
-          lsp.servers = ["tsserver"];
         };
       };
 
