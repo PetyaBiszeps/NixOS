@@ -12,14 +12,22 @@
       lsp = {
         enable = true;
 
-        servers.nixd = {
-          enable = true;
+        servers = {
+          nixd = {
+            enable = true;
 
-          settings = {
-            nixd = {
-              autoArchive = true;
+            settings = {
+              nixd = {
+                autoArchive = true;
+              };
             };
           };
+
+          volar.enable = true;
+          gopls.enable = true;
+          bashls.enable = true;
+          pyright.enable = true;
+          tsserver.enable = true;
         };
       };
 
@@ -34,11 +42,40 @@
       languages = {
         enableTreesitter = true;
 
-        ts.enable = true;
         nix = {
           enable = true;
           lsp.enable = true;
           lsp.servers = ["nixd"];
+        };
+
+        vue = {
+          enable = true;
+          lsp.enable = true;
+          lsp.servers = ["volar"];
+        };
+
+        go = {
+          enable = true;
+          lsp.enable = true;
+          lsp.servers = ["gopls"];
+        };
+
+        bash = {
+          enable = true;
+          lsp.enable = true;
+          lsp.servers = ["bashls"];
+        };
+
+        python = {
+          enable = true;
+          lsp.enable = true;
+          lsp.servers = ["pyright"];
+        };
+
+        ts = {
+          enable = true;
+          lsp.enable = true;
+          lsp.servers = ["tsserver"];
         };
       };
 
