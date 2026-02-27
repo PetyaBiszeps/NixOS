@@ -11,6 +11,7 @@
     settings.vim = {
       lsp = {
         enable = true;
+        lspconfig.enable = true;
 
         servers = {
           nixd = {
