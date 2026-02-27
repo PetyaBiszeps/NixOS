@@ -2,7 +2,7 @@
 # Provides import of modules
 # Feel free to add, remove and change anything here
 
-{ ... }:
+{ pkgs, ... }:
   let
     theme = import ./theme.nix;
     keymap = import ./keymap.nix;
