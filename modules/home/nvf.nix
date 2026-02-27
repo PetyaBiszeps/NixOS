@@ -26,8 +26,8 @@
           volar.enable = true;
           ts_ls.enable = true;
           gopls.enable = true;
-          bashls.enable = true;
           pyright.enable = true;
+          bash_ls.enable = true;
         };
       };
 
@@ -60,16 +60,16 @@
           lsp.servers = ["gopls"];
         };
 
-        bash = {
-          enable = true;
-          lsp.enable = true;
-          lsp.servers = ["bashls"];
-        };
-
         python = {
           enable = true;
           lsp.enable = true;
           lsp.servers = ["pyright"];
+        };
+
+        bash = {
+          enable = true;
+          lsp.enable = true;
+          lsp.servers = ["bash-ls"];
         };
       };
 
