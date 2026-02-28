@@ -34,4 +34,10 @@
     geometry-corner-radius 12
     clip-to-geometry true
   }
+
+  // Steam popups float
+  window-rule {
+    match app-id="steamwebhelper"
+    open-floating true
+  }
 ''
