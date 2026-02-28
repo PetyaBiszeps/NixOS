@@ -37,7 +37,7 @@
 
   // Steam popups float
   window-rule {
-    match app-id="steamwebhelper"
+    match app-id="steam" title="^(Friends List|Steam Settings)$"
     open-floating true
   }
 ''
