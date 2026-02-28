@@ -40,5 +40,6 @@
   # Additional steam pkgs
   environment.systemPackages = with pkgs; [
     mangohud
+    samrewritten
   ];
 }
