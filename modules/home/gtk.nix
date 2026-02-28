@@ -4,7 +4,7 @@
 
 { pkgs, ... }: {
   home.packages = [
-    pkgs.adwaita-icon-theme # Fallback
+    pkgs.adwaita-icon-theme     # Fallback
   ];
 
   gtk = {
