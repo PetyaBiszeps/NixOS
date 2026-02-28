@@ -34,4 +34,20 @@
     geometry-corner-radius 12
     clip-to-geometry true
   }
+
+  // Steam
+  window-rule {
+    match app-id="steam"
+    open-floating true
+  }
+
+  window-rule {
+    match app-id="steam" title="^Steam$"
+    open-floating false
+  }
+
+  window-rule {
+    match app-id="steam" title="^Steam Overlay$"
+    open-floating false
+  }
 ''
