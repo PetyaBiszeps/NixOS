@@ -35,9 +35,19 @@
     clip-to-geometry true
   }
 
-  // Steam popups float
+  // Steam
   window-rule {
-    match app-id="steam" title="^(Friends List|Steam Settings)$"
+    match app-id="steam"
     open-floating true
+  }
+
+  window-rule {
+    match app-id="steam" title="^Steam$"
+    open-floating false
+  }
+
+  window-rule {
+    match app-id="steam" title="^Steam Overlay$"
+    open-floating false
   }
 ''
