@@ -10,6 +10,10 @@
 in {
   home.packages = [pkgs.oh-my-posh];
 
+  home.activation.clearOhMyPoshCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    rm -rf "$HOME/.cache/oh-my-posh"
+  '';
+
   programs.zsh = lib.mkIf (defaultShell == "zsh") {
     enable = true;
 
