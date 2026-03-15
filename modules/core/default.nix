@@ -23,6 +23,7 @@
     ./services.nix
     ./xwayland.nix
     ./quickshell.nix
+    ./web_support.nix
     ./var_connector.nix
     ./gaming_support.nix
     ./garbage_collector.nix

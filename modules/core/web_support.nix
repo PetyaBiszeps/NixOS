@@ -1,0 +1,13 @@
+# Web development support module
+# Provides node tooling for web workflows
+# Feel free to add, remove and modify anything here
+
+{ config, lib, pkgs, ... }:
+  let webSupportEnable = config.variables.webSupportEnable or false;
+in lib.mkIf webSupportEnable {
+  environment.systemPackages = with pkgs; [
+    nodejs_24
+    yarn
+    pnpm
+  ];
+}
