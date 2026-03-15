@@ -51,6 +51,9 @@ in {
   # Enable gaming support (controllers, gamescope, protonup-qt)
   gamingSupportEnable = true;
 
+  # Enable web development support
+  webSupportEnable = true;
+
   # Shell choice
   defaultShell = "zsh";
 
