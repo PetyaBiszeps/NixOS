@@ -14,7 +14,9 @@ in {
     enable = true;
 
     initContent = ''
-      eval "$(oh-my-posh init zsh --config "$HOME/.config/oh-my-posh/${theme}.omp.json")"
+      if command -v oh-my-posh >/dev/null 2>&1; then
+        eval "$(oh-my-posh init zsh --config "$HOME/.config/oh-my-posh/${theme}.omp.json")"
+      fi
     '';
   };
 
@@ -22,7 +24,9 @@ in {
     enable = true;
 
     interactiveShellInit = ''
-      oh-my-posh init fish --config "$HOME/.config/oh-my-posh/${theme}.omp.json" | source
+      if type -q oh-my-posh
+        oh-my-posh init fish --config "$HOME/.config/oh-my-posh/${theme}.omp.json" | source
+      end
     '';
   };
 
