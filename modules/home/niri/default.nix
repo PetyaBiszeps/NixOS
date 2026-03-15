@@ -53,7 +53,7 @@ in {
       StandardOutput = "journal";
       ExecStart = "${pkgs.xwayland-satellite}/bin/xwayland-satellite";
     };
-    
+
     Install.WantedBy = ["graphical-session.target"];
   };
 }

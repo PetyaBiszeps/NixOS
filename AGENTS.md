@@ -89,4 +89,3 @@ Each host under `hosts/` contains:
 
 ### Host Variables (`hosts/*/variables.nix`)
 Important settings to understand when working with host configurations:
-
