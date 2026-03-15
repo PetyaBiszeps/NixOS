@@ -1,4 +1,5 @@
 # Niri styling
+# Provides system style configuration file
 # Rounded corners, subtle borders, and soft shadows
 
 { ... }: ''
