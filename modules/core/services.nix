@@ -14,6 +14,7 @@
     tumbler.enable = true;
     udisks2.enable = true;
     libinput.enable = true;
+    gnome.gnome-keyring.enable = true;
 
     # Audio
     pipewire = {
@@ -33,5 +34,10 @@
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
+  };
+
+  # Security
+  security = {
+    pam.services.ly.enableGnomeKeyring = false;
   };
 }

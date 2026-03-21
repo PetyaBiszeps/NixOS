@@ -12,7 +12,7 @@
     enable = lib.mkDefault false;
 
     settings = {
-      save = true;
+      save = false;
       xinitrc = null;
       xsessions = null;
       animation = "matrix";
