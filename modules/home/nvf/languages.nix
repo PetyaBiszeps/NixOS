@@ -14,8 +14,8 @@
 
     ts = {
       enable = true;
-      lsp.enable = true;
-      lsp.servers = ["vtsls"];
+      lsp.enable = false;
+      # lsp.servers = ["vtsls"];
     };
 
     go = {
