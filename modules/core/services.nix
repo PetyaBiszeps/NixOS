@@ -35,4 +35,9 @@
       pkgs.xdg-desktop-portal-gtk
     ];
   };
+
+  # Security
+  security = {
+    pam.services.ly.enableGnomeKeyring = false;
+  };
 }
