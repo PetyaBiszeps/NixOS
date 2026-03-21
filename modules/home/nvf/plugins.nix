@@ -12,9 +12,6 @@
     };
     opencode = {
       package = opencode-nvim;
-      setup = ''
-        require("opencode").setup({})
-      '';
     };
   };
 }
