@@ -10,7 +10,7 @@ in {
   config = lib.mkIf enable {
     programs.noctalia-shell = {
       enable = true;
-      systemd.enable = true;
+      systemd.enable = false;
     };
   };
 }
