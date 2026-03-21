@@ -38,6 +38,6 @@
 
   # Security
   security = {
-    pam.services.ly.enableGnomeKeyring = false;
+    pam.services.ly.enableGnomeKeyring = true;
   };
 }
