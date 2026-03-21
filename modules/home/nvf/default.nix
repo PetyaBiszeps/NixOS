@@ -20,16 +20,6 @@
       telescope.enable = true;
       statusline.lualine.enable = true;
       autocomplete.nvim-cmp.enable = true;
-
-      # Extra
-      extraPlugins = with pkgs.vimPlugins; {
-        snacks = {
-          package = snacks-nvim;
-          setup = ''
-            require("snacks").setup({})
-          '';
-        };
-      };
     };
   };
 }
