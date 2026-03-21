@@ -44,6 +44,7 @@ in {
       Description = "Xwayland outside Wayland";
       BindsTo = "graphical-session.target";
       After = "graphical-session.target";
+      ConditionEnvironment = "WAYLAND_DISPLAY";
     };
 
     Service = {
