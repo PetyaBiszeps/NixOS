@@ -8,6 +8,7 @@
 
     ./lsp.nix
     ./theme.nix
+    ./plugins.nix
     ./languages.nix
   ];
 
