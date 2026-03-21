@@ -7,6 +7,7 @@
 in lib.mkIf webSupportEnable {
   environment.systemPackages = with pkgs; [
     nodejs_24
+    opencode
     yarn
     pnpm
   ];
