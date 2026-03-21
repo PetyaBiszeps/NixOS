@@ -29,7 +29,6 @@ in {
     ./discord.nix
     ./noctalia.nix
     ./telegram.nix
-    ./jetbrains.nix
     ./teamspeak.nix
     ./oh-my-posh.nix
   ];
