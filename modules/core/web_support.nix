@@ -5,6 +5,11 @@
 { config, lib, pkgs, ... }:
   let webSupportEnable = config.variables.webSupportEnable or false;
 in lib.mkIf webSupportEnable {
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [];
+  };
+
   environment.systemPackages = with pkgs; [
     nodejs_24
     opencode
