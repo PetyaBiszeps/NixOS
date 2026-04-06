@@ -7,7 +7,11 @@
 in lib.mkIf webSupportEnable {
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [];
+    libraries = with pkgs; [
+      nil
+      nixd
+      nixpkgs-fmt
+    ];
   };
 
   environment.systemPackages = with pkgs; [
