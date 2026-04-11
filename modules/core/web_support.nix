@@ -7,11 +7,7 @@
 in lib.mkIf webSupportEnable {
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [
-      nil
-      nixd
-      nixpkgs-fmt
-    ];
+    # libraries = with pkgs; [];
   };
 
   environment.systemPackages = with pkgs; [
@@ -19,5 +15,9 @@ in lib.mkIf webSupportEnable {
     opencode
     yarn
     pnpm
+
+    nixd
+    nil
+    nixpkgs-fmt
   ];
 }

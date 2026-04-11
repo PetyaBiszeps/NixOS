@@ -2,7 +2,7 @@
 # Provides garbage auto cleaning
 # Feel free to add, remove and modify anything here
 
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   programs.nh = {
     enable = true;
 

@@ -2,7 +2,7 @@
 # Provides boot setup
 # Feel free to add, remove and modify anything here
 
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   boot = {
     loader = {
       systemd-boot = {

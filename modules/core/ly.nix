@@ -2,7 +2,7 @@
 # Provides setup specifically for ly
 # Feel free to add, remove and modify anything here
 
-{ config, lib, pkgs, ... }: {
+{ config, lib, ... }: {
   # Ensure greetd is disabled when ly is enabled
   services.greetd.enable = lib.mkIf config.services.displayManager.ly.enable (lib.mkForce false);
 

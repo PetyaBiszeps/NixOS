@@ -2,7 +2,7 @@
 # Provides Fastfetch setup config
 # Feel free to add, remove and modify anything here
 
-{ variables, lib, ... }:
+{ variables, ... }:
 let
   userLabel =
     if (variables ? username) && (variables.username != null)

@@ -2,7 +2,7 @@
 # Provides basic network configuration
 # Feel free to add, remove and modify anything here
 
-{ hostname, pkgs, ... }: {
+{ pkgs, ... }: {
   networking = {
     # hostName = hostname;
     # timeServers = [

@@ -2,7 +2,7 @@
 # Provides system packages for every system setup
 # Feel free to add, remove and modify anything here
 
-{ inputs, pkgs, lib, ... }: {
+{ pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   programs = {
