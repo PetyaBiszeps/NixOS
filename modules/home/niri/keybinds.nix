@@ -16,6 +16,8 @@ in ''
     Mod+I hotkey-overlay-title="Open IDE: ${ide}" { spawn "${ide}"; }
     Mod+E hotkey-overlay-title="Open Files" { spawn "nautilus"; }
     Mod+Print hotkey-overlay-title="Screenshot Area" { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
+    Mod+F hotkey-overlay-title="Maximize Column" { maximize-column; }
+    Mod+Shift+F hotkey-overlay-title="Fullscreen Window" { fullscreen-window; }
     Mod+C hotkey-overlay-title="Close Window" { close-window; }
   }
 ''
