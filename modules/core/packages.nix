@@ -13,6 +13,8 @@
   environment.systemPackages = with pkgs; [
     git
     wget
+    curl
+    unzip
     # gnome-notes
     docker-compose
     loupe celluloid # Image, Video
