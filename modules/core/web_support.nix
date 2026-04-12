@@ -16,7 +16,7 @@ in lib.mkIf webSupportEnable {
     yarn
     pnpm
     
-    # nil
+    nil
     nixd
     lazygit
     nixpkgs-fmt
