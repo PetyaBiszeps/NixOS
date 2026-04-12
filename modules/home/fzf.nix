@@ -2,7 +2,7 @@
 # Provides fzf configuration
 # Feel free to add, remove and modify anything here
 
-{ lib, variables, ... }:
+{ variables, ... }:
   let defaultShell = variables.defaultShell or "zsh";
 in {
   programs.fzf = {
