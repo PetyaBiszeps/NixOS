@@ -12,7 +12,7 @@
       lsp.servers = ["nixd"];
     };
 
-    ts = {
+    typescript = {
       enable = true;
       lsp.enable = false;
       # lsp.servers = ["vtsls"];
@@ -33,7 +33,7 @@
     bash = {
       enable = true;
       lsp.enable = true;
-      lsp.servers = ["bash-ls"];
+      lsp.servers = ["bash-language-server"];
     };
   };
 }
