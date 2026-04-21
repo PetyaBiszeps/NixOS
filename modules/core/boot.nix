@@ -22,6 +22,6 @@
       "systemd.show_status=false"
       "amdgpu.ppfeaturemask=0xffffffff"
     ];
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
   };
 }
