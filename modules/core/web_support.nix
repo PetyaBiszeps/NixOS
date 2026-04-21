@@ -15,7 +15,7 @@ in lib.mkIf webSupportEnable {
     opencode
     yarn
     pnpm
-    
+
     nil
     nixd
     lazygit
