@@ -52,10 +52,9 @@
 
           modules = [
             ./hosts/${hostname}
-            ./profiles/${profile}
+            ./profiles/${profile}.nix
             ./modules/core
             ./modules/drivers
-            # ./modules/home
 
             home-manager.nixosModules.home-manager
           ];
