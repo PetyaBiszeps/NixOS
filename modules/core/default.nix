@@ -17,8 +17,6 @@
     ./fonts.nix
     ./avahi.nix
     ./network.nix
-    ./packages.nix
-    ./security.nix
     ./keyboard.nix
     ./var_connector.nix
   ];

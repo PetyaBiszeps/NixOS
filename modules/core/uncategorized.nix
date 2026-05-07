@@ -134,6 +134,11 @@ in {
     qt6.qtwayland
     qt6.qtdeclarative
     qt6.qtsvg
+
+    git
+    wget
+    curl
+    unzip
   ];
 
   # necessary environment variables
@@ -146,5 +151,25 @@ in {
   environment.sessionVariables = {
     QT_QPA_PLATFORM = "wayland;xcb";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+  };
+
+  security = {
+    rtkit.enable = true;
+
+    polkit = {
+      enable = true;
+
+      extraConfig = ''
+        polkit.addRule(function(action, subject) {
+          if ( subject.isInGroup("users") && (
+           action.id == "org.freedesktop.login1.reboot" ||
+           action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
+           action.id == "org.freedesktop.login1.power-off" ||
+           action.id == "org.freedesktop.login1.power-off-multiple-sessions"
+          ))
+          { return polkit.Result.YES; }
+        })
+      '';
+    };
   };
 }
