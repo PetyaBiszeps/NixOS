@@ -1,18 +1,23 @@
 # AMD drivers file
-# Provides drivers for AMD GPUs
-# Feel free to add, remove and modify anything here
+# Provides driver options for AMD GPUs
+# Be careful when editing this file, it controls AMD GPU drivers
 
-{ lib, pkgs, config, ... }: with lib;
+{ config, lib, pkgs, ... }:
   let cfg = config.drivers.amdgpu;
 in {
   options.drivers.amdgpu = {
-    enable = mkEnableOption "Enable AMD Drivers";
-    overdrive.enable = true;
+    enable = lib.mkEnableOption "Enable AMD Drivers";
   };
 
-  config = mkIf cfg.enable {
-    systemd.tmpfiles.rules = ["L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"];
-    services.xserver.videoDrivers = ["amdgpu"];
+  config = lib.mkIf cfg.enable {
+    hardware = {
+      amdgpu.overdrive.enable = true;
+    };
+    services.xserver.videoDrivers = [ "amdgpu" ];
+
+    systemd.tmpfiles.rules = [
+      "L+ /opt/rocm/hip - - - - ${pkgs.rocmPackages.clr}"
+    ];
 
     environment.sessionVariables = {
       RADV_DEBUG = "nodcc";
