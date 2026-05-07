@@ -22,7 +22,6 @@
     ./security.nix
     ./nautilus.nix
     ./keyboard.nix
-    ./printing.nix
     ./services.nix
     ./xwayland.nix
     ./quickshell.nix
