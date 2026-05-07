@@ -8,10 +8,11 @@
     package = pkgs.niri;
   };
 
-  services = {
-    displayManager = {
-      defaultSession = "niri";
-      sessionPackages = [ pkgs.niri ];
-    };
+  services.displayManager = {
+    defaultSession = "niri";
+    
+    sessionPackages = with pkgs; [
+      niri
+    ];
   };
 }

@@ -40,7 +40,7 @@ in {
 
 
   # Enable NFS
-  enableNFS = true;
+  enableNFS = false;
 
   # Enable printing support
   printEnable = true;

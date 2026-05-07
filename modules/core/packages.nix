@@ -3,8 +3,6 @@
 # Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
-  nixpkgs.config.allowUnfree = true;
-
   programs = {
     dconf.enable = true;
     firefox.enable = true;

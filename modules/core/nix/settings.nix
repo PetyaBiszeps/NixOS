@@ -3,6 +3,8 @@
 # Be careful when modifying this file, as it may affect your Nix settings
 
 { ... }: {
+  nixpkgs.config.allowUnfree = true;
+  
   nix.settings = {
     auto-optimise-store = true;
     experimental-features = [ "nix-command" "flakes" ];
