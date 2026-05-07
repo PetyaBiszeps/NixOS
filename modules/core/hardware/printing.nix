@@ -1,6 +1,6 @@
-# Nix Printing module
-# Provides printing support
-# Feel free to add, remove and modify anything here
+# Hardware Printing module
+# Provides hardware printing support
+# Be careful modifying this module, as it may break printing functionality
 
 { config, ... }:
   let printEnable = config.variables.printEnable or false;

@@ -5,6 +5,7 @@
 { ... }: {
   imports = [
     ./nix
+    ./hardware
     
     ./ly.nix
     ./nfs.nix
@@ -17,7 +18,6 @@
     ./steam.nix
     ./avahi.nix
     ./network.nix
-    ./hardware.nix
     ./packages.nix
     ./security.nix
     ./nautilus.nix
