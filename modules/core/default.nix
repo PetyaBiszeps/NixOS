@@ -20,7 +20,6 @@
     ./network.nix
     ./packages.nix
     ./security.nix
-    ./nautilus.nix
     ./keyboard.nix
     ./services.nix
     ./xwayland.nix

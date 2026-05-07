@@ -25,6 +25,7 @@
     ./ghostty.nix
     ./spotify.nix
     ./discord.nix
+    ./nautilus.nix
     ./noctalia.nix
     ./telegram.nix
     ./teamspeak.nix
