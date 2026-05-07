@@ -12,15 +12,20 @@
       timeout = 0;
       efi.canTouchEfiVariables = true;
     };
+    plymouth.enable = true;
     initrd.verbose = false;
     consoleLogLevel = 0;
 
     kernelParams = [
       "quiet"
+      "splash"
+      
       "loglevel=3"
+      "udev.log_level=3"
       "rd.udev.log_level=3"
-      "systemd.show_status=false"
-      "amdgpu.ppfeaturemask=0xffffffff"
+      
+      # "systemd.show_status=auto"
+      # "rd.systemd.show_status=auto"
     ];
     kernelPackages = pkgs.linuxPackages;
   };

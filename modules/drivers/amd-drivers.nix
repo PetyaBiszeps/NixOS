@@ -13,6 +13,10 @@ in {
     hardware = {
       amdgpu.overdrive.enable = true;
     };
+
+    boot.kernelParams = [
+      "amdgpu.ppfeaturemask=0xffffffff"
+    ];
     services.xserver.videoDrivers = [ "amdgpu" ];
 
     systemd.tmpfiles.rules = [
