@@ -3,5 +3,8 @@
 # Feel free to add, remove and modify anything here
 
 { config, ... }: {
-  time.timeZone = config.variables.timeZone or "UTC";
+  time = {
+    timeZone = config.variables.timeZone or "UTC";
+    hardwareClockInLocalTime = false;
+  };
 }

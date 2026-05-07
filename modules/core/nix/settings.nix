@@ -4,7 +4,6 @@
 
 { ... }: {
   nix.settings = {
-    auto-rollback = true;
     auto-optimise-store = true;
     experimental-features = [ "nix-command" "flakes" ];
   };

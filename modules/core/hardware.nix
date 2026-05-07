@@ -4,13 +4,15 @@
 
 { pkgs, ... }: {
   hardware = {
-    amdgpu.opencl.enable = true;
-
     graphics = {
       enable = true;
       enable32Bit = true;
+      
       extraPackages = with pkgs; [
-        libva libvdpau-va-gl libva-vdpau-driver libva-utils
+        libva
+        libvdpau-va-gl
+        libva-vdpau-driver
+        libva-utils
       ];
     };
     bluetooth.enable = true;
@@ -20,8 +22,7 @@
     sane = {
       enable = true;
       extraBackends = [ pkgs.sane-airscan ];
-      disabledDefaultBackends = ["escl"];
+      disabledDefaultBackends = [ "escl" ];
     };
   };
-  time.hardwareClockInLocalTime = false;
 }

@@ -11,6 +11,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     hardware = {
+      amdgpu.opencl.enable = true;
       amdgpu.overdrive.enable = true;
     };
 
