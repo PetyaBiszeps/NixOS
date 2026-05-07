@@ -1,6 +1,6 @@
 # Boot module
 # Provides boot setup
-# Feel free to add, remove and modify anything here
+# Be careful when modifying anything here, as it may break your system startup
 
 { pkgs, ... }: {
   boot = {
