@@ -5,6 +5,7 @@
 { ... }: {
   imports = [
     ./nix
+    ./gaming
     ./hardware
     
     ./ly.nix
@@ -14,13 +15,11 @@
     ./lact.nix
     ./time.nix
     ./fonts.nix
-    ./steam.nix
     ./avahi.nix
     ./network.nix
     ./packages.nix
     ./security.nix
     ./keyboard.nix
     ./var_connector.nix
-    ./gaming_support.nix
   ];
 }

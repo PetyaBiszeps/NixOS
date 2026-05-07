@@ -1,6 +1,6 @@
 # Gaming modules collection module
 # Provides a collection of gaming-related modules
-# Be careful when adding or removing modules, as it may affect the system's gaming
+# Feel free to add, remove and modify anything here
 
 { ... }: {
   imports = [
