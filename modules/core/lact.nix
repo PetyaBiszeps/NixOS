@@ -1,5 +1,5 @@
 # LACT module
-# Provides LACT configuration
+# Provides GPU monitoring and control service
 # Feel free to add, remove and modify anything here
 
 { ... }: {

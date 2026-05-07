@@ -20,7 +20,6 @@
     ./packages.nix
     ./security.nix
     ./keyboard.nix
-    ./quickshell.nix
     ./var_connector.nix
     ./gaming_support.nix
   ];
