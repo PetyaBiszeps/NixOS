@@ -5,6 +5,7 @@
 { ... }: {
   imports = [
     ./ly.nix
+    ./niri.nix
     ./nfs.nix
     ./boot.nix
     ./user.nix

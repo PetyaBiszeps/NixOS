@@ -9,7 +9,7 @@
   # Enable ly with the matrix animation
   # Animations: "doom", "colormix", "matrix"
   services.displayManager.ly = {
-    enable = lib.mkDefault false;
+    enable = true;
 
     settings = {
       save = false;

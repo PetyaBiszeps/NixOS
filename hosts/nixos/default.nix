@@ -1,8 +1,8 @@
 # Nix default host configuration file
 # Detects user hardware configuration to make proper build
-# Enables display manager, sync GUI (Niri) session to be available to display manager
+# Feel free to add, remove and modify anything here
 
-{ pkgs, lib, ... }: {
+{ lib, ... }: {
   imports = [
     ./host-packages.nix
   ]
@@ -10,22 +10,6 @@
   ++ lib.optional (builtins.pathExists ./disks.nix) ./disks.nix
     # Users hardware
   ++ lib.optional (builtins.pathExists ./hardware.nix) ./hardware.nix;
-
-  # Display manager
-  services.displayManager.ly.enable = true;
-
-  # Enable niri session for display manager
-  programs.niri = {
-    enable = true;
-    package = pkgs.niri;
-  };
-
-  # Ensure niri session is available to display manager
-  services.displayManager.defaultSession = "niri";
-  services.displayManager.sessionPackages = [ pkgs.niri ];
-
-  # Allow NixOS flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # NixOS current version (Don't remove that unless you know what you do)
   system.stateVersion = "26.05";

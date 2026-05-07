@@ -1,6 +1,6 @@
 # Default host variables
-# Vocabulary for important constants
-# Do not edit manually. This file is overwritten per-machine, changes can lead to unexpected results
+# Host-specific variables and feature toggles
+# Private per-machine values should be placed in variables.local.nix.
 
 let
   # Check local file
