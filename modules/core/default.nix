@@ -11,7 +11,6 @@
     ./nfs.nix
     ./niri.nix
     ./boot.nix
-    ./user.nix
     ./lact.nix
     ./time.nix
     ./fonts.nix
@@ -21,8 +20,6 @@
     ./packages.nix
     ./security.nix
     ./keyboard.nix
-    ./services.nix
-    ./xwayland.nix
     ./quickshell.nix
     ./var_connector.nix
     ./gaming_support.nix
