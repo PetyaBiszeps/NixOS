@@ -15,7 +15,7 @@
     ./fonts.nix
     ./avahi.nix
     ./network.nix
-    ./keyboard.nix
+    ./localization.nix
     ./var_connector.nix
   ];
 }
