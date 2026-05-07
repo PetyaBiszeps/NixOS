@@ -8,9 +8,7 @@
     ./gaming
     ./hardware
     
-    ./ly.nix
     ./nfs.nix
-    ./niri.nix
     ./boot.nix
     ./lact.nix
     ./time.nix
