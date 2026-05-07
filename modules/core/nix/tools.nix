@@ -5,6 +5,9 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     nvd
+    nil
+    nixd
+    nixpkgs-fmt
     nix-output-monitor
   ];
 }

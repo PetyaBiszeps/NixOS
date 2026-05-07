@@ -4,6 +4,7 @@
 
 { ... }: {
   imports = [
+    ./ld.nix
     ./gc.nix
     ./tools.nix
     ./settings.nix

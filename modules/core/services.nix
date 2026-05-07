@@ -3,6 +3,10 @@
 # Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
+  programs = {
+    dconf.enable = true;
+  };
+  
   # Services to start
   services = {
     gvfs.enable = true;

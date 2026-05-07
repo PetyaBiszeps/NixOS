@@ -18,6 +18,7 @@
     ./xdg.nix
     ./zed.nix
     ./gtk.nix
+    ./dev.nix
     ./tmux.nix
     ./brave.nix
     ./polkit.nix

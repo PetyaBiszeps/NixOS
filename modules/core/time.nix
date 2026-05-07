@@ -1,6 +1,6 @@
 # Time module
-# Provides timezone configuration
-# Feel free to add, remove and modify anything here
+# Provides timezone and hardware clock configuration
+# Feel free to add, remove and modify anything here, but can break time synchronization
 
 { config, ... }: {
   time = {
