@@ -2,7 +2,7 @@
 # Provides nautilus as main file manager in this repo
 # Feel free to add, remove and modify anything here
 
-{ config, pkgs, lib, ... }:
+{ config, lib, pkgs, ... }:
   let nautilusEnable = config.variables.nautilusEnable or false;
 in lib.mkIf nautilusEnable {
   environment.systemPackages = [

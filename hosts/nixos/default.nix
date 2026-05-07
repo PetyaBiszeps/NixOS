@@ -8,6 +8,7 @@
   ]
     # Users disks
   ++ lib.optional (builtins.pathExists ./disks.nix) ./disks.nix
+  
     # Users hardware
   ++ lib.optional (builtins.pathExists ./hardware.nix) ./hardware.nix;
 
