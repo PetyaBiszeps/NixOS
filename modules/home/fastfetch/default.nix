@@ -99,7 +99,7 @@ in {
         }
         {
           type = "gpu";
-          format = "{1} {2} @ {12} GHz";
+          format = "AMD Radeon RX 9070 XD";
           key = " ├ 󰢮 ";
           keyColor = "33";
         }

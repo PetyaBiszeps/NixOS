@@ -1,91 +1,90 @@
 # AGENTS.md
 
-This file provides guidance to OpenAI Codex when working with code in this repository.
+This file provides top-level guidance for OpenAI Codex when working in this repository.
 
-## Repository Overview
+## Project Context
 
-This repository is a NixOS configuration, designed for a simplified installation process with sensible defaults.
+This is a NixOS flake configuration. The active branch is `Niri`.
 
-## Common Development Commands
+Primary goals:
+- Keep changes small and focused.
+- Preserve the existing repository structure.
+- Keep the configuration beginner-friendly.
+- Prefer existing patterns over new abstractions.
+- Do not add unrelated packages, services, or refactors.
 
-### Building and Deployment
+## Read These Docs When Relevant
+
+Do not read every file in `docs/` by default. Read only the docs relevant to the task.
+
+- `docs/architecture.md` — repository structure and configuration flow.
+- `docs/codex-workflow.md` — how Codex should inspect, edit, test, and summarize changes.
+- `docs/nixos-style.md` — Nix/NixOS style guidelines.
+- `docs/hosts.md` — host-specific configuration rules.
+- `docs/niri.md` — Niri desktop/session configuration.
+- `docs/troubleshooting.md` — common build/debug commands.
+
+## Hard Rules
+
+Do not:
+- Modify `flake.lock` unless explicitly requested.
+- Edit `hosts/*/hardware.nix` unless the task is hardware-specific.
+- Run `nixos-rebuild`, `nixos-rebuild-all`, `nix flake update`, garbage collection, or other system-changing commands unless explicitly requested.
+- Perform broad refactors unless explicitly requested.
+- Rename or move directories unless explicitly requested.
+- Add unnecessary dependencies.
+- Change unrelated files.
+- Commit changes unless explicitly requested.
+
+Do:
+- Inspect relevant files before editing.
+- Follow existing patterns.
+- Prefer small, reviewable changes.
+- Suggest an appropriate build/test command, but do not run it unless explicitly requested.
+- Explain what changed and why.
+
+## User Commands Reference
+
+These commands are documented for the user. Codex should not run them unless explicitly requested.
+
+Use `--no-write-lock-file` by default for rebuild commands to avoid accidental `flake.lock` changes.
+
 ```bash
-# Build and switch configuration
-sudo nixos-rebuild switch --flake .#HOSTNAME
+# Default full rebuild workflow used by the user
+nixos-rebuild-all
 
-# Build without switching (testing)
-sudo nixos-rebuild build --flake .#HOSTNAME
+# Default cleanup workflow used by the user
+nixos-delete-old
+
+# Build and activate after reboot
+sudo nixos-rebuild boot --flake "path:.#nixos" --no-write-lock-file
+
+# Build and switch immediately
+sudo nixos-rebuild switch --flake "path:.#nixos" --no-write-lock-file
+
+# Build without switching
+sudo nixos-rebuild build --flake "path:.#nixos" --no-write-lock-file
 
 # Show detailed error trace
-sudo nixos-rebuild build --flake .#HOSTNAME --show-trace
+sudo nixos-rebuild build --flake "path:.#nixos" --show-trace --no-write-lock-file
 
-# Update flake inputs (if you need to update packages to latest versions)
+# Update flake inputs only when explicitly requested
 nix flake update
-
-# Clean up old generations (to free up disk space)
-sudo nix-collect-garbage -d
 ```
 
-### Git Workflow
+## Expected Task Summary
+
+After making changes, Codex should summarize:
+
+- Which files changed.
+- What changed.
+- Why the change was made.
+- Which command the user can run to test it.
+
+For most configuration changes, suggest:
+
 ```bash
-# Check current branch
-git branch
-
-# Commit changes
-git add .
-git commit -m 'description'
-
-# Push to repository
-git push origin BRANCH-NAME
+nixos-rebuild-all
 ```
 
-## Do's and Don'ts
-- Don't add unnecessary dependencies
-- Don't modify core system files without understanding their purpose
-- Don't add code that doesn't serve a purpose for the current task
-- Don't add anything extra without asking first
-- Do test changes before committing
-- Do keep the configuration user-friendly for me (as a newbie)
-
-## Repository Information
-**GitHub Repository**: https://github.com/PetyaBiszeps/NixOS
-
-### Branch Strategy
-- **niri-default**: Our branch we're working in
-
-## Architecture Overview
-
-### Key Design Principles
-- **Simple Installation**: minimal questions, sensible defaults
-- **Gaming Optimized**: Pre-configured for performance (Steam, GameMode, etc.)
-- **Development Ready**: Optimized for JS/TS and web workflows
-- **Default GUI**: it made to work with Niri as default GUI
-- **Modular Features**: Decoupled modules for easy toggling
-- **Newcomer Friendly**: Great defaults that work out of the box
-
-### Key Directories
-- `hosts/`: Host-specific configurations (hardware.nix, variables.nix, etc.)
-- `modules/core`: Core system configuration modules
-- `modules/drivers/`: Hardware driver configurations (NVIDIA, AMD, INTEL)
-- `modules/home/`: Home-manager user environment configs
-- `modules/home/niri/`: Niri configuration
-- `profiles/`: Hardware-specific profiles that import appropriate modules
-- `wallpapers/`: System wallpapers for theming
-
-### Configuration Flow
-1. `flake.nix` defines hosts and their profiles
-2. Profiles import appropriate driver and core modules
-3. Host directories contain hardware-specific settings
-4. `variables.nix` in each host defines customization options
-
-### Host Configuration Structure
-Each host under `hosts/` contains:
-- `default.nix`: Imports hardware.nix and host-packages.nix
-- `hardware.nix`: Generated by nixos-generate-config, hardware-specific settings
-- `variables.nix`: Host-specific variables (monitors, GPY IDs, preferences, feature toggles)
-- `host-packages.nix`: Host-specific package installations
-
-## Key Configuration Files
-
-### Host Variables (`hosts/*/variables.nix`)
-Important settings to understand when working with host configurations:
+Do not run the command unless the user explicitly asks for it.
