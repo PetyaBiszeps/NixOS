@@ -1,12 +1,14 @@
 # Core global import file
 # Provides import for all /core modules
-# Feel free to add, remove and modify anything here
+# Be careful when modifying this file, as it may affect your system
 
 { ... }: {
   imports = [
+    ./nix
+    
     ./ly.nix
-    ./niri.nix
     ./nfs.nix
+    ./niri.nix
     ./boot.nix
     ./user.nix
     ./lact.nix
@@ -27,6 +29,5 @@
     ./web_support.nix
     ./var_connector.nix
     ./gaming_support.nix
-    ./garbage_collector.nix
   ];
 }

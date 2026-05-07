@@ -1,6 +1,6 @@
 # Gaming support module
-# Provides various tools and settings to upgrade gaming experience
-# Feel free to add, remove and modify anything here
+# Enables GameMode, controller support, and gaming helper tools
+# Be careful when modifying anything here, as it may break your gaming setup
 
 { config, lib, pkgs, ... }:
   let gamingSupportEnable = config.variables.gamingSupportEnable or false;

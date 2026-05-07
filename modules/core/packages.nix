@@ -3,8 +3,6 @@
 # Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
   nixpkgs.config.allowUnfree = true;
 
   programs = {
