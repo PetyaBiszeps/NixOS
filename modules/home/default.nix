@@ -26,5 +26,6 @@
     ./zoxide.nix
     ./ghostty.nix
     ./nautilus.nix
+    ./autostart.nix
   ];
 }
