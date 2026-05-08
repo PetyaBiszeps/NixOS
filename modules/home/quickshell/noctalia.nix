@@ -4,11 +4,13 @@
 
 { lib, inputs, variables, ... }:
   let desktopShell = variables.desktopShell or "none";
-in lib.mkIf (desktopShell == "noctalia") {
+in {
   imports = [ inputs.noctalia.homeModules.default ];
 
-  programs.noctalia-shell = {
-    enable = true;
-    systemd.enable = false;
+  config = lib.mkIf (desktopShell == "noctalia") {
+    programs.noctalia-shell = {
+      enable = true;
+      systemd.enable = false;
+    };
   };
 }

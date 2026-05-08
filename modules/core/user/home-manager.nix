@@ -13,8 +13,8 @@
     hasUser = username != "" && username != null;
 in lib.mkIf hasUser {
   home-manager = {
+    useGlobalPkgs = true;
     useUserPackages = true;
-    useGlobalPkgs = false;
     backupFileExtension = "backup";
 
     extraSpecialArgs = {

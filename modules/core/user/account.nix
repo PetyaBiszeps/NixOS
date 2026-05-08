@@ -15,34 +15,38 @@
     hasUser = username != "" && username != null;
     hasPassword = hashedPassword != "" && hashedPassword != null;
 in {
-  assertions = [
+  config = lib.mkMerge [
     {
-      assertion = (!enableNewUser) || (hasUser && hasPassword);
-      message = "enableNewUser is true, but username or hashedPassword is not set";
-    }
-  ];
-
-  config = lib.mkIf hasUser {
-    users.mutableUsers = true;
-
-    users.users.${username} = {
-      isNormalUser = true;
-      description = gitUsername;
-
-      extraGroups = [
-        "adbusers"
-        "docker"
-        "libvirtd"
-        "lp"
-        "networkmanager"
-        "scanner"
-        "wheel"
-        "vboxusers"
+      assertions = [
+        {
+          assertion = (!enableNewUser) || (hasUser && hasPassword);
+          message = "enableNewUser is true, but username or hashedPassword is not set";
+        }
       ];
+    }
 
-      ignoreShellProgramCheck = true;
-    } // lib.optionalAttrs enableNewUser {
-      initialHashedPassword = hashedPassword;
-    };
-  };
+    (lib.mkIf hasUser {
+      users.mutableUsers = true;
+
+      users.users.${username} = {
+        isNormalUser = true;
+        description = gitUsername;
+
+        extraGroups = [
+          "adbusers"
+          "docker"
+          "libvirtd"
+          "lp"
+          "networkmanager"
+          "scanner"
+          "wheel"
+          "vboxusers"
+        ];
+
+        ignoreShellProgramCheck = true;
+      } // lib.optionalAttrs enableNewUser {
+        initialHashedPassword = hashedPassword;
+      };
+    })
+  ];
 }

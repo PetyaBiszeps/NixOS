@@ -2,10 +2,10 @@
 # Provides node tooling for web workflows
 # Feel free to add, remove and modify anything here
 
-{ config, lib, pkgs, ... }:
-  let webSupportEnable = config.variables.webSupportEnable or false;
+{ lib, pkgs, variables, ... }:
+  let webSupportEnable = variables.webSupportEnable or false;
 in lib.mkIf webSupportEnable {
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     nodejs_24
     opencode
     yarn
