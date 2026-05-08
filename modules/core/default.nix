@@ -8,6 +8,7 @@
     ./gaming
     ./display
     ./hardware
+    ./security
     
     ./nfs.nix
     ./boot.nix
