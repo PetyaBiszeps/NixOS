@@ -5,6 +5,7 @@
 { ... }: {
   imports = [
     ./nix
+    ./user
     ./gaming
     ./display
     ./desktop
