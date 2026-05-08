@@ -12,8 +12,8 @@
     hasUser = username != "" && username != null;
     shellPackage = if defaultShell == "fish" then pkgs.fish else pkgs.zsh;
 in lib.mkIf hasUser {
-  programs.zsh.enable = true;
-  programs.fish.enable = true;
+  programs.zsh.enable = defaultShell == "zsh";
+  programs.fish.enable = defaultShell == "fish";
 
   users.users.${username}.shell = shellPackage;
 }

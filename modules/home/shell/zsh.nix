@@ -2,12 +2,9 @@
 # Provides zsh configuration
 # Feel free to add, remove and modify anything here
 
-{ ... }: {
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-  };
-
+{ lib, variables, ... }:
+  let defaultShell = variables.defaultShell or "zsh";
+in lib.mkIf (defaultShell == "zsh") {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;

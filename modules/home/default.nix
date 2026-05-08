@@ -7,12 +7,12 @@
     ./nvf
     ./niri
     ./yazi
+    ./shell
     ./fastfetch
     ./quickshell
 
     ./fd.nix
     ./rg.nix
-    ./zsh.nix
     ./fzf.nix
     ./eza.nix
     ./bat.nix
@@ -26,6 +26,5 @@
     ./zoxide.nix
     ./ghostty.nix
     ./nautilus.nix
-    ./oh-my-posh.nix
   ];
 }
