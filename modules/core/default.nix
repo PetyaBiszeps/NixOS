@@ -14,6 +14,7 @@
     ./lact.nix
     ./time.nix
     ./fonts.nix
+    ./tools.nix
     ./avahi.nix
     ./network.nix
     ./localization.nix

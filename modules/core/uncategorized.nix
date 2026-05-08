@@ -124,13 +124,6 @@ in {
     ];
   };
 
-  environment.systemPackages = with pkgs; [
-    git
-    wget
-    curl
-    unzip
-  ];
-
   security = {
     rtkit.enable = true;
 
