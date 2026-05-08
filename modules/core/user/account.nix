@@ -10,7 +10,10 @@
 
     username = vars.username or "";
     hashedPassword = vars.hashedPassword or "";
-    gitUsername = vars.gitUsername or username;
+    gitUsername =
+      if (vars.gitUsername or null) != null && (vars.gitUsername or "") != ""
+      then vars.gitUsername
+      else username;
 
     hasUser = username != "" && username != null;
     hasPassword = hashedPassword != "" && hashedPassword != null;

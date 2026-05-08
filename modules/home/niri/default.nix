@@ -7,6 +7,7 @@
     ide = variables.IDE or "zed";
     browser = variables.browser or "firefox";
     terminal = variables.terminal or "ghostty";
+    fileManager = variables.fileManager or "nautilus";
     desktopShell = variables.desktopShell or "";
     noctaliaStartup = lib.optionalString (desktopShell == "noctalia") ''
       spawn-at-startup "noctalia-shell"
@@ -14,7 +15,7 @@
 
     # Import keybinds
     keybindsModule = import ./keybinds.nix {
-      inherit terminal browser ide desktopShell;
+      inherit terminal browser ide fileManager desktopShell;
     };
 
     # Import styles

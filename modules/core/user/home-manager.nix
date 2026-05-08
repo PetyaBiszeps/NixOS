@@ -7,8 +7,14 @@
     vars = config.variables;
 
     username = vars.username or "";
-    gitUsername = vars.gitUsername or username;
-    gitEmail = vars.gitEmail or "";
+    gitUsername =
+      if (vars.gitUsername or null) != null && (vars.gitUsername or "") != ""
+      then vars.gitUsername
+      else username;
+    gitEmail =
+      if (vars.gitEmail or null) != null
+      then vars.gitEmail
+      else "";
 
     hasUser = username != "" && username != null;
 in lib.mkIf hasUser {
