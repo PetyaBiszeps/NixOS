@@ -13,6 +13,7 @@
     ./boot.nix
     ./lact.nix
     ./time.nix
+    ./audio.nix
     ./fonts.nix
     ./tools.nix
     ./avahi.nix

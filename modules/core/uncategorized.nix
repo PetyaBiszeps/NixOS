@@ -103,15 +103,6 @@ in {
     udisks2.enable = true;
     libinput.enable = true;
     gnome.gnome-keyring.enable = true;
-
-    # Audio
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-    };
   };
 
   # XDG portal
@@ -125,8 +116,6 @@ in {
   };
 
   security = {
-    rtkit.enable = true;
-
     polkit = {
       enable = true;
 
