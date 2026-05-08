@@ -6,6 +6,7 @@
   imports = [
     ./nix
     ./gaming
+    ./display
     ./hardware
     
     ./nfs.nix

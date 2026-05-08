@@ -8,6 +8,7 @@
     ./niri
     ./yazi
     ./fastfetch
+    ./quickshell
 
     ./fd.nix
     ./rg.nix
@@ -27,7 +28,6 @@
     ./spotify.nix
     ./discord.nix
     ./nautilus.nix
-    ./noctalia.nix
     ./telegram.nix
     ./teamspeak.nix
     ./oh-my-posh.nix

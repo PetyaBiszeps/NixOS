@@ -60,9 +60,9 @@ in {
   # Desktop session environment choice
   defaultSession = "niri";
 
-  # Shell choice
-  defaultShell = "zsh";
-
   # Quickshell Choice
   desktopShell = "noctalia";
+  
+  # Shell choice
+  defaultShell = "zsh";
 }
