@@ -54,6 +54,12 @@ in {
   # Enable web development support
   webSupportEnable = true;
 
+  # Display manager choice
+  displayManager = "ly";
+
+  # Desktop session environment choice
+  defaultSession = "niri";
+
   # Shell choice
   defaultShell = "zsh";
 
