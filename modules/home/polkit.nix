@@ -1,6 +1,6 @@
 # Polkit agent configuration
-# Provides user session polkit agent
-# Feel free to add, remove and modify anything here
+# Provides user session Polkit authentication agent
+# Feel free to modify it, but be careful, since it can break some modal windows
 
 { ... }: {
   services.polkit-gnome = {

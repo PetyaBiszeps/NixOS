@@ -6,20 +6,24 @@
   programs.ghostty = {
     enable = true;
     package = pkgs.ghostty;
-  };
 
-  xdg.configFile."ghostty/config" = {
-    force = true;
-    text = ''
-      font-family = "Fira Code"
-      font-size = 14
+    settings = {
+      theme = "dark:Catppuccin Mocha,light:Catppuccin Latte";
 
-      theme = dark:Catppuccin Mocha,light:Catppuccin Latte
-      background-opacity = 0.95
-      window-save-state = always
-      gtk-single-instance = true
-      background-blur-radius = 60
-      mouse-hide-while-typing = true
-    '';
+      font-family = "Fira Code";
+      font-size = 14;
+
+      background-opacity = 0.95;
+      background-blur-radius = 60;
+      mouse-hide-while-typing = true;
+
+      keybind = [
+        "ctrl+shift+c=copy_to_clipboard"
+        "ctrl+shift+v=paste_from_clipboard"
+      ];
+      window-save-state = "always";
+      gtk-single-instance = true;
+      confirm-close-surface = false;
+    };
   };
 }

@@ -3,8 +3,8 @@
 # Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
-  home.packages = [
-    pkgs.zed-editor
+  home.packages = with pkgs; [
+    zed-editor
   ];
 
   xdg.configFile."zed/settings.json".text = builtins.toJSON {

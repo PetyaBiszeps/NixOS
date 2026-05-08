@@ -37,6 +37,7 @@ in {
   IDE = "zeditor";
   browser = "brave";
   terminal = "ghostty";
+  fileManager = "nautilus";
 
 
   # Enable NFS

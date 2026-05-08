@@ -20,16 +20,12 @@
     ./zed.nix
     ./gtk.nix
     ./dev.nix
+    ./apps.nix
     ./tmux.nix
-    ./brave.nix
     ./polkit.nix
     ./zoxide.nix
     ./ghostty.nix
-    ./spotify.nix
-    ./discord.nix
     ./nautilus.nix
-    ./telegram.nix
-    ./teamspeak.nix
     ./oh-my-posh.nix
   ];
 }

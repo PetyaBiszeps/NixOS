@@ -38,7 +38,7 @@ in {
     ${styleModule}
   '';
 
-  # Xwayland support
+  # Xwayland Satellite support for Niri
   systemd.user.services.xwayland-satellite = {
     Unit = {
       Description = "Xwayland outside Wayland";
