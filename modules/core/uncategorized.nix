@@ -85,32 +85,4 @@ in {
 
       nix.settings.allowed-users = [ username ];
   })];
-
-  programs = {
-    dconf.enable = true;
-  };
-
-  # Services to start
-  services = {
-    gvfs.enable = true;
-    dbus.enable = true;
-    upower.enable = true;
-    fstrim.enable = true;
-    openssh.enable = true;
-    blueman.enable = true;
-    tumbler.enable = true;
-    udisks2.enable = true;
-    libinput.enable = true;
-    gnome.gnome-keyring.enable = true;
-  };
-
-  # XDG portal
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
 }

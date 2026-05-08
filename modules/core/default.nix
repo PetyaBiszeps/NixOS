@@ -7,9 +7,10 @@
     ./nix
     ./gaming
     ./display
+    ./desktop
     ./hardware
     ./security
-    
+
     ./nfs.nix
     ./boot.nix
     ./lact.nix
