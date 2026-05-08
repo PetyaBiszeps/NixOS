@@ -6,5 +6,7 @@
   imports = [
     ./managers
     ./sessions
+
+    ./xwayland.nix
   ];
 }
