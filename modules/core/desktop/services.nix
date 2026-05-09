@@ -14,6 +14,7 @@
     tumbler.enable = true;
     udisks2.enable = true;
     libinput.enable = true;
+    # blueman.enable = true; -> Bluetooth GUI
     gnome.gnome-keyring.enable = true;
   };
 }

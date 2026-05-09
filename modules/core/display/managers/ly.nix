@@ -21,11 +21,6 @@ in lib.mkIf (displayManager == "ly") {
       # min_refresh_delta = 5;
     };
   };
-  
-  security = {
-    # Enable GNOME keyring for Ly
-    pam.services.ly.enableGnomeKeyring = true;
-  };
 
   # Temporary files
   systemd.tmpfiles.rules = [
