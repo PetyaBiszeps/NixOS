@@ -11,7 +11,6 @@
     gvfs.enable = true;
     dbus.enable = true;
     upower.enable = true;
-    blueman.enable = true;
     tumbler.enable = true;
     udisks2.enable = true;
     libinput.enable = true;
