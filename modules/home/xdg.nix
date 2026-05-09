@@ -3,7 +3,9 @@
 # Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
-  home.packages = [pkgs.xdg-user-dirs];
+  home.packages = with pkgs; [
+    xdg-user-dirs
+  ];
 
   xdg = {
     enable = true;
