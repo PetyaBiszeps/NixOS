@@ -29,7 +29,7 @@ in lib.mkIf webSupportEnable {
     go
     gopls
     delve
-    gotools
+    # gotools -> confict with gopls
     golangci-lint
   ];
 }
