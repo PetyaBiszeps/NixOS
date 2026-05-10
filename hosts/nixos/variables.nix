@@ -52,8 +52,8 @@ in {
   # Enable gaming support (controllers, gamescope, protonup-qt)
   gamingSupportEnable = true;
 
-  # Enable web development support
-  webSupportEnable = true;
+  # Enable development support
+  devSupportEnable = true;
 
   # Display manager choice
   displayManager = "ly";

@@ -3,8 +3,8 @@
 # Feel free to add, remove and modify anything here
 
 { lib, pkgs, variables, ... }:
-  let webSupportEnable = variables.webSupportEnable or false;
-in lib.mkIf webSupportEnable {
+  let devSupportEnable = variables.devSupportEnable or false;
+in lib.mkIf devSupportEnable {
   home.packages = with pkgs; [
     # Search / navigation
     fd
@@ -44,5 +44,8 @@ in lib.mkIf webSupportEnable {
     delve
     # gotools -> confict with gopls
     golangci-lint
+
+    # Virtualization
+    docker-compose
   ];
 }

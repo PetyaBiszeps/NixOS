@@ -5,10 +5,16 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     brave
+    slack
+    loupe
     discord
     spotify
     spotatui
+    celluloid
+    thunderbird
+    # gnome-notes
     telegram-desktop
+    gnome-calculator
     teamspeak6-client
   ];
 }

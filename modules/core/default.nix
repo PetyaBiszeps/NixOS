@@ -20,6 +20,7 @@
     ./fonts.nix
     ./tools.nix
     ./avahi.nix
+    ./docker.nix
     ./network.nix
     ./localization.nix
     ./var_connector.nix
