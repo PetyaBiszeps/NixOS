@@ -3,7 +3,7 @@
 # Be careful when modifying this module, as it may break your desktop functionality
 
 { pkgs, ... }: {
-  environment.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     nautilus
     ffmpegthumbnailer
   ];
