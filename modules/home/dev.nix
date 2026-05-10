@@ -20,7 +20,7 @@ in lib.mkIf webSupportEnable {
     nodejs_24
 
     # Python
-    python3Full
+    python3
     uv
     ruff
     pyright
