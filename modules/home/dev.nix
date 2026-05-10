@@ -6,8 +6,15 @@
   let webSupportEnable = variables.webSupportEnable or false;
 in lib.mkIf webSupportEnable {
   home.packages = with pkgs; [
+    # Search / navigation
+    fd
+    tree
+    ripgrep
+    
     # Git-related
+    gh
     lazygit
+    pre-commit
 
     # AI-related
     opencode
@@ -16,8 +23,14 @@ in lib.mkIf webSupportEnable {
     pnpm
     yarn
 
+    # Data / config processing
+    jq
+    yq-go
+
     # JS / TS
-    nodejs_24
+    nodejs
+    typescript
+    typescript-language-server
 
     # Python
     python3
