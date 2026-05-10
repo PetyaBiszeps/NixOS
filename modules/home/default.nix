@@ -13,6 +13,7 @@
 
     ./fd.nix
     ./rg.nix
+    ./git.nix
     ./fzf.nix
     ./eza.nix
     ./bat.nix
