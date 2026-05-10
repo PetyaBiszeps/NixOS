@@ -4,6 +4,7 @@
 
 { ... }: {
   imports = [
+    ./apps.nix
     ./portal.nix
     ./services.nix
   ];

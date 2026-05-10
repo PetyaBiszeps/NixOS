@@ -33,27 +33,17 @@ in {
     gitUsername
     gitEmail;
 
-  # Software
-  IDE = "zeditor";
-  browser = "brave";
-  terminal = "ghostty";
-  fileManager = "nautilus";
-
-
   # Enable NFS
   enableNFS = false;
 
   # Enable printing support
   printEnable = true;
 
-  # Enable Nautilus GUI file manager
-  nautilusEnable = true;
+  # Enable development support
+  devSupportEnable = true;
 
   # Enable gaming support (controllers, gamescope, protonup-qt)
   gamingSupportEnable = true;
-
-  # Enable development support
-  devSupportEnable = true;
 
   # Display manager choice
   displayManager = "ly";
@@ -66,4 +56,10 @@ in {
   
   # Shell choice
   defaultShell = "zsh";
+
+  # Software choice
+  IDE = "zeditor";
+  browser = "brave";
+  terminal = "ghostty";
+  fileManager = "nautilus";
 }

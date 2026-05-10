@@ -25,6 +25,5 @@
     ./polkit.nix
     ./zoxide.nix
     ./ghostty.nix
-    ./nautilus.nix
   ];
 }

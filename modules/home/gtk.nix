@@ -3,8 +3,8 @@
 # Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
-  home.packages = [
-    pkgs.adwaita-icon-theme     # Fallback
+  home.packages = with pkgs; [
+    adwaita-icon-theme     # Fallback
   ];
 
   gtk = {

@@ -10,11 +10,5 @@ in lib.mkIf (defaultSession == "niri") {
     package = pkgs.niri;
   };
 
-  services.displayManager = {
-    defaultSession = "niri";
-
-    sessionPackages = [
-      pkgs.niri
-    ];
-  };
+  services.displayManager.defaultSession = "niri";
 }

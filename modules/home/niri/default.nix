@@ -22,7 +22,7 @@
     styleModule = import ./styles.nix {};
 in {
   home.packages = with pkgs; [
-    niri
+    # niri -> Installed via core/display/sessions/niri.nix module
     grim
     slurp
     wl-clipboard
