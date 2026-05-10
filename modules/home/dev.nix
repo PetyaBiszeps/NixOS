@@ -6,10 +6,30 @@
   let webSupportEnable = variables.webSupportEnable or false;
 in lib.mkIf webSupportEnable {
   home.packages = with pkgs; [
-    nodejs_24
-    opencode
-    yarn
-    pnpm
+    # Git-related
     lazygit
+
+    # AI-related
+    opencode
+
+    # Package managers
+    pnpm
+    yarn
+
+    # JS / TS
+    nodejs_24
+
+    # Python
+    python3Full
+    uv
+    ruff
+    pyright
+
+    # Go
+    go
+    gopls
+    delve
+    gotools
+    golangci-lint
   ];
 }
