@@ -19,7 +19,7 @@
       themePackages = with pkgs; [
         nixos-bgrt-plymouth
       ];
-      theme = "bgrt";
+      theme = "nixos-bgrt";
     };
     initrd.verbose = false;
     consoleLogLevel = 0;
