@@ -6,7 +6,7 @@
   programs.nvf.settings.vim.extraPlugins = with pkgs.vimPlugins; {
     snacks = {
       package = snacks-nvim;
-      
+
       setup = ''
         require("snacks").setup({
           input = {
@@ -30,6 +30,16 @@
           terminal = {
             enabled = true,
           },
+          dashboard = {
+            enabled = true,
+
+            sections = {
+              { section = "header" },
+              { section = "keys", gap = 1, padding = 1 },
+              { section = "recent_files", limit = 8, padding = 1 },
+              { section = "projects", limit = 8, padding = 1 },
+            },
+          },
           bigfile = {
             enabled = true,
           },
@@ -39,13 +49,22 @@
           words = {
             enabled = true,
           },
+          scope = {
+            enabled = true,
+          },
+          scroll = {
+            enabled = true,
+          },
+          statuscolumn = {
+            enabled = true,
+          },
         })
       '';
     };
 
     opencode = {
       package = opencode-nvim;
-      
+
       setup = ''
         vim.g.opencode_opts = {
           -- This can be configured later if needed.
