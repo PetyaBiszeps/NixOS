@@ -7,6 +7,7 @@
     inputs.nvf.homeManagerModules.default
 
     ./lsp.nix
+    ./binds.nix
     ./theme.nix
     ./plugins.nix
     ./languages.nix

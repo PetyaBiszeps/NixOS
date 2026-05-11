@@ -29,6 +29,9 @@
           terminal = {
             enabled = true,
           },
+          sqlite = {
+            enabled = true,
+          }
         })
       '';
     };
