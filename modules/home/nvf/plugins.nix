@@ -6,6 +6,7 @@
   programs.nvf.settings.vim.extraPlugins = with pkgs.vimPlugins; {
     snacks = {
       package = snacks-nvim;
+      
       setup = ''
         require("snacks").setup({
           input = {
@@ -29,19 +30,42 @@
           terminal = {
             enabled = true,
           },
-          sqlite = {
+          bigfile = {
             enabled = true,
-          }
+          },
+          quickfile = {
+            enabled = true,
+          },
+          words = {
+            enabled = true,
+          },
         })
       '';
     };
-    
+
     opencode = {
       package = opencode-nvim;
+      
       setup = ''
         vim.g.opencode_opts = {
           -- This can be configured later if needed.
         }
+      '';
+    };
+
+    devicons = {
+      package = nvim-web-devicons;
+
+      setup = ''
+        require("nvim-web-devicons").setup({})
+      '';
+    };
+
+    mini-icons = {
+      package = mini-icons;
+
+      setup = ''
+        require("mini.icons").setup({})
       '';
     };
   };
