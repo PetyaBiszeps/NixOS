@@ -9,31 +9,31 @@
     nix = {
       enable = true;
       lsp.enable = true;
-      lsp.servers = ["nixd"];
+      lsp.servers = [ "nixd" ];
     };
 
     typescript = {
       enable = true;
       lsp.enable = false;
-      # lsp.servers = ["vtsls"];
+      lsp.servers = [ "vtsls" ];
     };
 
     go = {
       enable = true;
       lsp.enable = true;
-      lsp.servers = ["gopls"];
+      lsp.servers = [ "gopls" ];
     };
 
     python = {
       enable = true;
       lsp.enable = true;
-      lsp.servers = ["pyright"];
+      lsp.servers = [ "pyright" ];
     };
 
     bash = {
       enable = true;
       lsp.enable = true;
-      lsp.servers = ["bash-language-server"];
+      lsp.servers = [ "bash_ls" ];
     };
   };
 }

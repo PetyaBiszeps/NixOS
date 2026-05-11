@@ -8,20 +8,11 @@
     lspconfig.enable = true;
 
     servers = {
-      nixd = {
-        enable = true;
-
-        settings = {
-          nixd = {
-            autoArchive = true;
-          };
+      nixd.settings = {
+        nixd = {
+          autoArchive = true;
         };
       };
-
-      vtsls.enable = true;
-      gopls.enable = true;
-      pyright.enable = true;
-      bash_ls.enable = true;
     };
   };
 }
