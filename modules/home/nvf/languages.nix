@@ -5,17 +5,20 @@
 { ... }: {
   programs.nvf.settings.vim.languages = {
     enableTreesitter = true;
-
+    
     nix = {
       enable = true;
       lsp.enable = true;
       lsp.servers = [ "nixd" ];
     };
+    html.enable = true;
+    css.enable = true;
+    markdown.enable = true;
 
     typescript = {
       enable = true;
-      lsp.enable = false;
-      lsp.servers = [ "vtsls" ];
+      lsp.enable = true;
+      lsp.servers = [ "typescript-go" ];
     };
 
     go = {
@@ -33,7 +36,7 @@
     bash = {
       enable = true;
       lsp.enable = true;
-      lsp.servers = [ "bash_ls" ];
+      lsp.servers = [ "bash-language-server" ];
     };
   };
 }

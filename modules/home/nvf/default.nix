@@ -10,6 +10,9 @@
     ./theme.nix
     ./plugins.nix
     ./languages.nix
+    ./externals.nix
+    ./filetypes.nix
+    ./treesitter.nix
   ];
 
   programs.nvf = {

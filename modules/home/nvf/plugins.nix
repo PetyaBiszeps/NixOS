@@ -7,11 +7,39 @@
     snacks = {
       package = snacks-nvim;
       setup = ''
-        require("snacks").setup({})
+        require("snacks").setup({
+          input = {
+            enabled = true,
+          },
+          picker = {
+            enabled = true,
+          },
+          notifier = {
+            enabled = true,
+          },
+          explorer = {
+            enabled = true,
+          },
+          image = {
+            enabled = true,
+          },
+          lazygit = {
+            enabled = true,
+          },
+          terminal = {
+            enabled = true,
+          },
+        })
       '';
     };
+    
     opencode = {
       package = opencode-nvim;
+      setup = ''
+        vim.g.opencode_opts = {
+          -- This can be configured later if needed.
+        }
+      '';
     };
   };
 }
