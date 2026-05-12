@@ -16,6 +16,7 @@ in {
     };
 
     boot.kernelParams = [
+      # Required for GPU tuning via LACT, including overclocking / undervolting
       "amdgpu.ppfeaturemask=0xffffffff"
     ];
     services.xserver.videoDrivers = [ "amdgpu" ];
@@ -25,8 +26,8 @@ in {
     ];
 
     environment.sessionVariables = {
-      RADV_DEBUG = "nodcc";
-      RADV_PERFTEST = "gpl";
+      # RADV_DEBUG = "nodcc"; -> Uncomment only if needed as a workaround for RADV rendering artifacts or crashes
+      RADV_PERFTEST = "gpl"; # -> useful for reducing shader stutter in some games
       AMD_VULKAN_ICD = "RADV";
       VDPAU_DRIVER = "radeonsi";
       LIBVA_DRIVER_NAME = "radeonsi";
