@@ -2,6 +2,9 @@
 .idea
 .vscode
 
+# Local files
+.DS_Store
+
 # NixOS local files
 hosts/*/disks.nix
 hosts/*/hardware.nix

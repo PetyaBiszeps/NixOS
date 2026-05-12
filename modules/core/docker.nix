@@ -7,8 +7,9 @@
     vars = config.variables;
 
     username = vars.username;
+    hasUser = username != "" && username != null;
     devSupportEnable = vars.devSupportEnable or false;
-in lib.mkIf devSupportEnable {
+in lib.mkIf (devSupportEnable && hasUser) {
   virtualisation.docker = {
     enable = true;
 
