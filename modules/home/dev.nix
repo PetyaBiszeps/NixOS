@@ -50,6 +50,9 @@ in lib.mkIf devSupportEnable {
     # gotools -> conflict with gopls
     golangci-lint
 
+    # Rust
+    rustup
+
     # Virtualization
     docker-compose
   ];
