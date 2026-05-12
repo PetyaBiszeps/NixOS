@@ -13,6 +13,7 @@
     spotatui
     obsidian
     celluloid
+    localsend
     thunderbird
     # gnome-notes
     mission-center
