@@ -25,6 +25,8 @@ in {
     # niri -> Installed via core/display/sessions/niri.nix module
     grim
     slurp
+    swappy
+    cliphist
     wl-clipboard
     xwayland-satellite
   ];

@@ -7,6 +7,9 @@
     nvd
     nil
     nixd
+    statix
+    deadnix
+    alejandra
     nixpkgs-fmt
     nix-output-monitor
   ];
