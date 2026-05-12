@@ -15,8 +15,8 @@ in ''
     Mod+B hotkey-overlay-title="Open Browser: ${browser}" { spawn "${browser}"; }
     Mod+I hotkey-overlay-title="Open IDE: ${ide}" { spawn "${ide}"; }
     Mod+E hotkey-overlay-title="Open Files" { spawn "${fileManager}"; }
-    Mod+Print hotkey-overlay-title="Screenshot Area" { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
-    Mod+Shift+Print hotkey-overlay-title="Screenshot Window" { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
+    Mod+Print hotkey-overlay-title="Screenshot Area Copy" { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
+    Mod+Shift+Print hotkey-overlay-title="Screenshot Area Edit" { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
     Mod+F hotkey-overlay-title="Maximize Column" { maximize-column; }
     Mod+Shift+F hotkey-overlay-title="Fullscreen Window" { fullscreen-window; }
     Mod+C hotkey-overlay-title="Close Window" { close-window; }

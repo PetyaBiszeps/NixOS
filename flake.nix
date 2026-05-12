@@ -41,30 +41,34 @@
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
+      pkgs = import nixpkgs {
+        inherit system;
+      };
 
-      mkHost = { hostname, profile }:
-        lib.nixosSystem {
-          inherit system;
+      mkHost = { hostname, profile }: lib.nixosSystem {
+        inherit system;
 
-          specialArgs = {
-            inherit inputs hostname profile;
-          };
-
-          modules = [
-            ./hosts/${hostname}
-            ./profiles/${profile}.nix
-            ./modules/core
-            ./modules/drivers
-
-            home-manager.nixosModules.home-manager
-          ];
+        specialArgs = {
+          inherit inputs hostname profile;
         };
-    in {
-      nixosConfigurations = {
-        nixos = mkHost {
-          hostname = "nixos";
-          profile = "amd";
-        };
+
+        modules = [
+          ./hosts/${hostname}
+          ./profiles/${profile}.nix
+          ./modules/core
+          ./modules/drivers
+
+          home-manager.nixosModules.home-manager
+        ];
+      };
+  in {
+    formatter.${system} = pkgs.alejandra;
+
+    nixosConfigurations = {
+      nixos = mkHost {
+        hostname = "nixos";
+        profile = "amd";
       };
     };
+  };
 }

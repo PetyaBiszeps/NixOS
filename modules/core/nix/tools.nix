@@ -10,7 +10,7 @@
     statix
     deadnix
     alejandra
-    nixpkgs-fmt
+    # nixpkgs-fmt -> both nixpkgs-fmt and alejandra are formatters, alejandra is preferred
     nix-output-monitor
   ];
 }
