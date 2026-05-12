@@ -36,14 +36,15 @@ in {
         description = gitUsername;
 
         extraGroups = [
-          "adbusers"
-          "docker"
-          "libvirtd"
           "lp"
-          "networkmanager"
-          "scanner"
           "wheel"
-          "vboxusers"
+          "scanner"
+          "networkmanager"
+          
+          # "docker" -> added by docker.nix, other commented groups should be a separate modules
+          # "adbusers"
+          # "libvirtd"
+          # "vboxusers"
         ];
 
         ignoreShellProgramCheck = true;
