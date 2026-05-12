@@ -7,12 +7,15 @@
     brave
     slack
     loupe
-    discord
+    # discord -> vesktop is a better alternative
+    vesktop
     spotify
     spotatui
+    obsidian
     celluloid
     thunderbird
     # gnome-notes
+    mission-center
     telegram-desktop
     gnome-calculator
     teamspeak6-client
