@@ -5,6 +5,11 @@
 { lib, pkgs, variables, ... }:
   let devSupportEnable = variables.devSupportEnable or false;
 in lib.mkIf devSupportEnable {
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+  
   home.packages = with pkgs; [
     # Search / navigation
     fd
@@ -42,7 +47,7 @@ in lib.mkIf devSupportEnable {
     go
     gopls
     delve
-    # gotools -> confict with gopls
+    # gotools -> conflict with gopls
     golangci-lint
 
     # Virtualization
