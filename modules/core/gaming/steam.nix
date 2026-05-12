@@ -2,7 +2,9 @@
 # Provides Steam gaming support
 # Important module for gaming, feel free to change, but be careful
 
-{ pkgs, ... }: {
+{ config, lib, pkgs, ... }:
+  let gamingSupportEnable = config.variables.gamingSupportEnable or false;
+in lib.mkIf gamingSupportEnable {
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
