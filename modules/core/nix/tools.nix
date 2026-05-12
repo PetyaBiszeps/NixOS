@@ -9,7 +9,7 @@
     nixd
     statix
     deadnix
-    alejandra
+    # alejandra -> added to flake as default formatter, use as "nix fmt"
     # nixpkgs-fmt -> both nixpkgs-fmt and alejandra are formatters, alejandra is preferred
     nix-output-monitor
   ];
