@@ -68,7 +68,7 @@ sudo nixos-rebuild build --flake "path:.#nixos" --no-write-lock-file
 # Show detailed error trace
 sudo nixos-rebuild build --flake "path:.#nixos" --show-trace --no-write-lock-file
 
-# Update flake inputs only when explicitly requested
+# Update flake , only when explicitly requested
 nix flake update
 ```
 

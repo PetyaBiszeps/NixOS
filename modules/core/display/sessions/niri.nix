@@ -2,13 +2,14 @@
 # Provides Niri graphical session support
 # Feel free to add, remove and modify anything here
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
   let defaultSession = config.variables.defaultSession or "niri";
 in lib.mkIf (defaultSession == "niri") {
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
   programs.niri = {
     enable = true;
-    package = pkgs.niri;
+    package = pkgs.niri-stable;
   };
-
   services.displayManager.defaultSession = "niri";
 }

@@ -15,9 +15,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # NVF
-    nvf = {
-      url = "github:notashelf/nvf";
+    # Niri
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # QuickShell
@@ -26,8 +27,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Noctalia (Built on QuickShell)
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    # NVF
+    nvf = {
+      url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -54,6 +62,7 @@
           ./modules/drivers
 
           home-manager.nixosModules.home-manager
+          inputs.niri.nixosModules.niri
         ];
       };
   in {
