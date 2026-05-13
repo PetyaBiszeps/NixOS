@@ -15,11 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Niri
-    niri = {
-      url = "github:YaLTeR/niri";
-    };
-
     # NVF
     nvf = {
       url = "github:notashelf/nvf";
