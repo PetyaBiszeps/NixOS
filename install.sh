@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # dirs
-HOST="${HOST:-nixos}"
+HOST="${HOSTNAME:-nixos}"
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOCAL_VARS="${REPO_DIR}/hosts/${HOST}/variables.local.nix"
 HARDWARE="${REPO_DIR}/hosts/${HOST}/hardware.nix"

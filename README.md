@@ -26,7 +26,7 @@ The installer can generate an SSH key, authenticate GitHub via device-flow, and 
 
 ### Rebuild after changes
 ```bash
-sudo nixos-rebuild switch --flake "path:.#nixos" --no-write-lock-file
+sudo nixos-rebuild switch --flake "path:.#nixos" --no-update-lock-file
 ```
 
 If you want to verify SSH, run `ssh -T git@github.com` after the installer completes.

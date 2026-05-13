@@ -17,14 +17,12 @@
 
     # Niri
     niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:YaLTeR/niri";
     };
 
     # NVF
     nvf = {
       url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # QuickShell

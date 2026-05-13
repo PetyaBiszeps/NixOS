@@ -2,7 +2,7 @@
 # Provides Quickshell runtime and shell implementations
 # Be careful when modifying this module, as it may break the shell
 
-{ lib, inputs, variables, pkgs, ... }:
+{ lib, pkgs, inputs, variables, ... }:
   let
     desktopShell = variables.desktopShell or "none";
 
