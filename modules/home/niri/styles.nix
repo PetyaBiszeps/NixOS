@@ -2,53 +2,76 @@
 # Provides system style configuration file
 # Rounded corners, subtle borders, and soft shadows
 
-{ ... }: ''
-  // Let niri draw borders around windows that support server-side decorations.
-  prefer-no-csd
+{ ... }: {
+  programs.niri.settings = {
+    # Let niri draw borders around windows that support server-side decorations.
+    prefer-no-csd = true;
 
-  layout {
-    // Keep borders slim and calm.
-    border {
-      width 2
-      active-color "#7f8b9b"
-      inactive-color "#2b3036"
-      urgent-color "#b14d4d"
-    }
+    layout = {
+      # Keep borders slim and calm.
+      border = {
+        enable = true;
+        width = 2;
+        active.color = "#7F8B9B";
+        inactive.color = "#2B3036";
+        urgent.color = "#B14D4D";
+      };
 
-    // Use border only, no extra focus ring.
-    focus-ring {
-      off
-    }
+      # Use border only, no extra focus ring.
+      focus-ring.enable = false;
 
-    // Soft shadow to separate windows from background.
-    shadow {
-      on
-      softness 24
-      spread 2
-      offset x=0 y=6
-      color "#00000066"
-    }
-  }
+      # Soft shadow to separate windows from background.
+      shadow = {
+        enable = true;
+        softness = 24;
+        spread = 2;
+        offset = {
+          x = 0;
+          y = 6;
+        };
+        color = "#00000066";
+      };
+    };
 
-  // Apply rounded corners to all windows.
-  window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
-  }
+    window-rules = [
+      # Apply rounded corners to all windows.
+      {
+        geometry-corner-radius = {
+          top-left = 12.0;
+          top-right = 12.0;
+          bottom-right = 12.0;
+          bottom-left = 12.0;
+        };
+        clip-to-geometry = true;
+      }
 
-  // Steam
-  window-rule {
-    match app-id="steam"
-    open-floating true
-  }
+      # Steam
+      {
+        matches = [
+          { app-id = "steam"; }
+        ];
+        open-floating = true;
+      }
 
-  window-rule {
-    match app-id="steam" title="^Steam$"
-    open-floating false
-  }
+      {
+        matches = [
+          {
+            app-id = "steam";
+            title = "^Steam$";
+          }
+        ];
+        open-floating = false;
+      }
 
-  window-rule {
-    match app-id="steam" title="^Steam Overlay$"
-    open-floating false
-  }
-''
+      {
+        matches = [
+          {
+            app-id = "steam";
+            title = "^Steam Overlay$";
+          }
+        ];
+        open-floating = false;
+      }
+    ];
+  };
+}
