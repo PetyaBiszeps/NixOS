@@ -26,4 +26,5 @@ in lib.mkIf (displayManager == "ly") {
   systemd.tmpfiles.rules = [
     "d /var/lib/ly 0755 root root -"
   ];
+  security.pam.services.ly.enableGnomeKeyring = true;
 }
