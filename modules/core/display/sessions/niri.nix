@@ -9,7 +9,7 @@ in lib.mkIf (defaultSession == "niri") {
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri-stable;
+    package = pkgs.niri-unstable;
   };
   services.displayManager.defaultSession = "niri";
 }

@@ -8,6 +8,11 @@
     prefer-no-csd = true;
 
     layout = {
+      # Default column width for apps
+      default-column-width = {
+        proportion = 0.5;
+      };
+      
       # Keep borders slim and calm.
       border = {
         enable = true;
