@@ -2,7 +2,7 @@
 # Provides basic network configuration
 # Feel free to add, remove and modify anything here
 
-{ pkgs, ... }: {
+{ ... }: {
   networking = {
     # hostName = hostname;
     # timeServers = [
@@ -18,7 +18,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    networkmanagerapplet
-  ];
+  # environment.systemPackages = with pkgs; [ -> It's bad...
+  #   networkmanagerapplet
+  # ];
 }
