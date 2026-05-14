@@ -2,7 +2,9 @@
 # Provides desktop portal support for Wayland applications
 # Be careful modifying this module, as it affects system applications stability
 
-{ pkgs, ... }: {
+{ config, lib, pkgs, ... }:
+  let defaultSession = config.variables.defaultSession or "";
+in lib.mkIf (defaultSession != "niri") {
   xdg.portal = {
     enable = true;
     wlr.enable = true;

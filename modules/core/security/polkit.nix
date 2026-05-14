@@ -2,7 +2,9 @@
 # Provides Polkit authorization rules
 # Be careful modifying this module, as it affects system permissions
 
-{ ... }: {
+{ config, lib, ... }:
+  let defaultSession = config.variables.defaultSession or "";
+in lib.mkIf (defaultSession != "niri") {
   security.polkit = {
     enable = true;
 
