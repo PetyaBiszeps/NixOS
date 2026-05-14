@@ -9,7 +9,7 @@ in {
     dconf.enable = true;
   };
 
-  services = lib.mkIf (defaultSession != "niri") {
+  services = {
     gvfs.enable = true;
     dbus.enable = true;
     upower.enable = true;
@@ -17,6 +17,8 @@ in {
     udisks2.enable = true;
     libinput.enable = true;
     # blueman.enable = true; -> Bluetooth GUI
+  }
+  // lib.optionalAttrs (defaultSession != "niri") {
     gnome.gnome-keyring.enable = true;
   };
 }
