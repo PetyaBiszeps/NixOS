@@ -23,7 +23,7 @@
     ./dev.nix
     ./apps.nix
     ./tmux.nix
-    ./polkit.nix
+    # ./polkit.nix -> Created by default in Niri-flake
     ./zoxide.nix
     ./ghostty.nix
   ];
