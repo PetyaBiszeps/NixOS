@@ -9,7 +9,7 @@
         enable = true;
         configurationLimit = 5;
       };
-      timeout = 3;
+      timeout = 0;
       efi.canTouchEfiVariables = true;
     };
 
