@@ -20,12 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # QuickShell
-    quickshell = {
-      url = "github:outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Noctalia (Built on QuickShell)
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";

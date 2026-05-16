@@ -1,7 +1,7 @@
 # Quickshell default.nix module
 # Provides modular aggregator for Quickshell runtime and shell implementations
 
-{ lib, pkgs, inputs, variables, ... }:
+{ lib, pkgs, variables, ... }:
   let
     desktopShell = variables.desktopShell or "none";
 
@@ -15,8 +15,8 @@ in {
 
   config = lib.mkIf enableQuickshell {
     home.packages = with pkgs; [
-      inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default
-
+      noctalia-qs
+      
       qt6.qt5compat
       qt6.qtbase
       qt6.qtquick3d
