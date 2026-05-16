@@ -1,6 +1,5 @@
-# Niri input configuration
+# Niri inputs module
 # Provides input configuration for Niri
-# Feel free to create, modify, or remove input sources
 
 {...}: {
   

@@ -1,6 +1,5 @@
 # Nix settings module
 # Provides general Nix daemon and store settings
-# Be careful when modifying this file, as it may affect your Nix settings
 
 { ... }: {
   nixpkgs.config.allowUnfree = true;

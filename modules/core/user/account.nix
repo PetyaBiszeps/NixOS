@@ -1,6 +1,5 @@
 # User account module
 # Provides system user account configuration
-# Be careful modifying this module, as it affects user login
 
 { config, lib, ... }:
   let

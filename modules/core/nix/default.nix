@@ -1,6 +1,5 @@
-# Nix modules collection module
-# Provides imports for Nix settings, garbage collection, and helper tools
-# Be careful when modifying this file, as it may affect the entire system behaviour
+# Nix default.nix module
+# Provides modular aggregator for imports for Nix settings, garbage collection, and helper tools
 
 { ... }: {
   imports = [

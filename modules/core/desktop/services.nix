@@ -1,6 +1,5 @@
 # Desktop services module
-# Provides desktop integration services
-# Be careful modifying this module, as it affects system behaviour
+# Provides desktop service integrations
 
 { config, lib, ... }:
   let defaultSession = config.variables.defaultSession or "";

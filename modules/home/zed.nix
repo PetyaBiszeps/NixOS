@@ -1,6 +1,5 @@
-# Zed home package
+# Home manager Zed
 # Provides Zed editor install
-# Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
   home.packages = with pkgs; [

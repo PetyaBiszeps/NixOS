@@ -1,6 +1,5 @@
-# eza home config
+# Home manager eza
 # Provides eza configuration
-# Feel free to add, remove and modify anything here
 
 { variables, ... }:
   let defaultShell = variables.defaultShell or "zsh";

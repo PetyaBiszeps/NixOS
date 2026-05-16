@@ -1,6 +1,5 @@
-# Oh My Posh home config
-# Provides prompt configuration
-# Feel free to add, remove and modify anything here
+# Shell Oh My Posh module
+# Provides oh-my-posh configuration
 
 { variables, pkgs, lib, ... }:
   let

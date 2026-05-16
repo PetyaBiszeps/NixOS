@@ -1,6 +1,5 @@
-# Niri global configuration
-# Provides Niri setup config and module imports
-# Feel free to add, remove and modify anything here
+# Niri default.nix module
+# Provides modular aggregator for Niri setup config and module imports
 
 {
   imports = [

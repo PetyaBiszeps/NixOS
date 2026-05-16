@@ -1,6 +1,5 @@
-# NVF languages configuration
+# NVF languages module
 # Provides language-specific settings and Treesitter parsers
-# Be careful modifying this file, as it may break Neovim setup
 
 { pkgs, ... }: {
   programs.nvf.settings.vim = {

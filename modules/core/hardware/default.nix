@@ -1,6 +1,5 @@
-# Hardware modules collection
-# Provides hardware-related core modules
-# Be careful modifying any of these, as they are controlling the hardware setup
+# Hardware default.nix modules
+# Provides modular aggregator for hardware-related core modules
 
 { ... }: {
   imports = [

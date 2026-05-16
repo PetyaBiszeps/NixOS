@@ -1,6 +1,5 @@
 # XDG user dirs configuration
 # Provides default XDG user directories
-# Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
   home.packages = with pkgs; [

@@ -1,6 +1,5 @@
-# Tmux home config
+# Home manager Tmux
 # Provides tmux configuration
-# Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
   programs.tmux = {

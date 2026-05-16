@@ -1,6 +1,5 @@
-# Zsh home config
+# Shell Zsh module
 # Provides zsh configuration
-# Feel free to add, remove and modify anything here
 
 { lib, variables, ... }:
   let defaultShell = variables.defaultShell or "zsh";

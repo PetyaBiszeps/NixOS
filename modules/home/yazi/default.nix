@@ -1,6 +1,5 @@
-# Yazi global file
-# Provides import of modules
-# Feel free to add, remove and change anything here
+# Yazi default.nix module
+# Provides modular aggregator for yazi 
 
 { variables, pkgs, ... }:
   let

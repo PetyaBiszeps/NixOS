@@ -1,6 +1,5 @@
-# Niri session packages
+# Niri session packages module
 # Provides extra tools used by the Niri session
-# Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
   home.packages = with pkgs; [

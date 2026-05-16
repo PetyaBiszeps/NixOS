@@ -1,6 +1,5 @@
 # Core global import file
 # Provides import for all /core modules
-# Be careful when modifying this file, as it may affect your system
 
 { ... }: {
   imports = [

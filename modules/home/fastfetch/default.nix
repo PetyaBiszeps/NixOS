@@ -1,6 +1,5 @@
-# Fastfetch configuration
-# Provides Fastfetch setup config
-# Feel free to add, remove and modify anything here
+# Fastfetch default.nix module
+# Provides modular aggregator for Fastfetch setup
 
 { variables, ... }:
 let

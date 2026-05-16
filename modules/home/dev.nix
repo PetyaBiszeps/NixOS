@@ -1,6 +1,5 @@
 # Web development support module
 # Provides node tooling for web workflows
-# Feel free to add, remove and modify anything here
 
 { lib, pkgs, variables, ... }:
   let devSupportEnable = variables.devSupportEnable or false;

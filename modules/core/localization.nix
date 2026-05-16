@@ -1,6 +1,5 @@
 # Keyboard module
 # Provides locales setup
-# Feel free to add any language except polish
 
 { config, ... }:
   let

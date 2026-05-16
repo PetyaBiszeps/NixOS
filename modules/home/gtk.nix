@@ -1,6 +1,5 @@
-# GTK home config
+# Home manager GTK
 # Provides GTK config
-# Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
   home.packages = with pkgs; [

@@ -1,6 +1,5 @@
-# Hardware Graphics module
+# Hardware graphics module
 # Provides hardware graphics support
-# Be careful modifying any of these, as they may break your graphics setup
 
 { pkgs, ... }: {
   hardware.graphics = {

@@ -1,6 +1,5 @@
-# Niri startup applications
+# Niri startup applications module
 # Provides applications launched when the Niri session starts
-# Feel free to add, remove and modify anything here
 
 { lib, variables, ... }:
   let desktopShell = variables.desktopShell or "";

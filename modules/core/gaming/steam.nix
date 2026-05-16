@@ -1,6 +1,5 @@
 # Steam module
 # Provides Steam gaming support
-# Important module for gaming, feel free to change, but be careful
 
 { config, lib, pkgs, ... }:
   let gamingSupportEnable = config.variables.gamingSupportEnable or false;

@@ -1,6 +1,5 @@
 # Nix user access module
 # Provides Nix daemon access for the configured user
-# Feel free to add, remove and modify anything here
 
 { config, lib, ... }:
   let

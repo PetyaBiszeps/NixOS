@@ -1,6 +1,5 @@
 # User shell module
 # Provides user shell configuration
-# Feel free to add, remove and modify anything here
 
 { config, lib, pkgs, ... }:
   let

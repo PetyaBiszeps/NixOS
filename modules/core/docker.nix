@@ -1,6 +1,5 @@
 # Docker virtualisation module
 # Provides Docker daemon support for development workflows
-# Be careful: users in the docker group effectively have root-level access
 
 { config, lib, ... }:
   let

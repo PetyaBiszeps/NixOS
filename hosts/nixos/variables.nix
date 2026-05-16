@@ -1,5 +1,4 @@
-# Default host variables
-# Host-specific variables and feature toggles
+# Default host-specific variables and feature toggles
 # Private per-machine values should be placed in variables.local.nix.
 
 let

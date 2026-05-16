@@ -1,6 +1,5 @@
 # Niri session module
 # Provides Niri graphical session support
-# Feel free to add, remove and modify anything here
 
 { config, lib, pkgs, inputs, ... }:
   let defaultSession = config.variables.defaultSession or "niri";

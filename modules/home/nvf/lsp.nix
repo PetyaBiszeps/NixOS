@@ -1,6 +1,5 @@
-# NVF LSP configuration
+# NVF LSP module
 # Provides language server setup
-# Feel free to add, remove and modify anything here
 
 { ... }: {
   programs.nvf.settings.vim.lsp = {

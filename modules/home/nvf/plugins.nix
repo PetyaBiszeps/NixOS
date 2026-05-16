@@ -1,6 +1,5 @@
-# NVF plugins configuration
+# NVF plugins module
 # Provides extra plugins for NVF
-# Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
   programs.nvf.settings.vim.extraPlugins = with pkgs.vimPlugins; {

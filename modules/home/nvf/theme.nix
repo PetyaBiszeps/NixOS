@@ -1,6 +1,5 @@
-# NVF theme configuration
+# NVF theme module
 # Provides UI theme settings
-# Feel free to add, remove and modify anything here
 
 { ... }: {
   programs.nvf.settings.vim.theme = {

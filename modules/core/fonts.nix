@@ -1,6 +1,5 @@
 # Nix fonts module
 # Provides... fonts!
-# Feel free to add, remove and modify anything here
 
 { pkgs, ... }: {
   fonts = {

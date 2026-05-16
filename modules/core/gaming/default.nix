@@ -1,6 +1,5 @@
-# Gaming modules collection module
-# Provides a collection of gaming-related modules
-# Feel free to add, remove and modify anything here
+# Gaming modules default.nix module
+# Provides modular aggregator for a collection of gaming-related modules
 
 { ... }: {
   imports = [

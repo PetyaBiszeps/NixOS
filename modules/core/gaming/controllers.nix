@@ -1,6 +1,5 @@
 # Gaming controllers module
 # Provides gamepad and controller support
-# Be careful when adding or removing modules, as it may affect the system's gaming
 
 { config, lib, ... }:
   let gamingSupportEnable = config.variables.gamingSupportEnable or false;

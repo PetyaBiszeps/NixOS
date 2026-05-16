@@ -1,6 +1,5 @@
 # Avahi mDNS configuration
 # Enables network discovery for local services
-# Feel free to add, remove and modify anything here
 
 { ... }: {
   services.avahi = {

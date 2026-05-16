@@ -1,6 +1,5 @@
-# Quickshell module
-# Provides Quickshell runtime and shell implementations
-# Be careful when modifying this module, as it may break the shell
+# Quickshell default.nix module
+# Provides modular aggregator for Quickshell runtime and shell implementations
 
 { lib, pkgs, inputs, variables, ... }:
   let

@@ -1,6 +1,5 @@
 # Nix default host configuration file
-# Detects user hardware configuration to make proper build
-# Feel free to add, remove and modify anything here
+# Detects user hardware configuration files (disks.nix / hardware.nix) to make proper build
 
 { lib, ... }: {
   imports = [

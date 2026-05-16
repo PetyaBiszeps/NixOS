@@ -1,6 +1,5 @@
-# Niri styling
+# Niri styling module
 # Provides system style configuration file
-# Rounded corners, subtle borders, and soft shadows
 
 { ... }: {
   programs.niri.settings = {

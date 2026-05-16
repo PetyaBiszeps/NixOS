@@ -1,6 +1,5 @@
-# rg home config
+# Home manager ripgrep
 # Provides ripgrep configuration
-# Feel free to add, remove and modify anything here
 
 { ... }: {
   programs.ripgrep = {

@@ -1,6 +1,5 @@
 # XDG portal module
 # Provides desktop portal support for Wayland applications
-# Be careful modifying this module, as it affects system applications stability
 
 { config, lib, pkgs, ... }:
   let defaultSession = config.variables.defaultSession or "";

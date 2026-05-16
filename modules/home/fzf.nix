@@ -1,6 +1,5 @@
-# fzf home config
+# Home manager fzf
 # Provides fzf configuration
-# Feel free to add, remove and modify anything here
 
 { variables, ... }:
   let defaultShell = variables.defaultShell or "zsh";

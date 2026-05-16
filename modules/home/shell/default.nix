@@ -1,6 +1,5 @@
-# Shell modules collection module
-# Provides shell configuration and shared shell environment
-# Be careful when modifying this file, as it affects all shell sessions
+# Shell default.nix module
+# Provides modular aggregator for shell configuration and shared shell environment
 
 { ... }: {
   imports = [

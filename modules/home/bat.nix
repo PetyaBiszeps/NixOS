@@ -1,6 +1,5 @@
-# bat home config
+# Home manager bat
 # Provides bat configuration
-# Feel free to add, remove and modify anything here
 
 { pkgs, lib, ... }: {
   programs.bat = {

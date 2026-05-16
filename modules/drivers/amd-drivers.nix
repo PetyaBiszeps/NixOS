@@ -1,6 +1,5 @@
 # AMD drivers file
 # Provides driver options for AMD GPUs
-# Be careful when editing this file, it controls AMD GPU drivers
 
 { config, lib, pkgs, ... }:
   let cfg = config.drivers.amdgpu;

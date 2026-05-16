@@ -1,6 +1,5 @@
 # Nix network module
 # Provides basic network configuration
-# Feel free to add, remove and modify anything here
 
 { ... }: {
   networking = {

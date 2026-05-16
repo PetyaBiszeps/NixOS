@@ -1,6 +1,5 @@
 # Git home module
 # Provides Git configuration for the home module
-# Be careful modifying this module, as it's used to configure git for current user
 
 { variables, username, ... }:
   let

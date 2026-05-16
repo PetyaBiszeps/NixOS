@@ -1,6 +1,5 @@
-# Niri user services
+# Niri user services module
 # Provides user systemd services used by the Niri session
-# Be careful modifying this file, as it may affect the Niri session
 
 { pkgs, ... }: {
   # Cliphist

@@ -1,6 +1,5 @@
 # Home Manager module
 # Provides Home Manager user configuration
-# Be careful modifying this module, as it affects user environment
 
 { config, inputs, lib, ... }:
   let

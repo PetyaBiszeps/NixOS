@@ -1,6 +1,5 @@
 # Core audio module
 # Provides audio services using PipeWire
-# Be careful modifying this module, as it may break audio functionality
 
 { ... }: {
   services.pipewire = {

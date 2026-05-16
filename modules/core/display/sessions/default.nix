@@ -1,6 +1,5 @@
-# Display sessions collection module
-# Provides available graphical session modules
-# Be careful when adding or removing modules, as it may affect desktop startup
+# Display sessions default.nix module
+# Provides modular aggregator for available graphical session modules
 
 { ... }: {
   imports = [

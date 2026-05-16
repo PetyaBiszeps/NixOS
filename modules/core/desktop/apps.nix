@@ -1,6 +1,5 @@
 # Desktop system apps module
-# Provides desktop system apps support
-# Be careful when modifying this module, as it may break your desktop functionality
+# Provides desktop system apps installation
 
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [

@@ -1,6 +1,5 @@
-# zoxide home config
+# Home manager zoxide
 # Provides zoxide configuration
-# Feel free to add, remove and modify anything here
 
 { variables, ... }:
   let defaultShell = variables.defaultShell or "zsh";

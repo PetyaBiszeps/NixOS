@@ -1,6 +1,5 @@
 # Ly display manager module
 # Provides Ly display manager configuration
-# Be careful modifying this module, as it may break the display manager
 
 { config, lib, ... }:
   let displayManager = config.variables.displayManager or "ly";

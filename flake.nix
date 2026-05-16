@@ -1,6 +1,5 @@
 # Global Nix Flake
-# Provides build for the system
-# Feel free to add, remove and modify anything here
+# Provides build wrapper for whole system
 
 {
   description = "NixOS configuration";

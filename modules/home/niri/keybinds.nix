@@ -1,6 +1,5 @@
-# Niri Keybinds module
+# Niri keybinds module
 # Provides complete niri binding
-# Feel free to add, remove and modify anything here
 
 { lib, variables, ... }:
   let

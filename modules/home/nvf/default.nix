@@ -1,6 +1,5 @@
-# NVF configuration
-# Provides Nixvim version management
-# Feel free to add, remove and modify anything here
+# NVF default.nix module
+# Provides modular aggregator for NVF
 
 { inputs, ... }: {
   imports = [

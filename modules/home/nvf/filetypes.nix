@@ -1,6 +1,5 @@
 # NVF Filetypes module
 # Provides filetype-specific settings for NVF configuration
-# Be careful modifying this file, as it can break your NVF health
 
 { ... }: {
   programs.nvf.settings.vim.luaConfigRC.filetypes = ''
