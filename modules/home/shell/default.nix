@@ -3,7 +3,13 @@
 
 { ... }: {
   imports = [
+    ./rg.nix
+    ./fd.nix
+    ./bat.nix
+    ./eza.nix
+    ./fzf.nix
     ./zsh.nix
+    ./zoxide.nix
     ./oh-my-posh.nix
   ];
 

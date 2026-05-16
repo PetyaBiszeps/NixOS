@@ -15,9 +15,9 @@ in {
 
   home.shellAliases = {
     ls = "eza";
-    lt = "eza --tree --level=2";
     ll = "eza -lh --no-user --long";
-    la = "eza -lah";
+    la = "eza -lah --no-user --long";
+    lt = "eza --tree --level=2";
     tree = "eza --tree";
   };
 }
