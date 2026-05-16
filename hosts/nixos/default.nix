@@ -4,14 +4,10 @@
 
 { lib, ... }: {
   imports = [
-    ./host-packages.nix
+    # 
   ]
-    # Users disks
-  ++ lib.optional (builtins.pathExists ./disks.nix) ./disks.nix
-  
-    # Users hardware
-  ++ lib.optional (builtins.pathExists ./hardware.nix) ./hardware.nix;
+  ++ lib.optional (builtins.pathExists ./disks.nix) ./disks.nix           # Users disks
+  ++ lib.optional (builtins.pathExists ./hardware.nix) ./hardware.nix;    # Users hardware
 
-  # NixOS current version (Don't remove that unless you know what you do)
   system.stateVersion = "26.05";
 }
