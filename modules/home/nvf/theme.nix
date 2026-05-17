@@ -10,14 +10,6 @@
     };
 
     extraPlugins = with pkgs.vimPlugins; {
-      devicons = {
-        package = nvim-web-devicons;
-  
-        setup = ''
-          require("nvim-web-devicons").setup({})
-        '';
-      };
-  
       mini-icons = {
         package = mini-icons;
   
