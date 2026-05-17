@@ -5,6 +5,7 @@
   imports = [
     ./git.nix
     ./cmdline.nix
+    ./snippets.nix
     ./dashboard.nix
     ./telescope.nix
     ./colorizer.nix
