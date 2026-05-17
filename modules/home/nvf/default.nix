@@ -10,6 +10,7 @@
     ./lsp.nix
     ./binds.nix
     ./theme.nix
+    ./styles.nix
     ./health.nix
     ./languages.nix
     ./filetypes.nix
