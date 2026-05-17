@@ -21,6 +21,13 @@
 
     settings.vim = {
       # Globals
+      globals = {
+        mapLeader = " ";
+        maplocalleader = " ";
+      };
+      viAlias = true;
+      vimAlias = true;
+      
       dashboard.alpha = {
         enable = true;
         theme = "dashboard";
