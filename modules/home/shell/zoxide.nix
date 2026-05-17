@@ -9,4 +9,8 @@ in {
     enableZshIntegration = defaultShell == "zsh";
     enableFishIntegration = defaultShell == "fish";
   };
+
+  home.shellAliases = {
+    e = "z";
+  };
 }
