@@ -6,6 +6,7 @@
     inputs.nvf.homeManagerModules.default
 
     ./lsp.nix
+    ./oil.nix
     ./binds.nix
     ./theme.nix
     ./health.nix
