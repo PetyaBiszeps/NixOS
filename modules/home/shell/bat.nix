@@ -19,9 +19,9 @@
 
   home = {
     shellAliases = {
-      cat = "bat";
+      cat = "bat -p";
     };
-    
+
     sessionVariables = {
       MANPAGER = "sh -c 'col -bx | bat -l man -p'";
       MANROFFOPT = "-c";
