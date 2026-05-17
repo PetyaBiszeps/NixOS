@@ -8,7 +8,6 @@
     ./plugins
 
     ./lsp.nix
-    ./oil.nix
     ./binds.nix
     ./theme.nix
     ./health.nix
@@ -22,10 +21,6 @@
     settings.vim = {
       viAlias = true;
       vimAlias = true;
-      
-      telescope.enable = true;
-      statusline.lualine.enable = true;
-      autocomplete.nvim-cmp.enable = true;
     };
   };
 

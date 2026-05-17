@@ -6,6 +6,9 @@
     ./oil.nix
     ./input.nix
     ./dashboard.nix
+    ./telescope.nix
+    ./statusline.nix
     ./notifications.nix
+    ./autocompletion.nix
   ];
 }
