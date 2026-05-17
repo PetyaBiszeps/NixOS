@@ -53,11 +53,24 @@
         spacing = 1,
       }
 
+      local function get_padding()
+        local header_height = #dashboard.section.header.val
+        local buttons_height = #dashboard.section.buttons.val * 2
+        local gaps_height = 6
+        local total_height = header_height + buttons_height + gaps_height
+        local padding = math.floor((vim.o.lines - total_height) / 2)
+
+        return padding > 0 and padding or 1
+      end
+
+      local vertical_padding = get_padding()
+
       dashboard.opts.layout = {
-        { type = "padding", val = 3 },
+        { type = "padding", val = vertical_padding },
         dashboard.section.header,
         { type = "padding", val = 3 },
         dashboard.section.buttons,
+        { type = "padding", val = vertical_padding },
       }
 
       alpha.setup(dashboard.opts)
