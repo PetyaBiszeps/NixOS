@@ -9,6 +9,7 @@
     ./eza.nix
     ./fzf.nix
     ./zsh.nix
+    ./atuin.nix
     ./zoxide.nix
     ./oh-my-posh.nix
   ];
