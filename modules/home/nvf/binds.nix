@@ -4,7 +4,7 @@
 { ... }: {
   programs.nvf.settings.vim = {
     globals = {
-      mapLeader = " ";
+      mapleader = " ";
       maplocalleader = " ";
     };
 

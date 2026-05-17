@@ -3,12 +3,12 @@
 
 { ... }: {
   imports = [
-    ./oil.nix
-    ./input.nix
+    ./cmdline.nix
     ./dashboard.nix
     ./telescope.nix
+    ./filesystem.nix
     ./statusline.nix
+    ./completion.nix
     ./notifications.nix
-    ./autocompletion.nix
   ];
 }

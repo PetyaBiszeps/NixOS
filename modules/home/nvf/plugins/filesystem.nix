@@ -1,5 +1,5 @@
 # NVF Plugins Oil module
-# Provides filesystem editing as a Neovim buffer
+# Provides filesystem navigation, browsing, and editing via Oil
 
 { ... }: {
   programs.nvf.settings.vim.utility.oil-nvim = {
