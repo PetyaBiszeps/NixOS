@@ -3,6 +3,7 @@
 
 { ... }: {
   imports = [
+    ./git.nix
     ./cmdline.nix
     ./dashboard.nix
     ./telescope.nix
