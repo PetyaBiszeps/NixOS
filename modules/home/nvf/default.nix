@@ -12,6 +12,7 @@
     ./theme.nix
     ./styles.nix
     ./health.nix
+    ./options.nix
     ./languages.nix
     ./filetypes.nix
   ];
