@@ -9,7 +9,7 @@
     layout = [
       {
         type = "padding";
-        val = 10;
+        val = 3;
       }
 
       {
