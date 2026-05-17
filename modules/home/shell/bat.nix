@@ -6,7 +6,7 @@
     enable = true;
 
     config = {
-      style = "full";
+      style = "plain";
       pager = "less -FR";
       theme = lib.mkForce "Catppuccin";
     };
@@ -19,7 +19,7 @@
 
   home = {
     shellAliases = {
-      cat = "bat -p";
+      cat = "bat";
     };
 
     sessionVariables = {
