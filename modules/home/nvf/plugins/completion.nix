@@ -6,6 +6,9 @@
     enable = true;
 
     setupOpts = {
+      signature = {
+        enable = true;
+      };
       keymap.preset = "super-tab";
 
       completion = {
@@ -25,6 +28,12 @@
 
       fuzzy = {
         implementation = "prefer_rust";
+
+        sorts = [
+          "exact"
+          "score"
+          "sort_text"
+        ];
         prebuilt_binaries.download = false;
       };
     };

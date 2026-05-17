@@ -7,6 +7,7 @@
     ./cmdline.nix
     ./dashboard.nix
     ./telescope.nix
+    ./colorizer.nix
     ./filesystem.nix
     ./statusline.nix
     ./completion.nix
