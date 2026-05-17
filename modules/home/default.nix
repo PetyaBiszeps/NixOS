@@ -17,7 +17,6 @@
     ./dev.nix
     ./apps.nix
     ./tmux.nix
-    # ./polkit.nix -> Created by default in Niri-flake
     ./ghostty.nix
   ];
 }

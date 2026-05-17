@@ -2,8 +2,12 @@
 # Provides Polkit authorization rules
 
 { config, lib, ... }:
-  let defaultSession = config.variables.defaultSession or "";
-in lib.mkIf (defaultSession != "niri") {
+  let
+    desktopShell = config.variables.desktopShell or "";
+    defaultSession = config.variables.defaultSession or "";
+
+    useNoctaliaNiri = defaultSession == "niri" && desktopShell == "noctalia";
+in {
   security.polkit = {
     enable = true;
 
@@ -20,4 +24,7 @@ in lib.mkIf (defaultSession != "niri") {
       });
     '';
   };
+
+  systemd.user.services.niri-flake-polkit.enable =
+      lib.mkIf useNoctaliaNiri false;
 }
