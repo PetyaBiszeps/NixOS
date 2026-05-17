@@ -2,171 +2,65 @@
 # Provides dashboard support via alpha
 
 { ... }: {
-  programs.nvf.settings.vim.dashboard.alpha = {
-    enable = true;
-    theme = null;
+  programs.nvf.settings.vim = {
+    dashboard.alpha = {
+      enable = true;
+      theme = "dashboard";
+    };
 
-    layout = [
-      {
-        type = "padding";
-        val = 3;
+    luaConfigRC.alpha-dashboard = ''
+      local alpha = require("alpha")
+      local dashboard = require("alpha.themes.dashboard")
+
+      dashboard.section.header.val = {
+        "    ____       __              ____  _                           ",
+        "   / __ \\___  / /___  ______ _/ __ )(_)________  ___  ____  _____",
+        "  / /_/ / _ \\/ __/ / / / __ `/ __  / / ___/_  / / _ \\/ __ \\/ ___/",
+        " / ____/  __/ /_/ /_/ / /_/ / /_/ / (__  ) / /_/  __/ /_/ (__  ) ",
+        "/_/    \\___/\\__/\\__, /\\__,_/_____/_/____/ /___/\\___/ .___/____/  ",
+        "               /____/                             /_/            ",
       }
 
-      {
-        type = "text";
-        val = [
-          "    ____       __              ____  _                           "
-          "   / __ \\___  / /___  ______ _/ __ )(_)________  ___  ____  _____"
-          "  / /_/ / _ \\/ __/ / / / __ `/ __  / / ___/_  / / _ \\/ __ \\/ ___/"
-          " / ____/  __/ /_/ /_/ / /_/ / /_/ / (__  ) / /_/  __/ /_/ (__  ) "
-          "/_/    \\___/\\__/\\__, /\\__,_/_____/_/____/ /___/\\___/ .___/____/  "
-          "               /____/                             /_/            "
-        ];
-        opts = {
-          position = "center";
-          hl = "AlphaHeader";
-        };
+      dashboard.section.header.opts = {
+        position = "center",
+        hl = "AlphaHeader",
       }
 
-      {
-        type = "padding";
-        val = 3;
+      local function button(key, label, command, shortcut)
+        local item = dashboard.button(key, label, command)
+
+        item.opts.position = "center"
+        item.opts.shortcut = shortcut or key
+        item.opts.align_shortcut = "right"
+        item.opts.hl_shortcut = "AlphaShortcut"
+        item.opts.width = 56
+        item.opts.cursor = 3
+
+        return item
+      end
+
+      dashboard.section.buttons.val = {
+        button("e", "  New file", "<cmd>enew<CR>", "E"),
+        button("f", "  Find file", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + F"),
+        button("h", "  Recently opened files", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + H"),
+        button("r", "  Frecency/MRU", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + R"),
+        button("g", "  Find word", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + G"),
+        button("m", "  Jump to bookmarks", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + M"),
+        button("s", "󰁯  Open last session", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + S + L"),
       }
 
-      {
-        type = "group";
-        val = [
-          {
-            type = "button";
-            val = "  New file";
-            on_press.__raw = ''
-              function()
-                vim.cmd("ene")
-                vim.cmd("startinsert")
-              end
-            '';
-            opts = {
-              position = "center";
-              shortcut = "E";
-              align_shortcut = "right";
-              hl_shortcut = "AlphaShortcut";
-              width = 56;
-              cursor = 3;
-            };
-          }
-
-          {
-            type = "button";
-            val = "  Find file";
-            on_press.__raw = ''
-              function()
-                vim.cmd("Telescope find_files")
-              end
-            '';
-            opts = {
-              position = "center";
-              shortcut = "Space + F + F";
-              align_shortcut = "right";
-              hl_shortcut = "AlphaShortcut";
-              width = 56;
-              cursor = 3;
-            };
-          }
-
-          {
-            type = "button";
-            val = "  Recently opened files";
-            on_press.__raw = ''
-              function()
-                vim.cmd("Telescope oldfiles")
-              end
-            '';
-            opts = {
-              position = "center";
-              shortcut = "Space + F + H";
-              align_shortcut = "right";
-              hl_shortcut = "AlphaShortcut";
-              width = 56;
-              cursor = 3;
-            };
-          }
-
-          {
-            type = "button";
-            val = "  Frecency/MRU";
-            on_press.__raw = ''
-              function()
-                vim.cmd("Telescope oldfiles")
-              end
-            '';
-            opts = {
-              position = "center";
-              shortcut = "Space + F + R";
-              align_shortcut = "right";
-              hl_shortcut = "AlphaShortcut";
-              width = 56;
-              cursor = 3;
-            };
-          }
-
-          {
-            type = "button";
-            val = "  Find word";
-            on_press.__raw = ''
-              function()
-                vim.cmd("Telescope live_grep")
-              end
-            '';
-            opts = {
-              position = "center";
-              shortcut = "Space + F + G";
-              align_shortcut = "right";
-              hl_shortcut = "AlphaShortcut";
-              width = 56;
-              cursor = 3;
-            };
-          }
-
-          {
-            type = "button";
-            val = "  Jump to bookmarks";
-            on_press.__raw = ''
-              function()
-                vim.cmd("Telescope marks")
-              end
-            '';
-            opts = {
-              position = "center";
-              shortcut = "Space + F + M";
-              align_shortcut = "right";
-              hl_shortcut = "AlphaShortcut";
-              width = 56;
-              cursor = 3;
-            };
-          }
-
-          {
-            type = "button";
-            val = "󰁯  Open last session";
-            on_press.__raw = ''
-              function()
-                vim.cmd("SessionRestore")
-              end
-            '';
-            opts = {
-              position = "center";
-              shortcut = "Space + S + L";
-              align_shortcut = "right";
-              hl_shortcut = "AlphaShortcut";
-              width = 56;
-              cursor = 3;
-            };
-          }
-        ];
-        opts = {
-          spacing = 1;
-        };
+      dashboard.section.buttons.opts = {
+        spacing = 1,
       }
-    ];
+
+      dashboard.opts.layout = {
+        { type = "padding", val = 3 },
+        dashboard.section.header,
+        { type = "padding", val = 3 },
+        dashboard.section.buttons,
+      }
+
+      alpha.setup(dashboard.opts)
+    '';
   };
 }
