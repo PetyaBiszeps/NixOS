@@ -40,13 +40,13 @@
       end
 
       dashboard.section.buttons.val = {
-        button("e", "  New file", "<cmd>enew<CR>", "E"),
-        button("f", "  Find file", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + F"),
-        button("h", "  Recently opened files", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + H"),
-        button("r", "  Frecency/MRU", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + R"),
-        button("g", "  Find word", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + G"),
-        button("m", "  Jump to bookmarks", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + M"),
-        button("s", "󰁯  Open last session", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + S + L"),
+        button("<leader>e", "  New file", "<cmd>enew<CR>", "E"),
+        button("<leader>fа", "  Find file", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + F"),
+        button("<leader>fh", "  Recently opened files", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + H"),
+        button("<leader>fr", "  Frecency/MRU", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + R"),
+        button("<leader>fg", "  Find word", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + G"),
+        button("<leader>fm", "  Jump to bookmarks", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + M"),
+        button("<leader>sl", "󰁯  Open last session", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + S + L"),
       }
 
       dashboard.section.buttons.opts = {
