@@ -6,6 +6,8 @@
 in {
   programs.zoxide = {
     enable = true;
+    flags = [ "--cmd cd" ];
+    
     enableZshIntegration = defaultShell == "zsh";
     enableFishIntegration = defaultShell == "fish";
   };

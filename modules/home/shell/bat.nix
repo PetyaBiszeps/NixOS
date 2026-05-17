@@ -14,6 +14,8 @@
     extraPackages = with pkgs.bat-extras; [
       batman
       batpipe
+      batdiff
+      prettybat
     ];
   };
 
