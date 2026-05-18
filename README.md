@@ -1,8 +1,8 @@
 # NixOS Configuration
 
-Personal modular NixOS configuration built around flakes, Home Manager, Niri, Noctalia, NVF, AMD graphics, development tools, and gaming support.
+Personal modular NixOS configuration built around flakes, Home Manager, Niri, Noctalia, NVF, development tools, gaming support, and AMD graphics.
 
-This repository is designed to bootstrap a fresh minimal NixOS installation into a complete daily-driver desktop system.
+This repository is designed to bootstrap a fresh NixOS installation into a complete daily-driver system.
 
 ## Overview
 
@@ -13,11 +13,6 @@ The configuration is split into small focused modules:
 ├── flake.nix
 ├── install.sh
 ├── mount.sh
-├── README.md
-├── AGENTS.md
-├── docs/
-│   ├── repository-map.md
-│   └── install-and-local-files.md
 ├── hosts/
 │   └── nixos/
 │       ├── default.nix
@@ -39,8 +34,8 @@ The configuration is split into small focused modules:
 ### System
 
 - Flake-based NixOS configuration
-- `nixos-unstable`
 - Home Manager integration
+- `nixos-unstable`
 - `systemd-boot`
 - Plymouth boot splash
 - PipeWire audio
@@ -49,7 +44,7 @@ The configuration is split into small focused modules:
 - Polkit rules
 - Nix flakes and `nix-command`
 - `nix-ld`
-- cleanup helpers through shell aliases and Nix tooling
+- automatic Nix cleanup through `nh`
 
 ### Desktop
 
@@ -57,9 +52,9 @@ The configuration is split into small focused modules:
 - Ly display manager
 - Noctalia shell through Quickshell
 - XWayland support
-- XDG desktop integration
-- Nautilus, GVFS, thumbnails, and UDisks
-- GTK/user app theming
+- XDG desktop integrations
+- Nautilus, GVFS, thumbnails, UDisks
+- Catppuccin/JetBrains-style user app theming
 
 ### Home Environment
 
@@ -80,11 +75,7 @@ The configuration is split into small focused modules:
 
 ### Development
 
-Development support is controlled by:
-
-```nix
-devSupportEnable = true;
-```
+Development support is controlled by `devSupportEnable` in `hosts/nixos/variables.nix`.
 
 When enabled, it installs tools for:
 
@@ -99,11 +90,7 @@ When enabled, it installs tools for:
 
 ### Gaming
 
-Gaming support is controlled by:
-
-```nix
-gamingSupportEnable = true;
-```
+Gaming support is controlled by `gamingSupportEnable` in `hosts/nixos/variables.nix`.
 
 When enabled, it provides:
 
@@ -128,7 +115,7 @@ It enables the custom AMD GPU driver module.
 
 ## Host Variables
 
-Most host-specific defaults live in:
+Most host-specific options live in:
 
 ```text
 hosts/nixos/variables.nix
@@ -174,8 +161,8 @@ Download the official NixOS ISO and install a minimal system.
 Recommended base:
 
 - No desktop environment
+- Flakes can be enabled later by this configuration
 - Boot into the installed CLI system
-- Let this repository configure the final desktop environment
 
 ### 2. Prepare Temporary Tools
 
@@ -233,7 +220,7 @@ The Zsh module also provides helper aliases.
 
 ### `nixos-build`
 
-Runs a rebuild without updating `flake.lock`:
+Runs:
 
 ```bash
 sudo nixos-rebuild switch --flake "path:.#nixos" --no-write-lock-file
@@ -324,14 +311,13 @@ They are intentionally ignored by Git.
 
 ### `flake.nix`
 
-Defines inputs, formatter, and NixOS configurations.
+Defines inputs and NixOS configurations.
 
 Current important inputs:
 
 - `nixpkgs`
 - `home-manager`
 - `sodiboo/niri-flake`
-- `quickshell`
 - `noctalia-shell`
 - `nvf`
 
@@ -339,13 +325,11 @@ Current important inputs:
 
 Host-specific configuration.
 
-Current host:
+The current host is:
 
 ```text
 hosts/nixos
 ```
-
-Use this area for machine-level host composition and variables.
 
 ### `profiles/`
 
@@ -397,51 +381,6 @@ Home Manager modules:
 - Fastfetch
 - desktop apps
 - development tools
-
-### `modules/home/shell/`
-
-Focused shell modules:
-
-- Zsh
-- Oh My Posh
-- Atuin
-- Zoxide
-- FZF
-- Eza
-- Bat
-- FD
-- Ripgrep
-- other CLI tools
-
-## Documentation
-
-This repository keeps the main README user-facing and relatively compact.
-
-Additional focused notes live in:
-
-```text
-docs/
-```
-
-Current docs:
-
-```text
-docs/repository-map.md
-docs/install-and-local-files.md
-```
-
-Use them as lightweight context files:
-
-- `docs/repository-map.md` explains where different kinds of changes should live.
-- `docs/install-and-local-files.md` explains `install.sh`, `mount.sh`, host variables, and generated local files.
-
-These docs are mainly useful for Codex/agent work and for future maintenance. They are not required for normal installation.
-
-## Codex / Agent Notes
-
-`AGENTS.md` contains short instructions for Codex-style agents working in this repository.
-
-It should stay compact and should not duplicate the full README or docs. When a task needs more context, agents should read the relevant focused file from `docs/`.
 
 ## SSH / GitHub
 
