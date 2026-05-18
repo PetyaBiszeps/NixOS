@@ -50,6 +50,26 @@
           desc = "Scroll up and center";
         };
 
+        "n" = {
+          action = "nzzzv";
+          desc = "Next search result centered";
+        };
+
+        "N" = {
+          action = "Nzzzv";
+          desc = "Previous search result centered";
+        };
+
+        "<leader>w" = {
+          action = "<cmd>w<CR>";
+          desc = "Save file";
+        };
+
+        "<leader>/" = {
+          action = "<cmd>nohlsearch<CR>";
+          desc = "Clear search highlight";
+        };
+
         "<leader>y" = {
           action = ''"+y'';
           desc = "Yank to system clipboard";
@@ -75,6 +95,21 @@
         "<leader>D" = {
           action = ''"+d'';
           desc = "Delete to system clipboard";
+        };
+
+        "<leader>p" = {
+          action = ''"_dP'';
+          desc = "Paste without replacing register";
+        };
+
+        "J" = {
+          action = ":m '>+1<CR>gv=gv";
+          desc = "Move selection down";
+        };
+
+        "K" = {
+          action = ":m '<-2<CR>gv=gv";
+          desc = "Move selection up";
         };
       };
     };
