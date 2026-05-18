@@ -1,90 +1,140 @@
 # AGENTS.md
 
-This file provides top-level guidance for OpenAI Codex when working in this repository.
+Top-level instructions for OpenAI Codex working in this repository.
 
-## Project Context
+## Context
 
-This is a NixOS flake configuration. The active branch is `Niri`.
+This is a personal modular NixOS flake configuration.
 
-Primary goals:
-- Keep changes small and focused.
-- Preserve the existing repository structure.
-- Keep the configuration beginner-friendly.
-- Prefer existing patterns over new abstractions.
-- Do not add unrelated packages, services, or refactors.
+Current repository shape:
 
-## Read These Docs When Relevant
+- host: `hosts/nixos`
+- profile: `profiles/amd.nix`
+- system modules: `modules/core/`
+- driver modules: `modules/drivers/`
+- Home Manager modules: `modules/home/`
+- shell modules: `modules/home/shell/`
+- local/generated files: `hosts/*/{hardware.nix,disks.nix,variables.local.nix}`
 
-Do not read every file in `docs/` by default. Read only the docs relevant to the task.
+The configuration uses NixOS, flakes, Home Manager, Niri, Noctalia, NVF, AMD graphics, development tooling, and gaming support.
 
-- `docs/architecture.md` — repository structure and configuration flow.
-- `docs/codex-workflow.md` — how Codex should inspect, edit, test, and summarize changes.
-- `docs/nixos-style.md` — Nix/NixOS style guidelines.
-- `docs/hosts.md` — host-specific configuration rules.
-- `docs/niri.md` — Niri desktop/session configuration.
-- `docs/troubleshooting.md` — common build/debug commands.
+Keep answers and changes focused. Prefer small patches over broad rewrites. Use docs as routing aids, not required reading.
+
+## Read Strategy
+
+Do not read the whole repo by default.
+
+Start with the files directly relevant to the task.
+
+Use:
+
+- `README.md` for user-facing install/rebuild context.
+- `docs/repository-map.md` when unsure where a change belongs.
+- `docs/install-and-local-files.md` when editing `install.sh`, `mount.sh`, host variables, or generated/local files.
+- other `docs/*.md` only when the task clearly matches a doc topic.
+- nearby modules before introducing new patterns.
+
+The `docs/` directory is for optional/situational notes. Do not require every task to create or read docs.
 
 ## Hard Rules
 
 Do not:
-- Modify `flake.lock` unless explicitly requested.
-- Edit `hosts/*/hardware.nix` unless the task is hardware-specific.
-- Run `nixos-rebuild`, `nixos-rebuild-all`, `nix flake update`, garbage collection, or other system-changing commands unless explicitly requested.
-- Perform broad refactors unless explicitly requested.
-- Rename or move directories unless explicitly requested.
-- Add unnecessary dependencies.
-- Change unrelated files.
-- Commit changes unless explicitly requested.
+
+- edit `flake.lock` unless explicitly asked
+- run `nix flake update` unless explicitly asked
+- run `nixos-rebuild`, cleanup, install scripts, or other system-changing commands unless explicitly asked
+- edit `hosts/*/hardware.nix` unless the task is hardware-specific
+- edit `hosts/*/disks.nix` unless the task is disk/mount-specific
+- edit `hosts/*/variables.local.nix` unless explicitly asked
+- move or rename modules unless explicitly asked
+- add large abstractions for small changes
+- add unrelated packages or services
+- change unrelated files
+- commit changes unless explicitly asked
 
 Do:
-- Inspect relevant files before editing.
-- Follow existing patterns.
-- Prefer small, reviewable changes.
-- Suggest an appropriate build/test command, but do not run it unless explicitly requested.
-- Explain what changed and why.
 
-## User Commands Reference
+- inspect relevant files before editing
+- follow the existing module style
+- keep modules small and focused
+- preserve existing directory structure
+- suggest validation commands instead of running them
+- explain changed files briefly
 
-These commands are documented for the user. Codex should not run them unless explicitly requested.
+## Style
 
-Use `--no-write-lock-file` by default for rebuild commands to avoid accidental `flake.lock` changes.
+Nix style in this repo prefers readable hand-written modules.
+
+Prefer this shape when practical:
+
+```nix
+{ config, lib, pkgs, ... }:
+  let
+    value = "...";
+in {
+  options = {};
+  config = {};
+}
+```
+
+Guidelines:
+
+- keep comments short and useful
+- prefer existing names and patterns
+- use `lib.mkIf` for feature toggles
+- use `lib.optionalAttrs` for conditional attribute sets
+- avoid unnecessary cleverness
+- avoid formatting-only churn
+- avoid broad rewrites
+
+## Local Files
+
+These are machine-specific and normally ignored by Git:
+
+```text
+hosts/*/hardware.nix
+hosts/*/disks.nix
+hosts/*/variables.local.nix
+```
+
+Treat them as generated/local state.
+
+## Commands
+
+Codex should not run these unless explicitly asked.
+
+Safe checks to suggest:
 
 ```bash
-# Default full rebuild workflow used by the user
-nixos-rebuild-all
+nix flake check "path:." --no-write-lock-file
+nix fmt
+```
 
-# Default cleanup workflow used by the user
-nixos-delete-old
+User rebuild aliases:
 
-# Build and activate after reboot
-sudo nixos-rebuild boot --flake "path:.#nixos" --no-write-lock-file
+```bash
+nixos-build
+nixos-update
+nixos-clean
+nixos-build-clean
+nixos-all
+```
 
-# Build and switch immediately
+Direct rebuild command:
+
+```bash
 sudo nixos-rebuild switch --flake "path:.#nixos" --no-write-lock-file
-
-# Build without switching
-sudo nixos-rebuild build --flake "path:.#nixos" --no-write-lock-file
-
-# Show detailed error trace
-sudo nixos-rebuild build --flake "path:.#nixos" --show-trace --no-write-lock-file
-
-# Update flake , only when explicitly requested
-nix flake update
 ```
 
-## Expected Task Summary
+Use `--no-write-lock-file` by default for rebuild/check commands.
 
-After making changes, Codex should summarize:
+## Task Summary
 
-- Which files changed.
-- What changed.
-- Why the change was made.
-- Which command the user can run to test it.
+After changes, summarize:
 
-For most configuration changes, suggest:
+- files changed
+- what changed
+- why
+- suggested validation command
 
-```bash
-nixos-rebuild-all
-```
-
-Do not run the command unless the user explicitly asks for it.
+Keep the summary short.
