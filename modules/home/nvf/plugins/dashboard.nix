@@ -41,7 +41,7 @@
 
       dashboard.section.buttons.val = {
         button("e", "  New file", "<cmd>enew<CR>", "E"),
-        button("<leader>fа", "  Find file", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + F"),
+        button("<leader>ff", "  Find file", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + F"),
         button("<leader>fh", "  Recently opened files", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + H"),
         button("<leader>fr", "  Frecency/MRU", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + R"),
         button("<leader>fg", "  Find word", "<cmd>echo 'Use keybinds faggot'<CR>", "Space + F + G"),
