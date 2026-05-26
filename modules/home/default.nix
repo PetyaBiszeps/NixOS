@@ -15,6 +15,7 @@
     ./zed.nix
     ./gtk.nix
     ./dev.nix
+    ./zen.nix
     ./apps.nix
     ./tmux.nix
     ./ghostty.nix
