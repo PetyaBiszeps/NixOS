@@ -34,6 +34,6 @@
       # "systemd.show_status=auto"
       # "rd.systemd.show_status=auto"
     ];
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 }
