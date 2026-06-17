@@ -2,9 +2,7 @@
 # Provides Noctalia bar settings
 
 { lib, variables, ... }:
-
-let
-  desktopShell = variables.desktopShell or "none";
+  let desktopShell = variables.desktopShell or "none";
 in {
   config = lib.mkIf (desktopShell == "noctalia") {
     programs.noctalia.settings.bar = {
@@ -22,6 +20,10 @@ in {
       
         radius_bottom_left = -80;
         radius_bottom_right = -80;
+
+        start = ["launcher" "clock" "media"];
+        center = ["workspaces"];
+        end = ["tray" "notifications" "network" "bluetooth" "volume" "brightness" "clipboard" "session"];
       };
     };
   };

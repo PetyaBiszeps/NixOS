@@ -6,6 +6,7 @@
     ./bar.nix
     ./theme.nix
     ./panels.nix
+    ./widgets.nix
     ./location.nix
     ./wallpaper.nix
     ./control-center.nix
