@@ -12,11 +12,16 @@ in {
         enabled = true;
         position = "top";
 
-        radius = 8;
+        capsule = true;
+        
+        radius = 0;
         padding = 8;
         thickness = 36;
-        margin_edge = 8;
-        margin_ends = 8;
+        margin_edge = 0;
+        margin_ends = 0;
+      
+        radius_bottom_left = -80;
+        radius_bottom_right = -80;
       };
     };
   };

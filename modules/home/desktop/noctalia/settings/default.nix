@@ -5,6 +5,8 @@
   imports = [
     ./bar.nix
     ./theme.nix
+    ./panels.nix
     ./wallpaper.nix
+    ./control-center.nix
   ];
 }
