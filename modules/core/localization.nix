@@ -19,8 +19,8 @@ in {
     LC_TELEPHONE = "uk_UA.UTF-8";
     LC_TIME = "en_GB.UTF-8";
   };
-  i18n.supportedLocales = [
-    "en_US.UTF-8/UTF-8"
+  i18n.extraLocales = [
+    "en_GB.UTF-8/UTF-8"
     "ru_RU.UTF-8/UTF-8"
     "uk_UA.UTF-8/UTF-8"
   ];

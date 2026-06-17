@@ -6,6 +6,10 @@
 in {
   config = lib.mkIf (desktopShell == "noctalia") {
     programs.noctalia.settings.widget = {
+      clock = {
+        format = "{:%A, %H:%M}";
+      };
+      
       tray = {
         drawer = true;
         drawer_columns = 4;
