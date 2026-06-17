@@ -3,6 +3,8 @@
 
 { lib, variables, ... }:
   let
+    noctalia = args: [ "noctalia" "msg" ] ++ args;
+    
     ide = variables.IDE or "zed";
     browser = variables.browser or "firefox";
     terminal = variables.terminal or "ghostty";
@@ -58,7 +60,7 @@ in {
   // lib.optionalAttrs (desktopShell == "noctalia") {
     "Mod+R" = {
       hotkey-overlay.title = "Launcher";
-      action.spawn = ["panel-toggle" "launcher"];
+      action.spawn = noctalia ["panel-toggle" "launcher"];
     };
   };
 }
