@@ -13,6 +13,7 @@
     obsidian
     celluloid
     localsend
+    qbittorrent
     thunderbird
     # gnome-notes
     mission-center

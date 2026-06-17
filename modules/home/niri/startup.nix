@@ -6,6 +6,6 @@
 in {
   programs.niri.settings.spawn-at-startup = 
     lib.optionals (desktopShell == "noctalia") [
-      { argv = ["noctalia-shell"]; }
+      { argv = ["noctalia"]; }
     ];
 }

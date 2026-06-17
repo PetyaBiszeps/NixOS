@@ -58,7 +58,7 @@ in {
   // lib.optionalAttrs (desktopShell == "noctalia") {
     "Mod+R" = {
       hotkey-overlay.title = "Launcher";
-      action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
+      action.spawn = ["panel-toggle" "launcher"];
     };
   };
 }

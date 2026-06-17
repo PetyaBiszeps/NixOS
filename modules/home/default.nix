@@ -7,8 +7,8 @@
     ./niri
     ./yazi
     ./shell
+    ./desktop
     ./fastfetch
-    ./quickshell
 
     ./git.nix
     ./xdg.nix

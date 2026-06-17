@@ -1,13 +1,17 @@
 # Noctalia shell module
-# Provides Noctalia shell configuration
+# Provides modular aggregator for Noctalia shell
 
 { lib, inputs, variables, ... }:
   let desktopShell = variables.desktopShell or "none";
 in {
-  imports = [ inputs.noctalia.homeModules.default ];
+  imports = [
+    ./settings
+    
+    inputs.noctalia.homeModules.default
+  ];
 
   config = lib.mkIf (desktopShell == "noctalia") {
-    programs.noctalia-shell = {
+    programs.noctalia = {
       enable = true;
       systemd.enable = false;
     };
