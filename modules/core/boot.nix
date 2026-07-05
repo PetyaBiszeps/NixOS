@@ -5,11 +5,16 @@
   boot = {
     loader = {
       systemd-boot = {
-        enable = true;
+        enable = false;
         configurationLimit = 5;
       };
       timeout = 0;
       efi.canTouchEfiVariables = true;
+    };
+
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
     };
 
     plymouth = {

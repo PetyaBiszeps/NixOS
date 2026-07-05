@@ -37,6 +37,12 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Secure Boot
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.1.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }:
@@ -62,6 +68,7 @@
 
           home-manager.nixosModules.home-manager
           inputs.niri.nixosModules.niri
+          inputs.lanzaboote.nixosModules.lanzaboote
         ];
       };
   in {
